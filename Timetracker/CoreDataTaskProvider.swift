@@ -55,7 +55,7 @@ class CoreDataTaskProvider: TaskProvider {
     }
     
     func removePingReceiver(_ pingReceiver: TaskPingReceiver) {
-        CoreDataTaskProvider.pingReceivers = CoreDataTaskProvider.pingReceivers?.filter { ($0 as? AnyObject) !== (pingReceiver as? AnyObject) }
+        CoreDataTaskProvider.pingReceivers = CoreDataTaskProvider.pingReceivers?.filter { ($0 as AnyObject) !== (pingReceiver as AnyObject) }
     }
     
     func getHeadOfDevelopments() -> [HeadOfDevelopment] {
@@ -146,7 +146,7 @@ class CoreDataTaskProvider: TaskProvider {
     func startTask(_ name: String, inProject project: Project) {
         
         if CoreDataTaskProvider.runningTask != nil {
-            stopRunningTask()
+            _ = stopRunningTask()
         }
         
         guard CoreDataTaskProvider.runningTask == nil else {
@@ -202,7 +202,7 @@ class CoreDataTaskProvider: TaskProvider {
     
     func deleteTasks(_ tasks: [Task]) -> Bool {
         tasks.forEach {
-            $0.project?.tasks?.remove($0)
+            _ = $0.project?.tasks?.remove($0)
             coreDataCtx.delete($0)
         }
         do {
@@ -253,7 +253,7 @@ class CoreDataTaskProvider: TaskProvider {
     func updateTask(_ task: Task) -> Bool {
         
         do {
-            CoreDataTaskProvider.runningProject?.tasks?.remove(task)
+            _ = CoreDataTaskProvider.runningProject?.tasks?.remove(task)
             try coreDataCtx.save()
             return true
         } catch {

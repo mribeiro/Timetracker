@@ -88,7 +88,7 @@ class ViewController: NSViewController, TaskPingReceiver, DataChanged {
         }
         
         if TaskProviderManager.instance.isTaskRunning {
-            TaskProviderManager.instance.stopRunningTask()
+            _ = TaskProviderManager.instance.stopRunningTask()
         }
         
         TaskProviderManager.instance.startTask(taskLabel.stringValue, inProject: selectedProject)

@@ -36,7 +36,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        taskProvider.stopRunningTask()
+        _ = taskProvider.stopRunningTask()
     }
 
     // MARK: - TaskPingReceiver implementation
@@ -270,7 +270,7 @@ extension AppDelegate: NSMenuDelegate {
             print(sender.representedObject)
             
             if taskProvider.isTaskRunning {
-                taskProvider.stopRunningTask()
+                _ = taskProvider.stopRunningTask()
             }
             
             taskProvider.startTask(task.title!, inProject: task.project!)
@@ -278,7 +278,7 @@ extension AppDelegate: NSMenuDelegate {
     }
     
     func stopTaskClicked(_ sender: NSMenuItem) {
-        taskProvider.stopRunningTask()
+        _ = taskProvider.stopRunningTask()
     }
     
     func loadBasicMenuItems(_ menu: NSMenu) {
