@@ -11,6 +11,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     
+    let databaseName = Bundle.main.object(forInfoDictionaryKey: "DB_NAME") as! String
+    
     let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     
     var builder: Builder = JackTheMonkey.one
@@ -110,7 +112,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
         var coordinator: NSPersistentStoreCoordinator? = nil
         if failError == nil {
             coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-            let url = self.applicationDocumentsDirectory.appendingPathComponent("CocoaAppCD2_DEV.sqlite")
+            let url = self.applicationDocumentsDirectory.appendingPathComponent("CocoaAppCD2_\(self.databaseName).sqlite")
             do {
                 try coordinator!.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
             } catch {

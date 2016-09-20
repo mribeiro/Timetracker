@@ -376,7 +376,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		E6910F551CCE5CFF003CBA90 /* Debug */ = {
+		E6910F551CCE5CFF003CBA90 /* Debug dev */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -421,7 +421,7 @@
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = "Debug dev";
 		};
 		E6910F561CCE5CFF003CBA90 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -463,20 +463,20 @@
 			};
 			name = Release;
 		};
-		E6910F581CCE5CFF003CBA90 /* Debug */ = {
+		E6910F581CCE5CFF003CBA90 /* Debug dev */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer: antonio.ribeiro@wit-software.com (N3JZ4EYZE4)";
 				COMBINE_HIDPI_IMAGES = YES;
-				DB_NAME = debug;
+				DB_NAME = DEV;
 				INFOPLIST_FILE = Timetracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
-			name = Debug;
+			name = "Debug dev";
 		};
 		E6910F591CCE5CFF003CBA90 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -494,7 +494,7 @@
 			};
 			name = Release;
 		};
-		E6910F5B1CCE5CFF003CBA90 /* Debug */ = {
+		E6910F5B1CCE5CFF003CBA90 /* Debug dev */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,7 +506,7 @@
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Timetracker.app/Contents/MacOS/Timetracker";
 			};
-			name = Debug;
+			name = "Debug dev";
 		};
 		E6910F5C1CCE5CFF003CBA90 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -522,13 +522,90 @@
 			};
 			name = Release;
 		};
+		E6C7CF301D91A79B00B16652 /* Debug prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug prod";
+		};
+		E6C7CF311D91A79B00B16652 /* Debug prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer: antonio.ribeiro@wit-software.com (N3JZ4EYZE4)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DB_NAME = PRD;
+				INFOPLIST_FILE = Timetracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = "Debug prod";
+		};
+		E6C7CF321D91A79B00B16652 /* Debug prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TimetrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.TimetrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Timetracker.app/Contents/MacOS/Timetracker";
+			};
+			name = "Debug prod";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		E6910F351CCE5CFF003CBA90 /* Build configuration list for PBXProject "Timetracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E6910F551CCE5CFF003CBA90 /* Debug */,
+				E6910F551CCE5CFF003CBA90 /* Debug dev */,
+				E6C7CF301D91A79B00B16652 /* Debug prod */,
 				E6910F561CCE5CFF003CBA90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -537,7 +614,8 @@
 		E6910F571CCE5CFF003CBA90 /* Build configuration list for PBXNativeTarget "Timetracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E6910F581CCE5CFF003CBA90 /* Debug */,
+				E6910F581CCE5CFF003CBA90 /* Debug dev */,
+				E6C7CF311D91A79B00B16652 /* Debug prod */,
 				E6910F591CCE5CFF003CBA90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -546,7 +624,8 @@
 		E6910F5A1CCE5CFF003CBA90 /* Build configuration list for PBXNativeTarget "TimetrackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E6910F5B1CCE5CFF003CBA90 /* Debug */,
+				E6910F5B1CCE5CFF003CBA90 /* Debug dev */,
+				E6C7CF321D91A79B00B16652 /* Debug prod */,
 				E6910F5C1CCE5CFF003CBA90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

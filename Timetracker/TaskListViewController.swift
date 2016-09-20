@@ -85,7 +85,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return tasks?.count ?? 5
+        return tasks?.count ?? 0
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
