@@ -131,10 +131,9 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
         }
     }
     
-    fileprivate func getSelectedObject() -> AnyObject? {
-        let selected = outlineView.selectedRow
-        let item = outlineView.item(atRow: selected)
-        return (item as AnyObject).representedObject
+    fileprivate func getSelectedObject() -> Any? {
+        let selectedItem = outlineView.item(atRow: outlineView.selectedRow)
+        return (selectedItem as? NSTreeNode)?.representedObject
     }
     
 }

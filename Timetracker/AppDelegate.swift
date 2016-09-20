@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     
     let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
     
-    var builder: Builder = MoonPhases.one
+    var builder: Builder = JackTheMonkey.one
     
     let menu = NSMenu()
     
@@ -162,7 +162,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplicationTerminateReply {
         // Save changes in the application's managed object context before the application terminates.
-        
         if !managedObjectContext.commitEditing() {
             NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing to terminate")
             return .terminateCancel
@@ -263,6 +262,9 @@ extension AppDelegate: NSMenuDelegate {
                 }
             }
         }
+        
+        loadCurrentTask(menu)
+        
     }
     
     func taskClicked(_ sender: NSMenuItem) {
@@ -300,4 +302,28 @@ extension AppDelegate: NSMenuDelegate {
 
     }
     
+    func loadCurrentTask(_ menu:NSMenu) {
+        if let task = taskProvider.runningTask , let project = taskProvider.projectOfRunningTask {
+            
+            menu.addItem(NSMenuItem.separator())
+            
+            let client = project.client!
+            let hod = client.headOfDevelopment!
+            
+            let hodItem = NSMenuItem(title: hod.name!, action: nil, keyEquivalent: "")
+            hodItem.isEnabled = false
+            let projectItem = NSMenuItem(title: project.name!,  action: nil, keyEquivalent: "")
+            projectItem.isEnabled = false
+            let clientItem = NSMenuItem(title: client.name!, action: nil, keyEquivalent: "")
+            clientItem.isEnabled = false
+            let taskItem = NSMenuItem(title: task.title!, action: nil, keyEquivalent: "")
+            taskItem.isEnabled = false
+            
+            menu.addItem(hodItem)
+            menu.addItem(projectItem)
+            menu.addItem(clientItem)
+            menu.addItem(taskItem)
+            
+        }
+    }
 }
