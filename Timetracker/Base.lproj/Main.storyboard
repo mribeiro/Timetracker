@@ -295,7 +295,7 @@
                                         <menuItem title="Task runner" keyEquivalent="t" id="9kx-o6-CDK">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES"/>
                                             <connections>
-                                                <segue destination="B8D-0N-5wS" kind="show" id="LvK-FM-tJQ"/>
+                                                <segue destination="di1-GN-por" kind="show" id="1tP-2a-7A3"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Costs centres" keyEquivalent="c" id="7VX-H3-HqH">
@@ -612,7 +612,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
-                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-ab-YfL">
+                            <segmentedControl horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cmC-ab-YfL">
                                 <rect key="frame" x="18" y="18" width="71" height="24"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="momentary" id="79S-W6-bKU">
                                     <font key="font" metaFont="system"/>
@@ -625,7 +625,7 @@
                                     <action selector="segmentedClicked:" target="2B6-69-iwz" id="aHg-x0-x81"/>
                                 </connections>
                             </segmentedControl>
-                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t7d-pm-7ea">
+                            <datePicker horizontalHuggingPriority="252" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="t7d-pm-7ea">
                                 <rect key="frame" x="95" y="18" width="97" height="27"/>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="tEH-lv-VWp">
                                     <font key="font" metaFont="system"/>
@@ -639,7 +639,7 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 </datePickerCell>
                             </datePicker>
-                            <datePicker verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HOs-Fi-DTc">
+                            <datePicker horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HOs-Fi-DTc">
                                 <rect key="frame" x="202" y="18" width="97" height="27"/>
                                 <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="P2Q-Ud-ZH5">
                                     <font key="font" metaFont="system"/>
@@ -663,7 +663,7 @@
                                     <action selector="filterClicked:" target="2B6-69-iwz" id="Xud-vu-IYb"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-x2-Mr3">
+                            <button horizontalHuggingPriority="252" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Waz-x2-Mr3">
                                 <rect key="frame" x="369" y="13" width="80" height="32"/>
                                 <buttonCell key="cell" type="push" title="Export" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dQ7-Uu-y9s">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -673,6 +673,14 @@
                                     <action selector="exportClicked:" target="2B6-69-iwz" id="0ts-o1-jtO"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3UY-pc-t8R">
+                                <rect key="frame" x="449" y="22" width="110" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Acumulated time:" id="xJV-kx-9Mi">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Waz-x2-Mr3" firstAttribute="top" secondItem="tTe-Hv-vq9" secondAttribute="top" id="5VL-x2-9ga"/>
@@ -684,14 +692,17 @@
                             <constraint firstItem="tTe-Hv-vq9" firstAttribute="leading" secondItem="HOs-Fi-DTc" secondAttribute="trailing" constant="8" id="O4e-RC-nDC"/>
                             <constraint firstItem="HOs-Fi-DTc" firstAttribute="leading" secondItem="t7d-pm-7ea" secondAttribute="trailing" constant="13" id="XjI-aR-1gA"/>
                             <constraint firstItem="cmC-ab-YfL" firstAttribute="leading" secondItem="QzA-I5-Pkc" secondAttribute="leading" constant="20" id="YcQ-Up-HOI"/>
+                            <constraint firstItem="3UY-pc-t8R" firstAttribute="centerY" secondItem="Waz-x2-Mr3" secondAttribute="centerY" id="icV-ea-WK9"/>
                             <constraint firstItem="tTe-Hv-vq9" firstAttribute="top" secondItem="HOs-Fi-DTc" secondAttribute="top" id="j9k-X2-mzW"/>
                             <constraint firstItem="xQD-D3-RLk" firstAttribute="leading" secondItem="QzA-I5-Pkc" secondAttribute="leading" constant="20" id="r9O-am-4Jx"/>
                             <constraint firstItem="t7d-pm-7ea" firstAttribute="leading" secondItem="cmC-ab-YfL" secondAttribute="trailing" constant="8" id="sDL-CZ-nVd"/>
                             <constraint firstItem="xQD-D3-RLk" firstAttribute="top" secondItem="QzA-I5-Pkc" secondAttribute="top" constant="20" id="syb-mJ-7Dh"/>
                             <constraint firstItem="Waz-x2-Mr3" firstAttribute="leading" secondItem="tTe-Hv-vq9" secondAttribute="trailing" constant="12" id="yNr-GA-IAO"/>
+                            <constraint firstItem="3UY-pc-t8R" firstAttribute="leading" secondItem="Waz-x2-Mr3" secondAttribute="trailing" constant="8" id="zMb-Jg-qUt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accumulatedTime" destination="3UY-pc-t8R" id="P84-Zr-EUM"/>
                         <outlet property="endDate" destination="HOs-Fi-DTc" id="5Vt-Ix-Hw6"/>
                         <outlet property="startDate" destination="t7d-pm-7ea" id="zSf-u8-GuT"/>
                         <outlet property="tableView" destination="05h-xs-2iF" id="wvs-hS-ehJ"/>
@@ -1055,9 +1066,6 @@ Gw
                         <rect key="contentRect" x="196" y="240" width="279" height="539"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                     </window>
-                    <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="HoR-xp-kPO"/>
-                    </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1246,16 +1254,19 @@ Gw
         <!--Window Controller-->
         <scene sceneID="WCY-6i-EUy">
             <objects>
-                <windowController storyboardIdentifier="id_task_runner" showSeguePresentationStyle="single" id="di1-GN-por" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="id_task_runner" showSeguePresentationStyle="single" id="di1-GN-por" customClass="TaskRunnerWindowController" customModule="Timetracker" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Task runner" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="ARW-Gf-Uu9">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="279" height="539"/>
+                        <rect key="contentRect" x="196" y="241" width="279" height="538"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                     </window>
+                    <connections>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="jJE-Yh-QOo"/>
+                    </connections>
                 </windowController>
                 <customObject id="UYF-jB-ZOW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-25.5" y="378.5"/>
+            <point key="canvasLocation" x="-25.5" y="379"/>
         </scene>
     </scenes>
     <resources>

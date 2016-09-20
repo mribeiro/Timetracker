@@ -15,6 +15,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     @IBOutlet var tableView: NSTableView!
     @IBOutlet var startDate: NSDatePicker!
     @IBOutlet var endDate: NSDatePicker!
+    @IBOutlet var accumulatedTime: NSTextField!
     
     // MARK: - Vars and Lets
     fileprivate var tasks: [Task]?
@@ -38,9 +39,20 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     
     func calculateTime() {
         //TODO time accumulated
-        _ = tasks?.reduce(0) { (accumulated, value) in
+        let timeAccumulated = tasks?.reduce(0) { (accumulated, value) in
             return (accumulated! + value.endTime!.timeIntervalSince(value.startTime! as Date))
         }
+        
+        if let time = timeAccumulated {
+            
+            let components = self.secondsToHoursMinutesSeconds(seconds: Int(time))
+            
+            accumulatedTime.stringValue = "Accumulated time: \(String(format:"%02d", components.hours))h\(String(format:"%02d",components.minutes))m"
+        }
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> (hours: Int, minutes: Int, seconds: Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
     override func viewWillDisappear() {
@@ -144,7 +156,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         print("Clicked \(sender.selectedSegment)")
         
         switch sender.selectedSegment {
-        case 0:
+        case 0: // delete task
             
             var tasksToDelete = [Task]()
             
@@ -158,8 +170,10 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
                 self.tableView.reloadData()
             }
             
+            calculateTime()
+            
             break;
-        case 1:
+        case 1: // new task
             self.editingTask = nil
             performSegue(withIdentifier: "add_line", sender: self)
             
@@ -194,6 +208,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         
         self.tasks = TaskProviderManager.instance.getTasksBetween(startDate.dateValue.startOfDay, and: end)
         self.tableView.reloadData()
+        self.calculateTime()
     }
     
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {

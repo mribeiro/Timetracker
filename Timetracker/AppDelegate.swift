@@ -223,10 +223,6 @@ extension AppDelegate: NSMenuDelegate {
     }
     
     func open(_ action: AnyObject) {
-        print("open open")
-        
-        let sb = NSStoryboard(name: "Main", bundle: nil)
-        
         if let controller = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "id_task_runner") as? NSWindowController {
             //NSApplication.shared().mainWindow
             controller.showWindow(self)
