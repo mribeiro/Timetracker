@@ -208,7 +208,12 @@ extension AppDelegate: NSMenuDelegate {
         
         menu.removeAllItems()
         loadBasicMenuItems(menu)
+        loadTree(menu)
+        loadCurrentTask(menu)
         
+    }
+    
+    func loadTree(_ sender: NSMenu) {
         taskProvider.getHeadOfDevelopments().forEach { hod in
             
             let hodItem = menu.addItem(withTitle: hod.name!, action: nil, keyEquivalent: "")
@@ -262,8 +267,6 @@ extension AppDelegate: NSMenuDelegate {
                 }
             }
         }
-        
-        loadCurrentTask(menu)
         
     }
     
