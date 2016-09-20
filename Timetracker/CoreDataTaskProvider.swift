@@ -168,8 +168,8 @@ class CoreDataTaskProvider: TaskProvider {
             $0.taskStarted()
         }
         
-        CoreDataTaskProvider.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CoreDataTaskProvider.taskPing), userInfo: nil, repeats: true)
-        
+        let timer = Timer(timeInterval: 1, target: self, selector: #selector(CoreDataTaskProvider.taskPing), userInfo: nil, repeats: true)
+        RunLoop.current.add(timer, forMode: .commonModes)
     }
     
     func stopRunningTask() -> Bool {
@@ -279,6 +279,7 @@ class CoreDataTaskProvider: TaskProvider {
     
     @objc func taskPing() {
         
+        print("ping")
         let interval = Date().timeIntervalSince(CoreDataTaskProvider.runningTask!.startTime! as Date)
         
         CoreDataTaskProvider.pingReceivers?.forEach {

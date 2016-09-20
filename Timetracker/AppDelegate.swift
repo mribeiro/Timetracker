@@ -45,8 +45,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
             let string = interval.toProperString()
             currentTaskTime = string
             
-            //button.title = string
+            print("updating button")
             button.title = builder.string()
+            
+            if let menuTimer = self.menu.item(withTag: 1) {
+                menuTimer.title = string
+            }
+            
         }
     }
     
@@ -207,18 +212,34 @@ extension AppDelegate: NSMenuDelegate {
     func menuWillOpen(_ menu: NSMenu) {
         
         menu.removeAllItems()
+        
+        //let menuItem = NSMenuItem(title: "Open", action: #selector(open(_:)) , keyEquivalent: "")
+        //menu.addItem(menuItem)
+        
         loadBasicMenuItems(menu)
         loadTree(menu)
         loadCurrentTask(menu)
         
     }
     
+    func open(_ action: AnyObject) {
+        print("open open")
+        
+        let sb = NSStoryboard(name: "Main", bundle: nil)
+        
+        if let controller = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "id_task_runner") as? NSWindowController {
+            //NSApplication.shared().mainWindow
+            controller.showWindow(self)
+        }
+    }
+    
+    
     func loadTree(_ sender: NSMenu) {
         taskProvider.getHeadOfDevelopments().forEach { hod in
             
             let hodItem = menu.addItem(withTitle: hod.name!, action: nil, keyEquivalent: "")
             
-            let clients = hod.children
+            let clients = hod.children 
             
             if clients.count > 0 {
                 
