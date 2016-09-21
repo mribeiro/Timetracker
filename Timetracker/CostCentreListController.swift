@@ -92,7 +92,13 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
     @IBAction func deleteClicked(_ sender: AnyObject) {
         
         if let selectedItem = getSelectedObject() as? NSManagedObject {
-            appDelegate.managedObjectContext.delete(selectedItem)
+            do {
+                appDelegate.managedObjectContext.delete(selectedItem)
+                try appDelegate.managedObjectContext.save()
+            } catch {
+                print("exception deleting \(selectedItem)")
+                print("error \(error)")
+            }
             loadTreeData()
             outlineView.reloadData()
         }
