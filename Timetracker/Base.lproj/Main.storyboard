@@ -1261,7 +1261,7 @@ Gw
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="jJE-Yh-QOo"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="bof-Li-r8E"/>
                     </connections>
                 </windowController>
                 <customObject id="UYF-jB-ZOW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
