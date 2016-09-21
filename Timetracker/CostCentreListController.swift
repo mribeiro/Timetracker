@@ -98,6 +98,8 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
             } catch {
                 print("exception deleting \(selectedItem)")
                 print("error \(error)")
+                appDelegate.managedObjectContext.rollback()
+                showError("Could not delete! Does this item have childs?")
             }
             loadTreeData()
             outlineView.reloadData()

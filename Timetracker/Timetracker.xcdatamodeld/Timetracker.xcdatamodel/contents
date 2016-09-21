@@ -3,11 +3,11 @@
     <entity name="Client" representedClassName=".Client" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="headOfDevelopment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeadOfDevelopment" inverseName="clients" inverseEntity="HeadOfDevelopment" syncable="YES"/>
-        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Project" inverseName="client" inverseEntity="Project" syncable="YES"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Project" inverseName="client" inverseEntity="Project" syncable="YES"/>
     </entity>
     <entity name="HeadOfDevelopment" representedClassName=".HeadOfDevelopment" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="clients" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Client" inverseName="headOfDevelopment" inverseEntity="Client" syncable="YES"/>
+        <relationship name="clients" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Client" inverseName="headOfDevelopment" inverseEntity="Client" syncable="YES"/>
     </entity>
     <entity name="Project" representedClassName=".Project" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -23,7 +23,7 @@
     </entity>
     <elements>
         <element name="Client" positionX="-333" positionY="-982" width="128" height="90"/>
-        <element name="HeadOfDevelopment" positionX="-308" positionY="-1161" width="128" height="73"/>
+        <element name="HeadOfDevelopment" positionX="-308" positionY="-1161" width="128" height="75"/>
         <element name="Project" positionX="-0" positionY="-664" width="128" height="90"/>
         <element name="Task" positionX="-38" positionY="-1134" width="128" height="118"/>
     </elements>
