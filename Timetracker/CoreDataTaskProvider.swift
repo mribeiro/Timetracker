@@ -168,8 +168,8 @@ class CoreDataTaskProvider: TaskProvider {
             $0.taskStarted()
         }
         
-        let timer = Timer(timeInterval: 1, target: self, selector: #selector(CoreDataTaskProvider.taskPing), userInfo: nil, repeats: true)
-        RunLoop.current.add(timer, forMode: .commonModes)
+        CoreDataTaskProvider.timer = Timer(timeInterval: 1, target: self, selector: #selector(CoreDataTaskProvider.taskPing), userInfo: nil, repeats: true)
+        RunLoop.current.add(CoreDataTaskProvider.timer!, forMode: .commonModes)
     }
     
     func stopRunningTask() -> Bool {
