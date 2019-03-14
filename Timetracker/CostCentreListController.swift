@@ -20,7 +20,7 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
     
     //MARK: - Vars and Lets
     
-    let appDelegate = NSApplication.shared().delegate as! AppDelegate
+    let appDelegate = NSApplication.shared.delegate as! AppDelegate
     
     //MARK: - ViewController callbacks
     
@@ -48,7 +48,7 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
     
     @IBAction func addProjectOrClientClicked(_ sender: NSButton) {
         
-        guard itemName.stringValue.characters.count > 0 else {
+        guard itemName.stringValue.count > 0 else {
             showError("Please fill in the text box")
             return
         }

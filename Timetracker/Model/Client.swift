@@ -18,9 +18,9 @@ class Client: NSManagedObject {
     @NSManaged var projects: Set<Project>?
     @NSManaged var headOfDevelopment: HeadOfDevelopment?
     
-    var isLeaf: Bool = false
+    @objc var isLeaf: Bool = false
     
-    var children: [Project] {
+    @objc var children: [Project] {
         return Array(self.projects!)
     }
     
@@ -34,5 +34,3 @@ class Client: NSManagedObject {
         }.first
     }
 }
-
-// Insert code here to add functionality to your managed object subclass

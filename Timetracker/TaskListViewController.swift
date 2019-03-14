@@ -74,7 +74,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     // MARK: - TableViewDataSource callbacks
     
     var editingTask: Task?
-    func tableViewDoubleClick() {
+    @objc func tableViewDoubleClick() {
         guard tableView.clickedRow > -1 else {
             print("header was double clicked, ignore")
             return
@@ -138,7 +138,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
             }
         }
         
-        if let cell = tableView.make(withIdentifier: identifier, owner: nil) as? NSTableCellView {
+        if let cell = tableView.makeView(withIdentifier: convertToNSUserInterfaceItemIdentifier(identifier), owner: nil) as? NSTableCellView {
             cell.textField?.stringValue = text ?? ""
             return cell
         }
@@ -226,4 +226,9 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToNSUserInterfaceItemIdentifier(_ input: String) -> NSUserInterfaceItemIdentifier {
+	return NSUserInterfaceItemIdentifier(rawValue: input)
 }

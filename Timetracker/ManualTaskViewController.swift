@@ -42,7 +42,7 @@ class ManualTaskViewController: NSViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
         hods = TaskProviderManager.instance.getHeadOfDevelopments()
-        let hodNames = hods!.flatMap{ $0.name }
+        let hodNames = hods!.compactMap{ $0.name }
         hodsPopup.removeAllItems()
         hodsPopup.addItems(withTitles: hodNames)
         
@@ -73,7 +73,7 @@ class ManualTaskViewController: NSViewController {
     fileprivate func populateClients(_ defaultSelected: String?, withDefaultProject defaultProject: String?) {
         clientsPopup.removeAllItems()
         if let selectedHod = selectedHod {
-            let clientNames = selectedHod.children.flatMap { $0.name }
+            let clientNames = selectedHod.children.compactMap { $0.name }
             clientsPopup.addItems(withTitles: clientNames)
         }
         
@@ -87,10 +87,10 @@ class ManualTaskViewController: NSViewController {
     fileprivate func populateProjects(_ defaultSelected: String?) {
         projectsPopup.removeAllItems()
         if let selectedClient = selectedClient {
-            var projectNames = selectedClient.children.flatMap { $0.name }
+            var projectNames = selectedClient.children.compactMap { $0.name }
             
             projectNames.sort{
-                return $0.0.compare($0.1) == .orderedAscending
+                return $0.compare($1) == .orderedAscending
             }
             
             projectsPopup.addItems(withTitles: projectNames)
@@ -120,7 +120,7 @@ class ManualTaskViewController: NSViewController {
     }
     
     @IBAction func saveClicked(_ sender: NSButton) {
-        if let selectedProject = self.selectedProject , taskName.stringValue.characters.count > 0 {
+        if let selectedProject = self.selectedProject , taskName.stringValue.count > 0 {
             
             if let task = editingTask {
                 

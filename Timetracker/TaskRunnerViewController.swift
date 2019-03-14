@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController, TaskPingReceiver, DataChanged {
+class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged {
     
     // MARK: - Outlets
     
@@ -57,7 +57,7 @@ class ViewController: NSViewController, TaskPingReceiver, DataChanged {
     
     fileprivate func reloadData() {
         hods = TaskProviderManager.instance.getHeadOfDevelopments()
-        let hodNames = hods!.flatMap{ $0.name! }
+        let hodNames = hods!.compactMap{ $0.name! }
         hodPopup.removeAllItems()
         hodPopup.addItems(withTitles: hodNames)
         populateClients()
@@ -81,7 +81,7 @@ class ViewController: NSViewController, TaskPingReceiver, DataChanged {
     
     @IBAction func startClicked(_ sender: AnyObject) {
         
-        guard let selectedProject = selectedProject , taskLabel.stringValue.characters.count > 0 else {
+        guard let selectedProject = selectedProject , taskLabel.stringValue.count > 0 else {
             print("cannot start task")
             showError("Did you set all fields?")
             return
@@ -143,7 +143,7 @@ class ViewController: NSViewController, TaskPingReceiver, DataChanged {
     fileprivate func populateClients() {
         clientPopup.removeAllItems()
         if let selectedHod = selectedHod {
-            let clientNames = selectedHod.children.flatMap { $0.name }
+            let clientNames = selectedHod.children.compactMap { $0.name }
             clientPopup.addItems(withTitles: clientNames)
         }
         
@@ -153,10 +153,10 @@ class ViewController: NSViewController, TaskPingReceiver, DataChanged {
     fileprivate func populateProjects() {
         projectPopup.removeAllItems()
         if let selectedClient = selectedClient {
-            var projectNames = selectedClient.children.flatMap { $0.name }
+            var projectNames = selectedClient.children.compactMap { $0.name }
             
             projectNames.sort{
-                return $0.0.compare($0.1) == .orderedAscending
+                return $0.compare($1) == .orderedAscending
             }
             
             projectPopup.addItems(withTitles: projectNames)

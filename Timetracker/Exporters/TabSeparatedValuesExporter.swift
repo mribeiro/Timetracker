@@ -124,7 +124,7 @@ private struct Line: CustomStringConvertible {
     var project: String!
     
     var description: String {
-        return "\(start)\t\(end)\t\(hod)\t\(client)\t\(project)\t\(title)\r\n"
+        return "\(start as String)\t\(end as String)\t\(hod as String)\t\(client as String)\t\(project as String)\t\(title as String)\r\n"
     }
     
 }

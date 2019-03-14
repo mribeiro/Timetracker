@@ -17,10 +17,10 @@ class HeadOfDevelopment: NSManagedObject {
     @NSManaged var name: String?
     @NSManaged var clients: Set<Client>?
     
-    var isLeaf: Bool = false
+    @objc var isLeaf: Bool = false
     
     
-    var children: [Client] {
+    @objc var children: [Client] {
         return Array(self.clients!)
     }
     

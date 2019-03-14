@@ -7,13 +7,14 @@
 //
 
 import Cocoa
+import IOKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     
     let databaseName = Bundle.main.object(forInfoDictionaryKey: "DB_NAME") as! String
     
-    let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     var builder: Builder = JackTheMonkey.one
     
@@ -46,6 +47,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
         if let button = statusItem.button {
             let string = interval.toProperString()
             currentTaskTime = string
+            
+            var lastEvent:CFTimeInterval = 0
+            lastEvent = CGEventSource.secondsSinceLastEventType(CGEventSourceStateID.hidSystemState, eventType: CGEventType(rawValue: ~0)!)
+            print("idle for \(lastEvent) seconds")
+            
+            if (lastEvent > 300) {
+                /** open popup asking what to do:
+                    1 - Continue counting (went to a meeting without laptop?)
+                    2 - Stop at idle time (went home and forgot to stop task and call it a day?)
+                    3 - Stop at idle time and resume same task (ideal for launch time?)
+                */
+            }
             
             print("updating button")
             button.title = builder.string()
@@ -129,7 +142,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
                 dict[NSUnderlyingErrorKey] = failError
             }
             let error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            NSApplication.shared().presentError(error)
+            NSApplication.shared.presentError(error)
             abort()
         } else {
             return coordinator!
@@ -157,7 +170,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
                 try managedObjectContext.save()
             } catch {
                 let nserror = error as NSError
-                NSApplication.shared().presentError(nserror)
+                NSApplication.shared.presentError(nserror)
             }
         }
     }
@@ -167,7 +180,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
         return managedObjectContext.undoManager
     }
 
-    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplicationTerminateReply {
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
         // Save changes in the application's managed object context before the application terminates.
         if !managedObjectContext.commitEditing() {
             NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing to terminate")
@@ -199,7 +212,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
             alert.addButton(withTitle: cancelButton)
             
             let answer = alert.runModal()
-            if answer == NSAlertFirstButtonReturn {
+            if answer == NSApplication.ModalResponse.alertFirstButtonReturn {
                 return .terminateCancel
             }
         }
@@ -289,9 +302,9 @@ extension AppDelegate: NSMenuDelegate {
         
     }
     
-    func taskClicked(_ sender: NSMenuItem) {
+    @objc func taskClicked(_ sender: NSMenuItem) {
         if let task = sender.representedObject as? Task {
-            print(sender.representedObject)
+            print(sender.representedObject ?? "No represented object from sender")
             
             if taskProvider.isTaskRunning {
                 _ = taskProvider.stopRunningTask()
@@ -301,7 +314,7 @@ extension AppDelegate: NSMenuDelegate {
         }
     }
     
-    func stopTaskClicked(_ sender: NSMenuItem) {
+    @objc func stopTaskClicked(_ sender: NSMenuItem) {
         _ = taskProvider.stopRunningTask()
     }
     

@@ -18,8 +18,8 @@ class Project: NSManagedObject {
     @NSManaged var client: Client?
     @NSManaged var tasks: Set<Task>?
 
-    var isLeaf: Bool = true
+    @objc var isLeaf: Bool = true
     
-    var children = [] as NSArray
+    @objc var children = [] as NSArray
     
 }

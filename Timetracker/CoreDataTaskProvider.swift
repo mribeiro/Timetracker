@@ -79,7 +79,7 @@ class CoreDataTaskProvider: TaskProvider {
     
     func saveHeadOfDevelopments(_ name: String) -> Bool {
         
-        guard name.characters.count > 0 else {
+        guard name.count > 0 else {
             return false
         }
         
@@ -99,7 +99,7 @@ class CoreDataTaskProvider: TaskProvider {
     
     func saveClient(_ name: String, ofHod hod: HeadOfDevelopment) -> Bool {
         
-        guard name.characters.count > 0 else {
+        guard name.count > 0 else {
             return false
         }
         
@@ -122,7 +122,7 @@ class CoreDataTaskProvider: TaskProvider {
     
     func saveProject(_ name: String, ofClient client: Client) -> Bool {
         
-        guard name.characters.count > 0 else {
+        guard name.count > 0 else {
             return false
         }
         
@@ -169,7 +169,7 @@ class CoreDataTaskProvider: TaskProvider {
         }
         
         CoreDataTaskProvider.timer = Timer(timeInterval: 1, target: self, selector: #selector(CoreDataTaskProvider.taskPing), userInfo: nil, repeats: true)
-        RunLoop.current.add(CoreDataTaskProvider.timer!, forMode: .commonModes)
+        RunLoop.current.add(CoreDataTaskProvider.timer!, forMode: RunLoop.Mode.common)
     }
     
     func stopRunningTask() -> Bool {
