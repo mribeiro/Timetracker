@@ -11,7 +11,7 @@ import CoreData
 
 
 
-class CoreDataTaskProvider: TaskProvider {
+class CoreDataTaskProvider: TaskProvider {    
     
     fileprivate var coreDataCtx: NSManagedObjectContext
     fileprivate(set) static var runningTask: Task?
@@ -172,10 +172,10 @@ class CoreDataTaskProvider: TaskProvider {
         RunLoop.current.add(CoreDataTaskProvider.timer!, forMode: RunLoop.Mode.common)
     }
     
-    func stopRunningTask() -> Bool {
-        
+    func stopRunningTask(atDate endDate: Date?) -> Bool {
+
         if let task = CoreDataTaskProvider.runningTask {
-            task.endTime = Date()
+            task.endTime = endDate ?? Date()
             coreDataCtx.insert(task)
             task.project = CoreDataTaskProvider.runningProject
             //CoreDataTaskProvider.runningProject?.tasks?.insert(task)
@@ -198,6 +198,10 @@ class CoreDataTaskProvider: TaskProvider {
         }
         return false
         
+    }
+    
+    func stopRunningTask() -> Bool {
+        return stopRunningTask(atDate: Date())
     }
     
     func deleteTasks(_ tasks: [Task]) -> Bool {

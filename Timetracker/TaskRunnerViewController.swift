@@ -25,7 +25,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
     // MARK: - Vars and Lets
     
     fileprivate var selectedHod: HeadOfDevelopment? {
-        return hods?[hodPopup.indexOfSelectedItem]
+        return hodPopup.indexOfSelectedItem >= 0 ? hods?[hodPopup.indexOfSelectedItem] : nil
     }
     
     fileprivate var selectedClient: Client? {
@@ -108,6 +108,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
     func ping(_ interval: TimeInterval) {
         let string = interval.toProperString()
         timeLabel.stringValue = string
+        print("Printing counter in task runner with \(string)")
     }
     
     func taskStarted() {
@@ -115,7 +116,9 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
     }
     
     func taskStopped() {
-        setCurrentTaskLabels()
+        _ = Timer.inOneSecond({ (timer) in
+            self.setCurrentTaskLabels()
+        })
     }
     
     // MARK: - Private methods

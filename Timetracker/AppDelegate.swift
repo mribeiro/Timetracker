@@ -8,6 +8,7 @@
 
 import Cocoa
 import IOKit
+import AppKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
@@ -34,14 +35,47 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
         
         statusItem.menu = menu
         statusItem.menu?.delegate = self
-        
     }
     
-
     func applicationWillTerminate(_ aNotification: Notification) {
         _ = taskProvider.stopRunningTask()
     }
 
+    
+    var showingIdleDialog = false;
+    func showIdleDialogWithIdleDate(_ idleDate: Date) -> NSApplication.ModalResponse {
+        self.showingIdleDialog = true
+        let alert = NSAlert()
+        
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "HH:mm"
+        let dateStr = formatter.string(from: idleDate)
+        
+        alert.messageText = "Idle time"
+        alert.informativeText = "You've been idle since \(dateStr)"
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: "Stop at idle time")
+        alert.addButton(withTitle: "Stop now")
+        alert.addButton(withTitle: "Continue")
+        return alert.runModal()
+    }
+    
+    func handleIdleDialog(withResponse response: NSApplication.ModalResponse, andIdleStart idleDate: Date) {
+        switch response {
+        case .alertFirstButtonReturn: // stop at idle time
+            _ = taskProvider.stopRunningTask(atDate: idleDate)
+            break
+        case .alertSecondButtonReturn: // stop now
+            _ = taskProvider.stopRunningTask()
+            break
+        default: // continue
+            print("nothing to do, let's continue counting time")
+            break
+        }
+        
+    }
+    
     // MARK: - TaskPingReceiver implementation
     func ping(_ interval: TimeInterval) {
         if let button = statusItem.button {
@@ -52,12 +86,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
             lastEvent = CGEventSource.secondsSinceLastEventType(CGEventSourceStateID.hidSystemState, eventType: CGEventType(rawValue: ~0)!)
             print("idle for \(lastEvent) seconds")
             
-            if (lastEvent > 300) {
-                /** open popup asking what to do:
-                    1 - Continue counting (went to a meeting without laptop?)
-                    2 - Stop at idle time (went home and forgot to stop task and call it a day?)
-                    3 - Stop at idle time and resume same task (ideal for launch time?)
-                */
+            if (lastEvent > 3) {
+                if (!showingIdleDialog) {
+                    let idleDate = Date();
+                    handleIdleDialog(withResponse: showIdleDialogWithIdleDate(idleDate), andIdleStart: idleDate)
+                    showingIdleDialog = false
+                    
+                }
             }
             
             print("updating button")
@@ -71,8 +106,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     }
     
     func taskStopped() {
-        statusItem.button?.title = builder.idle
         currentTaskTime = nil
+        _ = Timer.inOneSecond { (timer) in
+            self.statusItem.button?.title = self.builder.idle
+        }
     }
     
     func taskStarted() {

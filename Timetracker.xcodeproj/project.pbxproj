@@ -28,6 +28,7 @@
 		E6E1B4511CD899C300FE24CD /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B4501CD899C300FE24CD /* Builder.swift */; };
 		E6E1B4531CD899EA00FE24CD /* JackTheMonkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */; };
 		E6E1B4551CD89CE900FE24CD /* MoonPhases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */; };
+		E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */; };
 		E6FE838C1CDA5F9300794723 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE838B1CDA5F9300794723 /* ExportViewController.swift */; };
 		E6FE83901CDB34C900794723 /* TaskRunnerWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE838F1CDB34C900794723 /* TaskRunnerWindowController.swift */; };
 		E6FE83921CDB5D4100794723 /* NSTextView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE83911CDB5D4100794723 /* NSTextView+Utils.swift */; };
@@ -72,6 +73,7 @@
 		E6E1B4501CD899C300FE24CD /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JackTheMonkey.swift; sourceTree = "<group>"; };
 		E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonPhases.swift; sourceTree = "<group>"; };
+		E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Timer+Utils.swift"; path = "Utils/Timer+Utils.swift"; sourceTree = "<group>"; };
 		E6FE838B1CDA5F9300794723 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
 		E6FE838F1CDB34C900794723 /* TaskRunnerWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRunnerWindowController.swift; sourceTree = "<group>"; };
 		E6FE83911CDB5D4100794723 /* NSTextView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSTextView+Utils.swift"; path = "Utils/NSTextView+Utils.swift"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				E6D680571CD4F5F000C45179 /* NSTimeInterval+Utils.swift */,
 				E6FE83911CDB5D4100794723 /* NSTextView+Utils.swift */,
 				E6FE83931CDB5D5F00794723 /* NSDate+Utils.swift */,
+				E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				E6D680671CD88CE300C45179 /* ManualTaskViewController.swift in Sources */,
 				E6FE83961CDB6AF300794723 /* ErrorViewController.swift in Sources */,
 				E6FE83921CDB5D4100794723 /* NSTextView+Utils.swift in Sources */,
+				E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */,
 				E6910F401CCE5CFF003CBA90 /* TaskRunnerViewController.swift in Sources */,
 				E6E1B4531CD899EA00FE24CD /* JackTheMonkey.swift in Sources */,
 				E6910F8E1CCF78C0003CBA90 /* CostCentreListController.swift in Sources */,

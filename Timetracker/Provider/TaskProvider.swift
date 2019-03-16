@@ -14,7 +14,9 @@ class TaskProviderManager {
     fileprivate(set) static var instance: TaskProvider!
     
     static func setup(_ coreDataContext: NSManagedObjectContext) -> TaskProvider {
-        instance = CoreDataTaskProvider(coreDataContext: coreDataContext)
+        if (instance == nil) {
+            instance = CoreDataTaskProvider(coreDataContext: coreDataContext)
+        }
         return instance
     }
     
@@ -49,6 +51,8 @@ protocol TaskProvider {
     func removePingReceiver(_ pingReceiver: TaskPingReceiver)
     
     func startTask(_ name: String, inProject project: Project)
+    
+    func stopRunningTask(atDate endDate: Date?) -> Bool
     
     func stopRunningTask() -> Bool
     
