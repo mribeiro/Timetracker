@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import Cocoa
 protocol Builder {
     mutating func string() -> String
+    
+    var name: String { get }
     
     var idle: String { get }
     
     var start: String { get }
+    
 }
+
+

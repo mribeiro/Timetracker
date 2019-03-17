@@ -13,6 +13,10 @@ enum JackTheMonkey: Builder {
     case two
     case three
     
+    var name: String {
+        return "monkey"
+    }
+    
     var idle: String {
         return "🐒"
     }

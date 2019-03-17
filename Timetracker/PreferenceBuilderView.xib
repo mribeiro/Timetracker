@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferenceBuilderViewController" customModule="Timetracker" customModuleProvider="target">
+            <connections>
+                <outlet property="monkeyRadio" destination="GH9-94-Knb" id="p3D-v3-1Cf"/>
+                <outlet property="moonRadio" destination="6Qv-2Q-66O" id="X0R-Pv-Q5b"/>
+                <outlet property="view" destination="c22-O7-iKe" id="zFr-DE-WwF"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="moon" id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <button identifier="monkey" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GH9-94-Knb">
+                    <rect key="frame" x="19" y="235" width="483" height="18"/>
+                    <buttonCell key="cell" type="radio" title="Jack the monkey" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="MFF-Rv-lnI">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="setBuilder:" target="-2" id="u0w-GA-tfv"/>
+                    </connections>
+                </button>
+                <button identifier="moon" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6Qv-2Q-66O">
+                    <rect key="frame" x="19" y="213" width="103" height="18"/>
+                    <buttonCell key="cell" type="radio" title="Moon phases" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="yJp-BZ-lYw">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="setBuilder:" target="-2" id="7Pt-xE-vhi"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="GH9-94-Knb" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="LAb-gm-JEW"/>
+                <constraint firstItem="6Qv-2Q-66O" firstAttribute="leading" secondItem="GH9-94-Knb" secondAttribute="leading" id="gPO-BT-qnS"/>
+                <constraint firstItem="6Qv-2Q-66O" firstAttribute="top" secondItem="GH9-94-Knb" secondAttribute="bottom" constant="6" id="u4N-HH-D43"/>
+                <constraint firstItem="GH9-94-Knb" firstAttribute="width" secondItem="c22-O7-iKe" secondAttribute="width" id="vod-gw-hmO"/>
+                <constraint firstItem="GH9-94-Knb" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="wCC-5o-TWA"/>
+            </constraints>
+        </customView>
+    </objects>
+</document>

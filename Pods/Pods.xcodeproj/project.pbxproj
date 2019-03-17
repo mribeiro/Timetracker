@@ -1,0 +1,1124 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A70B8BE46B7A533A4E36671550CE9C7 /* PreferencesTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C701E4058C8FB302AD0E119B56D5EA73 /* PreferencesTabViewController.swift */; };
+		3C7DB755C6BAB55AAAD899D498A76486 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
+		3EA35177258EA91E303DBFD3F93DFD00 /* Preferences-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1EF1A689C525D152647C68BADCD5AD4 /* Preferences-dummy.m */; };
+		3F5E782F032BEC3077991A2F035F0D3F /* Pods-Timetracker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA1A4CE74886136CC0D8CA138F3061D /* Pods-Timetracker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62C16FD93E3C94A65AAD97EF97E068B3 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
+		631F3503CF8BF00596F10E17120B1FBD /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77247F742DB9A701178D778029C52F7 /* util.swift */; };
+		64B21AE11C83EEC5E9D4B802DC112769 /* Preferences-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D75A705AB06317F71C0FA99A47D78AD /* Preferences-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		992A12A5501C99B4A789A2450ADBFC8B /* Pods-TimetrackerTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 62E9203816AB25154C8291EB79D9A583 /* Pods-TimetrackerTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA63B97B8E6126181E23B8AF2FC7AE0D /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEDD55B3AA6CD0FF951DA75E683453D /* PreferencesWindowController.swift */; };
+		BB60F5C144E38E4564F5BC0975F77166 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
+		BC69167B49BA86E8C65274C7D4834C7E /* Preferenceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4144AB0A44FA1FF1825BF7D1864D723 /* Preferenceable.swift */; };
+		E3B7FDE7E582DCFDBF3D988F5DCE9071 /* Pods-Timetracker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0480F2433C2F6995F7DFADDC19031CD3 /* Pods-Timetracker-dummy.m */; };
+		E44E1C1CE6003900EB49AB57F1DB3838 /* Pods-TimetrackerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 37BB19576FD47F85F73460510015E8F6 /* Pods-TimetrackerTests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49809B28109BFEEF65EE10FA0D1E65C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20091D296CF8ED9C026EF22B8F1B6913;
+			remoteInfo = "Pods-Timetracker";
+		};
+		A26EE39E515EFF416CD02D9B9606027B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 212A6D540507E575D7DEFBCCB5A76359;
+			remoteInfo = Preferences;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0480F2433C2F6995F7DFADDC19031CD3 /* Pods-Timetracker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Timetracker-dummy.m"; sourceTree = "<group>"; };
+		159A232E209064EEAD2804F57BBEE383 /* Pods-Timetracker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Timetracker-acknowledgements.plist"; sourceTree = "<group>"; };
+		1D75A705AB06317F71C0FA99A47D78AD /* Preferences-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Preferences-umbrella.h"; sourceTree = "<group>"; };
+		1FCEDDA674F279E64DDA6BBD5847ECA8 /* Preferences.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Preferences.framework; path = Preferences.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		286659AC2E538A35DB9B82CE3AFA1844 /* Pods_Timetracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Timetracker.framework; path = "Pods-Timetracker.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B6B56B923B5E6CFF155CB4B037ED2BA /* Preferences-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Preferences-prefix.pch"; sourceTree = "<group>"; };
+		37BB19576FD47F85F73460510015E8F6 /* Pods-TimetrackerTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TimetrackerTests-dummy.m"; sourceTree = "<group>"; };
+		43735B2C4EB5E0BDB91B63B756678507 /* Pods-Timetracker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Timetracker-Info.plist"; sourceTree = "<group>"; };
+		4C2A7C79F26409D5C225A65D9334B83E /* Pods_TimetrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TimetrackerTests.framework; path = "Pods-TimetrackerTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		586B070B3289FB9DD0B8A72AC43A2C00 /* Pods-TimetrackerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TimetrackerTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		5D701B9D83B6621B412EEFC10ECCD031 /* Pods-TimetrackerTests.debug prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimetrackerTests.debug prod.xcconfig"; sourceTree = "<group>"; };
+		62E9203816AB25154C8291EB79D9A583 /* Pods-TimetrackerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TimetrackerTests-umbrella.h"; sourceTree = "<group>"; };
+		6C66CEF04209AA73710490DE9D2B284A /* Pods-Timetracker.debug dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Timetracker.debug dev.xcconfig"; sourceTree = "<group>"; };
+		6DEDD55B3AA6CD0FF951DA75E683453D /* PreferencesWindowController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreferencesWindowController.swift; path = Sources/Preferences/PreferencesWindowController.swift; sourceTree = "<group>"; };
+		783CE4497A7051D47904E72908FB0E90 /* Preferences.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Preferences.xcconfig; sourceTree = "<group>"; };
+		7B70B6A1D88791D6EEF0E9AB3F230790 /* Pods-Timetracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Timetracker.release.xcconfig"; sourceTree = "<group>"; };
+		85387F8BBEC209701FAD32FC6E1C90AB /* Pods-TimetrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimetrackerTests.release.xcconfig"; sourceTree = "<group>"; };
+		88A26A653E7C0CF1EE39E97CCFB3210F /* Pods-Timetracker.debug prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Timetracker.debug prod.xcconfig"; sourceTree = "<group>"; };
+		88F4B72EE3E02AD34C755FF650F9580A /* Preferences-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Preferences-Info.plist"; sourceTree = "<group>"; };
+		8C560C863F812CCF26B575B42FF3F4E2 /* Pods-TimetrackerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TimetrackerTests.modulemap"; sourceTree = "<group>"; };
+		91682142E6C684EF987643A6B0D9877A /* Pods-Timetracker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Timetracker.modulemap"; sourceTree = "<group>"; };
+		94FC2C6EBD8EA0AD56A77076B866A45E /* Pods-TimetrackerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TimetrackerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DA1A4CE74886136CC0D8CA138F3061D /* Pods-Timetracker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Timetracker-umbrella.h"; sourceTree = "<group>"; };
+		A77247F742DB9A701178D778029C52F7 /* util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = util.swift; path = Sources/Preferences/util.swift; sourceTree = "<group>"; };
+		B4144AB0A44FA1FF1825BF7D1864D723 /* Preferenceable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Preferenceable.swift; path = Sources/Preferences/Preferenceable.swift; sourceTree = "<group>"; };
+		C701E4058C8FB302AD0E119B56D5EA73 /* PreferencesTabViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PreferencesTabViewController.swift; path = Sources/Preferences/PreferencesTabViewController.swift; sourceTree = "<group>"; };
+		D1EF1A689C525D152647C68BADCD5AD4 /* Preferences-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Preferences-dummy.m"; sourceTree = "<group>"; };
+		D28DBF5C771C7E7E5763E87474FD0A3E /* Preferences.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Preferences.modulemap; sourceTree = "<group>"; };
+		DBFF1D0277B11AE92CBD4B3B8564F7EA /* Pods-Timetracker-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Timetracker-frameworks.sh"; sourceTree = "<group>"; };
+		DEA66E69159C4DFAE07BB47B073B65B5 /* Pods-TimetrackerTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TimetrackerTests-Info.plist"; sourceTree = "<group>"; };
+		E686057E3ED6D4360D88010B4DAE3B95 /* Pods-TimetrackerTests.debug dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TimetrackerTests.debug dev.xcconfig"; sourceTree = "<group>"; };
+		ED99DFC3854CCD2BDB826E4E66F92808 /* Pods-Timetracker-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Timetracker-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1588A96455910DEA2BD09C1C438EC01C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C7DB755C6BAB55AAAD899D498A76486 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		215E7719CBC05DEFFC72F3679F5E5622 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62C16FD93E3C94A65AAD97EF97E068B3 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBA2C84E89197EB835FE073F534053FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB60F5C144E38E4564F5BC0975F77166 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		594A5DE33A886CE073E22670964B11DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				286659AC2E538A35DB9B82CE3AFA1844 /* Pods_Timetracker.framework */,
+				4C2A7C79F26409D5C225A65D9334B83E /* Pods_TimetrackerTests.framework */,
+				1FCEDDA674F279E64DDA6BBD5847ECA8 /* Preferences.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8251A4B1404C3F420FFDEF4F40FF7A4F /* Pods-Timetracker */ = {
+			isa = PBXGroup;
+			children = (
+				91682142E6C684EF987643A6B0D9877A /* Pods-Timetracker.modulemap */,
+				ED99DFC3854CCD2BDB826E4E66F92808 /* Pods-Timetracker-acknowledgements.markdown */,
+				159A232E209064EEAD2804F57BBEE383 /* Pods-Timetracker-acknowledgements.plist */,
+				0480F2433C2F6995F7DFADDC19031CD3 /* Pods-Timetracker-dummy.m */,
+				DBFF1D0277B11AE92CBD4B3B8564F7EA /* Pods-Timetracker-frameworks.sh */,
+				43735B2C4EB5E0BDB91B63B756678507 /* Pods-Timetracker-Info.plist */,
+				9DA1A4CE74886136CC0D8CA138F3061D /* Pods-Timetracker-umbrella.h */,
+				6C66CEF04209AA73710490DE9D2B284A /* Pods-Timetracker.debug dev.xcconfig */,
+				88A26A653E7C0CF1EE39E97CCFB3210F /* Pods-Timetracker.debug prod.xcconfig */,
+				7B70B6A1D88791D6EEF0E9AB3F230790 /* Pods-Timetracker.release.xcconfig */,
+			);
+			name = "Pods-Timetracker";
+			path = "Target Support Files/Pods-Timetracker";
+			sourceTree = "<group>";
+		};
+		95370564F696983935CFE17514AF71F5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D28DBF5C771C7E7E5763E87474FD0A3E /* Preferences.modulemap */,
+				783CE4497A7051D47904E72908FB0E90 /* Preferences.xcconfig */,
+				D1EF1A689C525D152647C68BADCD5AD4 /* Preferences-dummy.m */,
+				88F4B72EE3E02AD34C755FF650F9580A /* Preferences-Info.plist */,
+				2B6B56B923B5E6CFF155CB4B037ED2BA /* Preferences-prefix.pch */,
+				1D75A705AB06317F71C0FA99A47D78AD /* Preferences-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Preferences";
+			sourceTree = "<group>";
+		};
+		C1D89E308DF39236204D53A2FBB2B76C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8251A4B1404C3F420FFDEF4F40FF7A4F /* Pods-Timetracker */,
+				C6588527DC88E5BCF2C5622DE93A2BF1 /* Pods-TimetrackerTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C6588527DC88E5BCF2C5622DE93A2BF1 /* Pods-TimetrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8C560C863F812CCF26B575B42FF3F4E2 /* Pods-TimetrackerTests.modulemap */,
+				94FC2C6EBD8EA0AD56A77076B866A45E /* Pods-TimetrackerTests-acknowledgements.markdown */,
+				586B070B3289FB9DD0B8A72AC43A2C00 /* Pods-TimetrackerTests-acknowledgements.plist */,
+				37BB19576FD47F85F73460510015E8F6 /* Pods-TimetrackerTests-dummy.m */,
+				DEA66E69159C4DFAE07BB47B073B65B5 /* Pods-TimetrackerTests-Info.plist */,
+				62E9203816AB25154C8291EB79D9A583 /* Pods-TimetrackerTests-umbrella.h */,
+				E686057E3ED6D4360D88010B4DAE3B95 /* Pods-TimetrackerTests.debug dev.xcconfig */,
+				5D701B9D83B6621B412EEFC10ECCD031 /* Pods-TimetrackerTests.debug prod.xcconfig */,
+				85387F8BBEC209701FAD32FC6E1C90AB /* Pods-TimetrackerTests.release.xcconfig */,
+			);
+			name = "Pods-TimetrackerTests";
+			path = "Target Support Files/Pods-TimetrackerTests";
+			sourceTree = "<group>";
+		};
+		CBD43E0947D94E318A0ED1350CFF29ED /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				E0A1E60606E0BF6E2E10F1F01350DFE8 /* Frameworks */,
+				FAD6A880D268D9975843B2EB8418E86E /* Pods */,
+				594A5DE33A886CE073E22670964B11DC /* Products */,
+				C1D89E308DF39236204D53A2FBB2B76C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E0A1E60606E0BF6E2E10F1F01350DFE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBD43E0947D94E318A0ED1350CFF29ED /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E50AACF2AEB582C9EA38296EFC5A5EE0 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				B4144AB0A44FA1FF1825BF7D1864D723 /* Preferenceable.swift */,
+				C701E4058C8FB302AD0E119B56D5EA73 /* PreferencesTabViewController.swift */,
+				6DEDD55B3AA6CD0FF951DA75E683453D /* PreferencesWindowController.swift */,
+				A77247F742DB9A701178D778029C52F7 /* util.swift */,
+				95370564F696983935CFE17514AF71F5 /* Support Files */,
+			);
+			name = Preferences;
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		FAD6A880D268D9975843B2EB8418E86E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E50AACF2AEB582C9EA38296EFC5A5EE0 /* Preferences */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7B91C09AF9DEA70650B897D11A892122 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F5E782F032BEC3077991A2F035F0D3F /* Pods-Timetracker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A78C542313691431C8A613E6B6066A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64B21AE11C83EEC5E9D4B802DC112769 /* Preferences-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1A93F8F269ED9C7A8995A7319A98A08 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				992A12A5501C99B4A789A2450ADBFC8B /* Pods-TimetrackerTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		20091D296CF8ED9C026EF22B8F1B6913 /* Pods-Timetracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C73FA21F058475AB8F7812D345F5DD9 /* Build configuration list for PBXNativeTarget "Pods-Timetracker" */;
+			buildPhases = (
+				7B91C09AF9DEA70650B897D11A892122 /* Headers */,
+				E07F95DEA97DD84E8181D2338E76F2F5 /* Sources */,
+				1588A96455910DEA2BD09C1C438EC01C /* Frameworks */,
+				B245B775E132036D7907312F0DF73C07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8DAD161719BE3BC670952DAA0589400C /* PBXTargetDependency */,
+			);
+			name = "Pods-Timetracker";
+			productName = "Pods-Timetracker";
+			productReference = 286659AC2E538A35DB9B82CE3AFA1844 /* Pods_Timetracker.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		212A6D540507E575D7DEFBCCB5A76359 /* Preferences */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845983DC26626C877F04E91637458059 /* Build configuration list for PBXNativeTarget "Preferences" */;
+			buildPhases = (
+				E1A78C542313691431C8A613E6B6066A /* Headers */,
+				7B69980F3020AC949AEFF7E8E5FBEB38 /* Sources */,
+				215E7719CBC05DEFFC72F3679F5E5622 /* Frameworks */,
+				A289AEFDB2A869F81B04B2D1D7B9E51E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Preferences;
+			productName = Preferences;
+			productReference = 1FCEDDA674F279E64DDA6BBD5847ECA8 /* Preferences.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F2ABF6184D4C8C870745C62BA77E22B6 /* Pods-TimetrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D56374BAEFB2FD26AA7A08B15A8E24F4 /* Build configuration list for PBXNativeTarget "Pods-TimetrackerTests" */;
+			buildPhases = (
+				E1A93F8F269ED9C7A8995A7319A98A08 /* Headers */,
+				6C651418B063CA5425B200455DA32FE0 /* Sources */,
+				CBA2C84E89197EB835FE073F534053FC /* Frameworks */,
+				4D5C59620AFEA39A4EAB50046BDEDCD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2EEBEAAD0FFFC1F9C7BD6BC024E5AE9C /* PBXTargetDependency */,
+			);
+			name = "Pods-TimetrackerTests";
+			productName = "Pods-TimetrackerTests";
+			productReference = 4C2A7C79F26409D5C225A65D9334B83E /* Pods_TimetrackerTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 594A5DE33A886CE073E22670964B11DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20091D296CF8ED9C026EF22B8F1B6913 /* Pods-Timetracker */,
+				F2ABF6184D4C8C870745C62BA77E22B6 /* Pods-TimetrackerTests */,
+				212A6D540507E575D7DEFBCCB5A76359 /* Preferences */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D5C59620AFEA39A4EAB50046BDEDCD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A289AEFDB2A869F81B04B2D1D7B9E51E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B245B775E132036D7907312F0DF73C07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C651418B063CA5425B200455DA32FE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E44E1C1CE6003900EB49AB57F1DB3838 /* Pods-TimetrackerTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B69980F3020AC949AEFF7E8E5FBEB38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC69167B49BA86E8C65274C7D4834C7E /* Preferenceable.swift in Sources */,
+				3EA35177258EA91E303DBFD3F93DFD00 /* Preferences-dummy.m in Sources */,
+				0A70B8BE46B7A533A4E36671550CE9C7 /* PreferencesTabViewController.swift in Sources */,
+				BA63B97B8E6126181E23B8AF2FC7AE0D /* PreferencesWindowController.swift in Sources */,
+				631F3503CF8BF00596F10E17120B1FBD /* util.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E07F95DEA97DD84E8181D2338E76F2F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3B7FDE7E582DCFDBF3D988F5DCE9071 /* Pods-Timetracker-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2EEBEAAD0FFFC1F9C7BD6BC024E5AE9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Timetracker";
+			target = 20091D296CF8ED9C026EF22B8F1B6913 /* Pods-Timetracker */;
+			targetProxy = 49809B28109BFEEF65EE10FA0D1E65C3 /* PBXContainerItemProxy */;
+		};
+		8DAD161719BE3BC670952DAA0589400C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Preferences;
+			target = 212A6D540507E575D7DEFBCCB5A76359 /* Preferences */;
+			targetProxy = A26EE39E515EFF416CD02D9B9606027B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0132454A74D512D493839524BE9B25E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 783CE4497A7051D47904E72908FB0E90 /* Preferences.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Preferences/Preferences-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Preferences/Preferences-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Preferences/Preferences.modulemap";
+				PRODUCT_MODULE_NAME = Preferences;
+				PRODUCT_NAME = Preferences;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0CD93F567BE2D192B3416D8759A25362 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		30B7A17F0200D8938B806918D9248696 /* Debug dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C66CEF04209AA73710490DE9D2B284A /* Pods-Timetracker.debug dev.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Timetracker/Pods-Timetracker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-Timetracker/Pods-Timetracker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug dev";
+		};
+		40FD3EFFF70CECBFCBC1117E0F4696C5 /* Debug prod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88A26A653E7C0CF1EE39E97CCFB3210F /* Pods-Timetracker.debug prod.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Timetracker/Pods-Timetracker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-Timetracker/Pods-Timetracker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug prod";
+		};
+		7676EC5740BA18BD1B4C7CA03AA9317F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 783CE4497A7051D47904E72908FB0E90 /* Preferences.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Preferences/Preferences-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Preferences/Preferences-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Preferences/Preferences.modulemap";
+				PRODUCT_MODULE_NAME = Preferences;
+				PRODUCT_NAME = Preferences;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		863E6D4DE6093483E070876B7D052B30 /* Debug dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG_DEV=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = "Debug dev";
+		};
+		8652BBED7714AD0B7089DF3C3FBFF7E3 /* Debug prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG_PROD=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = "Debug prod";
+		};
+		97735B90B60C29A8D1118A0462F30A17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		A4814B80C8A69BE05BC1522DAB033853 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85387F8BBEC209701FAD32FC6E1C90AB /* Pods-TimetrackerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AEB1BC1A98D7B2DD481BE61A3553B36B /* Debug dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E686057E3ED6D4360D88010B4DAE3B95 /* Pods-TimetrackerTests.debug dev.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug dev";
+		};
+		B407740640A834887D6CD0EF1733E90E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Timetracker/Pods-Timetracker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-Timetracker/Pods-Timetracker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B42DB76031D8140FF9294635D1A1E00C /* Debug dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 783CE4497A7051D47904E72908FB0E90 /* Preferences.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Preferences/Preferences-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Preferences/Preferences-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Preferences/Preferences.modulemap";
+				PRODUCT_MODULE_NAME = Preferences;
+				PRODUCT_NAME = Preferences;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug dev";
+		};
+		C0DC230BA60220A4FA24540464C58BF0 /* Debug prod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D701B9D83B6621B412EEFC10ECCD031 /* Pods-TimetrackerTests.debug prod.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug prod";
+		};
+		D0A5C185E6F96F034A3680A0F734FD8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E4E4067FF8811D4DE82720395E85E4BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B70B6A1D88791D6EEF0E9AB3F230790 /* Pods-Timetracker.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Timetracker/Pods-Timetracker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MODULEMAP_FILE = "Target Support Files/Pods-Timetracker/Pods-Timetracker.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FB87C871DD0A0666C1C6CE9944C726AC /* Debug prod */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 783CE4497A7051D47904E72908FB0E90 /* Preferences.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/Preferences/Preferences-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Preferences/Preferences-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MODULEMAP_FILE = "Target Support Files/Preferences/Preferences.modulemap";
+				PRODUCT_MODULE_NAME = Preferences;
+				PRODUCT_NAME = Preferences;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = "Debug prod";
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C73FA21F058475AB8F7812D345F5DD9 /* Build configuration list for PBXNativeTarget "Pods-Timetracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B407740640A834887D6CD0EF1733E90E /* Debug */,
+				30B7A17F0200D8938B806918D9248696 /* Debug dev */,
+				40FD3EFFF70CECBFCBC1117E0F4696C5 /* Debug prod */,
+				E4E4067FF8811D4DE82720395E85E4BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97735B90B60C29A8D1118A0462F30A17 /* Debug */,
+				863E6D4DE6093483E070876B7D052B30 /* Debug dev */,
+				8652BBED7714AD0B7089DF3C3FBFF7E3 /* Debug prod */,
+				D0A5C185E6F96F034A3680A0F734FD8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		845983DC26626C877F04E91637458059 /* Build configuration list for PBXNativeTarget "Preferences" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7676EC5740BA18BD1B4C7CA03AA9317F /* Debug */,
+				B42DB76031D8140FF9294635D1A1E00C /* Debug dev */,
+				FB87C871DD0A0666C1C6CE9944C726AC /* Debug prod */,
+				0132454A74D512D493839524BE9B25E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D56374BAEFB2FD26AA7A08B15A8E24F4 /* Build configuration list for PBXNativeTarget "Pods-TimetrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CD93F567BE2D192B3416D8759A25362 /* Debug */,
+				AEB1BC1A98D7B2DD481BE61A3553B36B /* Debug dev */,
+				C0DC230BA60220A4FA24540464C58BF0 /* Debug prod */,
+				A4814B80C8A69BE05BC1522DAB033853 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

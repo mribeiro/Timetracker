@@ -9,6 +9,7 @@
 import Cocoa
 import IOKit
 import AppKit
+import Preferences
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
@@ -17,13 +18,20 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
-    var builder: Builder = JackTheMonkey.one
+    var builder: Builder = BuilderManager.getFromConfiguration()
     
     let menu = NSMenu()
     
     var taskProvider: TaskProvider!
     
     var currentTaskTime: String?
+    
+    func builderChanged(_ newBuilder: Builder) {
+        self.builder = newBuilder
+        if (!self.taskProvider.isTaskRunning) {
+            statusItem.button?.title = builder.idle
+        }
+    }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
@@ -41,6 +49,16 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
         _ = taskProvider.stopRunningTask()
     }
 
+    let preferencesWindowController = PreferencesWindowController(
+        viewControllers: [
+            PreferenceBuilderViewController()
+        ]
+    )
+    
+    @IBAction func openPreferences(_ sender: NSMenuItem) {
+        preferencesWindowController.showWindow()
+    }
+    
     
     var showingIdleDialog = false;
     func showIdleDialogWithIdleDate(_ idleDate: Date) -> NSApplication.ModalResponse {

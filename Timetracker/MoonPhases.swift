@@ -19,6 +19,10 @@ enum MoonPhases: Builder {
     case seven
     case eight
     
+    var name: String {
+        return "moon"
+    }
+    
     var idle: String {
         return "🌚"
     }
