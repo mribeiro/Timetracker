@@ -18,6 +18,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
+    let idleTime = Int(Bundle.main.object(forInfoDictionaryKey: "IDLE_SECONDS") as! String)!
+    
     var builder: Builder = BuilderManager.getFromConfiguration()
     
     let menu = NSMenu()
@@ -104,7 +106,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
             lastEvent = CGEventSource.secondsSinceLastEventType(CGEventSourceStateID.hidSystemState, eventType: CGEventType(rawValue: ~0)!)
             print("idle for \(lastEvent) seconds")
             
-            if (lastEvent > 3) {
+            if (Int(lastEvent) > idleTime) {
                 if (!showingIdleDialog) {
                     let idleDate = Date();
                     handleIdleDialog(withResponse: showIdleDialogWithIdleDate(idleDate), andIdleStart: idleDate)
