@@ -26,7 +26,6 @@ final class LogManager {
         case Debug = 0
         case Info = 1
         case Error = 2
-        case None = 3
         
         var asString: String {
             get {
