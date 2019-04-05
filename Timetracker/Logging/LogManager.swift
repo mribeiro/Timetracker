@@ -43,7 +43,7 @@ final class LogManager {
         }
         
         static var all: [Level] {
-            return [.Debug, .Info, .Error, .None]
+            return [.Debug, .Info, .Error]
         }
         
         var intVal: Int {
