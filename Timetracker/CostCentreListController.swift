@@ -72,7 +72,7 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
             }
             
         default:
-            print("nothing known was clicked")
+            L.d("nothing known was clicked")
             
         }
         
@@ -96,10 +96,10 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
                 appDelegate.managedObjectContext.delete(selectedItem)
                 try appDelegate.managedObjectContext.save()
             } catch {
-                print("exception deleting \(selectedItem)")
-                print("error \(error)")
+                L.e("Exception deleting \(selectedItem). Does this item have children?")
+                L.e("error \(error)")
                 appDelegate.managedObjectContext.rollback()
-                showError("Could not delete! Does this item have childs?")
+                showError("Could not delete! Does this item have children?")
             }
             loadTreeData()
             outlineView.reloadData()

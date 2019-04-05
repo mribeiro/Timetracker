@@ -76,10 +76,10 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     var editingTask: Task?
     @objc func tableViewDoubleClick() {
         guard tableView.clickedRow > -1 else {
-            print("header was double clicked, ignore")
+            L.d("header was double clicked, ignore")
             return
         }
-        print("double clicked on row \(tableView.clickedRow)")
+        L.d("double clicked on row \(tableView.clickedRow)")
         editingTask = tasks?[tableView.clickedRow]
         performSegue(withIdentifier: "add_line", sender: self)
     }
@@ -153,7 +153,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     
     @IBAction func segmentedClicked(_ sender: NSSegmentedControl) {
         
-        print("Clicked \(sender.selectedSegment)")
+        L.d("Clicked \(sender.selectedSegment)")
         
         switch sender.selectedSegment {
         case 0: // delete task
@@ -179,7 +179,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
             
             break;
         default:
-            print("Not recognized")
+            L.d("Segment not recognized")
         }
         
         
@@ -202,7 +202,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     @IBAction func filterClicked(_ sender: AnyObject?) {
         
         guard let end = endDate.dateValue.endOfDay else {
-            print("couldn't get end date")
+            L.e("Couldn't get end date")
             return
         }
         

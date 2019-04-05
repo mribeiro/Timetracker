@@ -71,18 +71,18 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
     // MARK: - Actions
     
     @IBAction func selectedHodChanged(_ sender: NSPopUpButton) {
-        print("selected hod \(sender.indexOfSelectedItem)")
+        L.d("selected hod \(sender.indexOfSelectedItem)")
         populateClients()
     }
     @IBAction func selectedClientChanged(_ sender: NSPopUpButton) {
-        print("selected client \(sender.indexOfSelectedItem)")
+        L.d("selected client \(sender.indexOfSelectedItem)")
         populateProjects()
     }
     
     @IBAction func startClicked(_ sender: AnyObject) {
         
         guard let selectedProject = selectedProject , taskLabel.stringValue.count > 0 else {
-            print("cannot start task")
+            L.e("Cannot start task. Were all fields set?")
             showError("Did you set all fields?")
             return
         }
@@ -99,7 +99,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
         
         let stopped = TaskProviderManager.instance.stopRunningTask()
         setCurrentTaskLabels()
-        print("\(stopped)")
+        L.i("Task stopped successfully? \(stopped)")
         
     }
     
@@ -108,7 +108,6 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
     func ping(_ interval: TimeInterval) {
         let string = interval.toProperString()
         timeLabel.stringValue = string
-        print("Printing counter in task runner with \(string)")
     }
     
     func taskStarted() {

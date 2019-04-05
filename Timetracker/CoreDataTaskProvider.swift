@@ -70,7 +70,7 @@ class CoreDataTaskProvider: TaskProvider {
             return results
             
         } catch {
-            print("\(error)")
+            L.e("\(error)")
         }
         
         return []
@@ -91,7 +91,7 @@ class CoreDataTaskProvider: TaskProvider {
             return true
             
         } catch {
-            print("\(error)")
+            L.e("\(error)")
         }
         
         return false
@@ -113,7 +113,7 @@ class CoreDataTaskProvider: TaskProvider {
             return true
             
         } catch {
-            print("\(error)")
+            L.e("\(error)")
         }
         
         return false
@@ -136,7 +136,7 @@ class CoreDataTaskProvider: TaskProvider {
             return true
             
         } catch {
-            print("\(error)")
+            L.e("\(error)")
         }
         
         return false
@@ -192,7 +192,7 @@ class CoreDataTaskProvider: TaskProvider {
                 
                 return true
             } catch {
-                print("\(error)")
+                L.e("\(error)")
             }
             
         }
@@ -230,7 +230,7 @@ class CoreDataTaskProvider: TaskProvider {
             try coreDataCtx.save()
             return true
         } catch {
-            print("\(error)")
+            L.e("\(error)")
             return false
         }
         
@@ -248,7 +248,7 @@ class CoreDataTaskProvider: TaskProvider {
             let tasks = try coreDataCtx.fetch(fetchRequest)
             return tasks
         } catch {
-            print(error)
+            L.e("\(error)")
         }
         
         return []
@@ -261,7 +261,7 @@ class CoreDataTaskProvider: TaskProvider {
             try coreDataCtx.save()
             return true
         } catch {
-            print(error)
+            L.e("\(error)")
             return false
         }
         
@@ -283,7 +283,6 @@ class CoreDataTaskProvider: TaskProvider {
     
     @objc func taskPing() {
         
-        print("ping")
         let interval = Date().timeIntervalSince(CoreDataTaskProvider.runningTask!.startTime! as Date)
         
         CoreDataTaskProvider.pingReceivers?.forEach {
