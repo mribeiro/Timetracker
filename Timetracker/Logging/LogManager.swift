@@ -36,8 +36,6 @@ final class LogManager {
                     return "ERROR"
                 case .Info:
                     return "INFO"
-                default:
-                    return "NONE"
                 }
             }
         }
