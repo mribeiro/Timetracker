@@ -1,16 +1,20 @@
 PODS:
   - Preferences (0.2.1)
+  - SwiftLog (1.0.0)
 
 DEPENDENCIES:
   - Preferences
+  - SwiftLog
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Preferences
+    - SwiftLog
 
 SPEC CHECKSUMS:
   Preferences: 5543bfd757a2485a310683da977d661c0ae509a9
+  SwiftLog: f6c4f9a4ade06263555ab34b2c0f72025ffcda9e
 
-PODFILE CHECKSUM: 50eec2799486d75606bc14ec89418c4bfaf81a8b
+PODFILE CHECKSUM: 1cfe3112ba133f7ff32f2e966800dd531df8f942
 
 COCOAPODS: 1.6.1

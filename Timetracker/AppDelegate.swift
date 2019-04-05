@@ -10,6 +10,7 @@ import Cocoa
 import IOKit
 import AppKit
 import Preferences
+import SwiftLog
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
@@ -29,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     var currentTaskTime: String?
     
     func builderChanged(_ newBuilder: Builder) {
+        
         self.builder = newBuilder
         if (!self.taskProvider.isTaskRunning) {
             statusItem.button?.title = builder.idle
@@ -53,7 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
 
     let preferencesWindowController = PreferencesWindowController(
         viewControllers: [
-            PreferenceBuilderViewController()
+            PreferenceBuilderViewController(),
+            PreferenceLogViewController()
         ]
     )
     

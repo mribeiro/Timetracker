@@ -154,12 +154,15 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug dev" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Preferences/Preferences.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftLog/SwiftLog.framework"
 fi
 if [[ "$CONFIGURATION" == "Debug prod" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Preferences/Preferences.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftLog/SwiftLog.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Preferences/Preferences.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftLog/SwiftLog.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
