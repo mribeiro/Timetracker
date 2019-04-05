@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -673,15 +673,15 @@ Gw
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzK-wW-AOw">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="44Q-3G-fq7">
-                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
+                                    <rect key="frame" x="1" y="1" width="433" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="130-gO-c0b">
-                                            <rect key="frame" x="0.0" y="0.0" width="658" height="298"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="643" height="298"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="448" height="298"/>
+                                            <size key="minSize" width="433" height="298"/>
                                             <size key="maxSize" width="660" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -692,7 +692,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="f0W-Hs-xev">
-                                    <rect key="frame" x="433" y="1" width="16" height="298"/>
+                                    <rect key="frame" x="434" y="1" width="15" height="298"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -904,6 +904,9 @@ Gw
                                             <menuItem title="Item 3" id="NqN-wQ-m3q"/>
                                         </items>
                                     </menu>
+                                    <connections>
+                                        <action selector="selectedProjectChanged:" target="XfG-lQ-9wD" id="c8S-sx-hNE"/>
+                                    </connections>
                                 </popUpButtonCell>
                             </popUpButton>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="9Vl-eH-5bL">
@@ -1026,6 +1029,20 @@ Gw
                                     <action selector="stopClicked:" target="XfG-lQ-9wD" id="hi1-Ah-EIY"/>
                                 </connections>
                             </button>
+                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ioh-ce-6Zg">
+                                <rect key="frame" x="21" y="323" width="240" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="EXb-hH-Wlz">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <objectValues>
+                                        <string>Item 1</string>
+                                        <string>Item 2</string>
+                                        <string>Item 3</string>
+                                    </objectValues>
+                                </comboBoxCell>
+                            </comboBox>
                         </subviews>
                         <constraints>
                             <constraint firstItem="cDI-IM-AIN" firstAttribute="top" secondItem="zvL-vG-v0H" secondAttribute="bottom" constant="8" id="0F2-w0-hee"/>
@@ -1075,6 +1092,7 @@ Gw
                         <outlet property="hodPopup" destination="4IZ-Vr-fFi" id="DEY-pP-666"/>
                         <outlet property="projectPopup" destination="ssl-DN-0pw" id="nHA-1z-xm1"/>
                         <outlet property="taskClientLabel" destination="djH-kk-r2h" id="o1B-Ih-LR4"/>
+                        <outlet property="taskComboBox" destination="Ioh-ce-6Zg" id="NWt-P1-vdr"/>
                         <outlet property="taskHodLabel" destination="cDI-IM-AIN" id="S5v-bI-wKI"/>
                         <outlet property="taskLabel" destination="Kj5-Cw-pMn" id="edb-hF-Szu"/>
                         <outlet property="taskProjectLabel" destination="eqG-87-VLT" id="Cwk-N5-ilI"/>
@@ -1083,12 +1101,13 @@ Gw
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="dtu-OW-uUo"/>
             </objects>
             <point key="canvasLocation" x="-26" y="1088.5"/>
         </scene>
     </scenes>
     <resources>
-        <image name="play" width="102.40000152587891" height="102.40000152587891"/>
-        <image name="stop" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="play" width="128" height="128"/>
+        <image name="stop" width="128" height="128"/>
     </resources>
 </document>

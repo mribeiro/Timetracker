@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged {
+class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged, NSComboBoxDataSource {
     
     // MARK: - Outlets
     
@@ -21,6 +21,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
     @IBOutlet var taskClientLabel: NSTextField!
     @IBOutlet var taskProjectLabel: NSTextField!
     @IBOutlet var taskTaskLabel: NSTextField!
+    @IBOutlet weak var taskComboBox: NSComboBox!
     
     // MARK: - Vars and Lets
     
@@ -36,6 +37,14 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
         return selectedClient?.getProjectByName(projectPopup.titleOfSelectedItem)
     }
     
+    fileprivate var selectedProjectsTasks: [Task]?
+    /*
+        {
+        didSet {
+            populateTasks()
+        }
+    }*/
+    
     fileprivate var hods: [HeadOfDevelopment]?
     
     // MARK: - ViewController callbacks
@@ -50,6 +59,10 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
         TaskProviderManager.instance.addPingReceiver(self)
         TaskProviderManager.instance.addChangesListener(self)
         
+        
+        self.taskComboBox.usesDataSource = true
+        self.taskComboBox.dataSource = self
+        
         reloadData()
         
         setCurrentTaskLabels()
@@ -61,6 +74,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
         hodPopup.removeAllItems()
         hodPopup.addItems(withTitles: hodNames)
         populateClients()
+        populateTasks()
     }
     
     override func viewWillDisappear() {
@@ -77,6 +91,10 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
     @IBAction func selectedClientChanged(_ sender: NSPopUpButton) {
         L.d("selected client \(sender.indexOfSelectedItem)")
         populateProjects()
+    }
+    @IBAction func selectedProjectChanged(_ sender: NSPopUpButtonCell) {
+        L.d("selected project \(sender.indexOfSelectedItem)")
+        populateTasks()
     }
     
     @IBAction func startClicked(_ sender: AnyObject) {
@@ -164,6 +182,31 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
             projectPopup.addItems(withTitles: projectNames)
         }
     }
+    
+    
+    fileprivate func populateTasks() {
+                
+        if let tasks = selectedProject?.tasks {
+            self.selectedProjectsTasks = Array(tasks)
+        }
+        
+        taskComboBox.reloadData();
+        
+        if let _ = selectedProjectsTasks {
+            taskComboBox.selectItem(at: 0)
+        }
+        
+    }
+    
+    func numberOfItems(in comboBox: NSComboBox) -> Int {
+        return self.selectedProjectsTasks?.count ?? 0
+    }
+    
+    func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
+        return self.selectedProjectsTasks![index].title
+    }
+    
+    
     
 }
 
