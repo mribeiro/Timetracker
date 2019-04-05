@@ -134,7 +134,7 @@ class ManualTaskViewController: NSViewController {
                     
                 } else {
                     showError("Couldn't update task")
-                    print("Couldn't update")
+                    L.e("Couldn't update task in database")
                 }
                 
             } else {
@@ -143,7 +143,7 @@ class ManualTaskViewController: NSViewController {
                     dismiss(self)
                 } else {
                     showError("Couldn't save task")
-                    print("Couldn't save")
+                    L.e("Couldn't save task in database")
                 }
             }
             

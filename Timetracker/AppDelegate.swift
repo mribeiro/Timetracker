@@ -10,6 +10,7 @@ import Cocoa
 import IOKit
 import AppKit
 import Preferences
+import SwiftLog
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
@@ -29,6 +30,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     var currentTaskTime: String?
     
     func builderChanged(_ newBuilder: Builder) {
+        
         self.builder = newBuilder
         if (!self.taskProvider.isTaskRunning) {
             statusItem.button?.title = builder.idle
@@ -53,7 +55,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
 
     let preferencesWindowController = PreferencesWindowController(
         viewControllers: [
-            PreferenceBuilderViewController()
+            PreferenceBuilderViewController(),
+            PreferenceLogViewController()
         ]
     )
     
@@ -84,13 +87,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
     func handleIdleDialog(withResponse response: NSApplication.ModalResponse, andIdleStart idleDate: Date) {
         switch response {
         case .alertFirstButtonReturn: // stop at idle time
+            L.d("Task stopping at idle time")
             _ = taskProvider.stopRunningTask(atDate: idleDate)
             break
         case .alertSecondButtonReturn: // stop now
+            L.d("Task stopping now")
             _ = taskProvider.stopRunningTask()
             break
         default: // continue
-            print("nothing to do, let's continue counting time")
+            L.d("nothing to do, let's continue counting time")
             break
         }
         
@@ -104,18 +109,17 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver {
             
             var lastEvent:CFTimeInterval = 0
             lastEvent = CGEventSource.secondsSinceLastEventType(CGEventSourceStateID.hidSystemState, eventType: CGEventType(rawValue: ~0)!)
-            print("idle for \(lastEvent) seconds")
             
             if (Int(lastEvent) > idleTime) {
                 if (!showingIdleDialog) {
                     let idleDate = Date();
+                    L.d("Showing idle dialog")
                     handleIdleDialog(withResponse: showIdleDialogWithIdleDate(idleDate), andIdleStart: idleDate)
                     showingIdleDialog = false
                     
                 }
             }
             
-            print("updating button")
             button.title = builder.string()
             
             if let menuTimer = self.menu.item(withTag: 1) {
@@ -284,9 +288,7 @@ extension AppDelegate: NSMenuDelegate {
     func menuWillOpen(_ menu: NSMenu) {
         
         menu.removeAllItems()
-        
-        //let menuItem = NSMenuItem(title: "Open", action: #selector(open(_:)) , keyEquivalent: "")
-        //menu.addItem(menuItem)
+    
         
         loadBasicMenuItems(menu)
         loadTree(menu)
@@ -361,7 +363,8 @@ extension AppDelegate: NSMenuDelegate {
     
     @objc func taskClicked(_ sender: NSMenuItem) {
         if let task = sender.representedObject as? Task {
-            print(sender.representedObject ?? "No represented object from sender")
+            
+            L.i("Starting task \(task.title!) in project \(task.project!) from menu bar")
             
             if taskProvider.isTaskRunning {
                 _ = taskProvider.stopRunningTask()

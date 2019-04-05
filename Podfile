@@ -7,6 +7,7 @@ target 'Timetracker' do
 
   # Pods for Timetracker
   pod 'Preferences'
+  pod 'SwiftLog'
 
   target 'TimetrackerTests' do
     inherit! :search_paths

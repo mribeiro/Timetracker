@@ -39,17 +39,13 @@ class PreferenceBuilderViewController: NSViewController, Preferenceable {
             self.monkeyRadio.state = .on
         }
         
-        
-        // Setup stuff here
     }
     
     @IBAction func setBuilder(_ sender: NSButton) {
         
         let id = sender.identifier?.rawValue ?? ""
-        let builder = BuilderManager.saveBuilder(id)
-        
-        print(builder.start)
-    
+        L.i("Saving new builder as \(id)")
+        _ = BuilderManager.saveBuilder(id)
     }
     
 }
