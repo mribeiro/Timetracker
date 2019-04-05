@@ -90,7 +90,7 @@ final class LogManager {
     private init() {
         Log.logger.directory = "\(Log.logger.directory)/Timetracker"
         self.enabled = UserDefaults().bool(forKey: "log_enabled")
-        self.level = Level(rawValue: UserDefaults().integer(forKey: "log_level")) ?? .None
+        self.level = Level(rawValue: UserDefaults().integer(forKey: "log_level")) ?? .Error
     }
     
     private func logMessage(_ message: String, withLevel level: Level) {
