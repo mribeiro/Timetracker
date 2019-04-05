@@ -46,6 +46,9 @@ class PreferenceBuilderViewController: NSViewController, Preferenceable {
     @IBAction func setBuilder(_ sender: NSButton) {
         
         let id = sender.identifier?.rawValue ?? ""
+        
+        L.i("Saving new builder as \(id)")
+        
         let builder = BuilderManager.saveBuilder(id)
         
         print(builder.start)
