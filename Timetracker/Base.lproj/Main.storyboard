@@ -673,15 +673,15 @@ Gw
                             <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzK-wW-AOw">
                                 <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="44Q-3G-fq7">
-                                    <rect key="frame" x="1" y="1" width="433" height="298"/>
+                                    <rect key="frame" x="1" y="1" width="448" height="298"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="130-gO-c0b">
-                                            <rect key="frame" x="0.0" y="0.0" width="643" height="298"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="658" height="298"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="433" height="298"/>
+                                            <size key="minSize" width="448" height="298"/>
                                             <size key="maxSize" width="660" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -692,7 +692,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="f0W-Hs-xev">
-                                    <rect key="frame" x="434" y="1" width="15" height="298"/>
+                                    <rect key="frame" x="433" y="1" width="16" height="298"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -923,14 +923,6 @@ Gw
                                     <action selector="startClicked:" target="XfG-lQ-9wD" id="JcT-ec-3Cn"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kj5-Cw-pMn">
-                                <rect key="frame" x="20" y="393" width="238" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="W4o-0g-XeW">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4IZ-Vr-fFi">
                                 <rect key="frame" x="18" y="495" width="243" height="25"/>
                                 <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="4RS-2v-ihg" id="nxj-rh-wxG">
@@ -1029,46 +1021,40 @@ Gw
                                     <action selector="stopClicked:" target="XfG-lQ-9wD" id="hi1-Ah-EIY"/>
                                 </connections>
                             </button>
-                            <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ioh-ce-6Zg">
-                                <rect key="frame" x="21" y="323" width="240" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="EXb-hH-Wlz">
+                            <comboBox verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ioh-ce-6Zg">
+                                <rect key="frame" x="20" y="404" width="241" height="26"/>
+                                <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesDataSource="YES" numberOfVisibleItems="5" id="EXb-hH-Wlz">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <objectValues>
-                                        <string>Item 1</string>
-                                        <string>Item 2</string>
-                                        <string>Item 3</string>
-                                    </objectValues>
                                 </comboBoxCell>
                             </comboBox>
                         </subviews>
                         <constraints>
                             <constraint firstItem="cDI-IM-AIN" firstAttribute="top" secondItem="zvL-vG-v0H" secondAttribute="bottom" constant="8" id="0F2-w0-hee"/>
                             <constraint firstItem="cDI-IM-AIN" firstAttribute="leading" secondItem="zvL-vG-v0H" secondAttribute="leading" constant="12" id="36q-IW-sWp"/>
-                            <constraint firstItem="SED-qV-wkQ" firstAttribute="trailing" secondItem="Kj5-Cw-pMn" secondAttribute="trailing" id="7BQ-dP-yhh"/>
                             <constraint firstItem="eqG-87-VLT" firstAttribute="trailing" secondItem="djH-kk-r2h" secondAttribute="trailing" id="8ED-cs-ct6"/>
                             <constraint firstItem="4IZ-Vr-fFi" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="957-wd-20Z"/>
                             <constraint firstItem="ZM0-Fw-Fth" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="A0S-I8-N0o"/>
                             <constraint firstItem="ssl-DN-0pw" firstAttribute="top" secondItem="Du1-ME-OEE" secondAttribute="bottom" constant="10" id="Adf-iy-psa"/>
                             <constraint firstItem="8fV-1Z-qWY" firstAttribute="top" secondItem="eqG-87-VLT" secondAttribute="bottom" constant="8" id="Cdy-lT-3df"/>
                             <constraint firstItem="SED-qV-wkQ" firstAttribute="top" secondItem="9Vl-eH-5bL" secondAttribute="bottom" constant="21" id="DbF-s0-P8A"/>
+                            <constraint firstItem="Ioh-ce-6Zg" firstAttribute="top" secondItem="ssl-DN-0pw" secondAttribute="bottom" constant="8" id="Iy5-ge-gSI"/>
                             <constraint firstItem="Du1-ME-OEE" firstAttribute="top" secondItem="4IZ-Vr-fFi" secondAttribute="bottom" constant="10" id="J6h-9Y-5cO"/>
                             <constraint firstItem="g80-86-X8A" firstAttribute="trailing" secondItem="SED-qV-wkQ" secondAttribute="trailing" id="J7k-OJ-HUZ"/>
                             <constraint firstItem="g80-86-X8A" firstAttribute="top" secondItem="8fV-1Z-qWY" secondAttribute="bottom" constant="25" id="JFJ-3e-Eiz"/>
-                            <constraint firstItem="9Vl-eH-5bL" firstAttribute="centerX" secondItem="Kj5-Cw-pMn" secondAttribute="centerX" id="K9x-HF-j5t"/>
                             <constraint firstItem="g80-86-X8A" firstAttribute="leading" secondItem="SED-qV-wkQ" secondAttribute="leading" id="KCG-3A-06s"/>
                             <constraint firstItem="eqG-87-VLT" firstAttribute="top" secondItem="djH-kk-r2h" secondAttribute="bottom" constant="8" id="MAN-JL-SSh"/>
                             <constraint firstItem="zvL-vG-v0H" firstAttribute="leading" secondItem="SED-qV-wkQ" secondAttribute="leading" id="Mcv-wX-dV6"/>
                             <constraint firstItem="djH-kk-r2h" firstAttribute="trailing" secondItem="cDI-IM-AIN" secondAttribute="trailing" id="OjW-i7-red"/>
+                            <constraint firstItem="9Vl-eH-5bL" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="88" id="P9n-n6-cLj"/>
                             <constraint firstItem="djH-kk-r2h" firstAttribute="leading" secondItem="cDI-IM-AIN" secondAttribute="leading" id="QZK-dG-YCB"/>
+                            <constraint firstItem="9Vl-eH-5bL" firstAttribute="top" secondItem="Ioh-ce-6Zg" secondAttribute="bottom" constant="23" id="UH7-SA-eJe"/>
                             <constraint firstItem="zvL-vG-v0H" firstAttribute="trailing" secondItem="SED-qV-wkQ" secondAttribute="trailing" id="Ub2-aQ-tSp"/>
                             <constraint firstItem="jXD-p7-XPY" firstAttribute="top" secondItem="g80-86-X8A" secondAttribute="bottom" constant="8" id="VFy-IX-fFi"/>
                             <constraint firstItem="8fV-1Z-qWY" firstAttribute="leading" secondItem="eqG-87-VLT" secondAttribute="leading" id="VMF-VV-Ku0"/>
-                            <constraint firstItem="Kj5-Cw-pMn" firstAttribute="top" secondItem="ssl-DN-0pw" secondAttribute="bottom" constant="21" id="W1b-0u-g17"/>
+                            <constraint firstItem="Ioh-ce-6Zg" firstAttribute="leading" secondItem="ssl-DN-0pw" secondAttribute="leading" id="WFh-4v-xI5"/>
                             <constraint firstItem="ssl-DN-0pw" firstAttribute="trailing" secondItem="Du1-ME-OEE" secondAttribute="trailing" id="YJh-f7-XLn"/>
-                            <constraint firstItem="SED-qV-wkQ" firstAttribute="leading" secondItem="Kj5-Cw-pMn" secondAttribute="leading" id="YKi-7z-hK8"/>
                             <constraint firstItem="eqG-87-VLT" firstAttribute="leading" secondItem="djH-kk-r2h" secondAttribute="leading" id="YZs-8T-VWn"/>
                             <constraint firstItem="8fV-1Z-qWY" firstAttribute="trailing" secondItem="eqG-87-VLT" secondAttribute="trailing" id="ZNK-7I-H0r"/>
                             <constraint firstItem="4IZ-Vr-fFi" firstAttribute="leading" secondItem="ZM0-Fw-Fth" secondAttribute="trailing" constant="-64" id="ZX3-jG-K1T"/>
@@ -1076,15 +1062,15 @@ Gw
                             <constraint firstItem="cDI-IM-AIN" firstAttribute="trailing" secondItem="zvL-vG-v0H" secondAttribute="trailing" id="c1p-iE-nKP"/>
                             <constraint firstItem="Du1-ME-OEE" firstAttribute="width" secondItem="4IZ-Vr-fFi" secondAttribute="width" id="cdW-0z-dJI"/>
                             <constraint firstItem="ZM0-Fw-Fth" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="17" id="dBH-cs-gqX"/>
-                            <constraint firstItem="Kj5-Cw-pMn" firstAttribute="leading" secondItem="ssl-DN-0pw" secondAttribute="leading" id="fci-M8-xmC"/>
+                            <constraint firstItem="SED-qV-wkQ" firstAttribute="trailing" secondItem="Ioh-ce-6Zg" secondAttribute="trailing" id="g4O-F5-VHd"/>
                             <constraint firstItem="4IZ-Vr-fFi" firstAttribute="top" secondItem="ZM0-Fw-Fth" secondAttribute="bottom" constant="8" id="gCr-rj-N9G"/>
+                            <constraint firstItem="SED-qV-wkQ" firstAttribute="leading" secondItem="Ioh-ce-6Zg" secondAttribute="leading" id="jHt-KS-ioj"/>
+                            <constraint firstItem="Ioh-ce-6Zg" firstAttribute="trailing" secondItem="ssl-DN-0pw" secondAttribute="trailing" id="mcx-0j-DnT"/>
                             <constraint firstItem="jXD-p7-XPY" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="115" id="tfM-GA-knM"/>
                             <constraint firstItem="Du1-ME-OEE" firstAttribute="leading" secondItem="4IZ-Vr-fFi" secondAttribute="leading" id="vAv-Av-mXQ"/>
                             <constraint firstItem="ssl-DN-0pw" firstAttribute="leading" secondItem="Du1-ME-OEE" secondAttribute="leading" id="vLQ-nU-4lm"/>
                             <constraint firstItem="djH-kk-r2h" firstAttribute="top" secondItem="cDI-IM-AIN" secondAttribute="bottom" constant="8" id="yNw-WD-yTk"/>
-                            <constraint firstItem="Kj5-Cw-pMn" firstAttribute="trailing" secondItem="ssl-DN-0pw" secondAttribute="trailing" id="ywc-Ru-5G6"/>
                             <constraint firstAttribute="trailing" secondItem="4IZ-Vr-fFi" secondAttribute="trailing" constant="20" id="z9B-AB-Dug"/>
-                            <constraint firstItem="9Vl-eH-5bL" firstAttribute="top" secondItem="Kj5-Cw-pMn" secondAttribute="bottom" constant="8" id="zGw-g7-5Wy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1094,7 +1080,6 @@ Gw
                         <outlet property="taskClientLabel" destination="djH-kk-r2h" id="o1B-Ih-LR4"/>
                         <outlet property="taskComboBox" destination="Ioh-ce-6Zg" id="NWt-P1-vdr"/>
                         <outlet property="taskHodLabel" destination="cDI-IM-AIN" id="S5v-bI-wKI"/>
-                        <outlet property="taskLabel" destination="Kj5-Cw-pMn" id="edb-hF-Szu"/>
                         <outlet property="taskProjectLabel" destination="eqG-87-VLT" id="Cwk-N5-ilI"/>
                         <outlet property="taskTaskLabel" destination="8fV-1Z-qWY" id="Vc8-Em-veZ"/>
                         <outlet property="timeLabel" destination="g80-86-X8A" id="ks7-RI-bBX"/>
