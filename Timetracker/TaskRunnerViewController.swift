@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged {
+class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged, NSComboBoxDataSource {
     
     // MARK: - Outlets
     
@@ -16,11 +16,11 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
     @IBOutlet var clientPopup: NSPopUpButton!
     @IBOutlet var projectPopup: NSPopUpButton!
     @IBOutlet var timeLabel: NSTextField!
-    @IBOutlet var taskLabel: NSTextField!
     @IBOutlet var taskHodLabel: NSTextField!
     @IBOutlet var taskClientLabel: NSTextField!
     @IBOutlet var taskProjectLabel: NSTextField!
     @IBOutlet var taskTaskLabel: NSTextField!
+    @IBOutlet weak var taskComboBox: NSComboBox!
     
     // MARK: - Vars and Lets
     
@@ -36,6 +36,8 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
         return selectedClient?.getProjectByName(projectPopup.titleOfSelectedItem)
     }
     
+    fileprivate var selectedProjectsTaskNames: [String]?
+    
     fileprivate var hods: [HeadOfDevelopment]?
     
     // MARK: - ViewController callbacks
@@ -50,6 +52,10 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
         TaskProviderManager.instance.addPingReceiver(self)
         TaskProviderManager.instance.addChangesListener(self)
         
+        self.taskComboBox.usesDataSource = true
+        self.taskComboBox.completes = true
+        self.taskComboBox.dataSource = self
+        
         reloadData()
         
         setCurrentTaskLabels()
@@ -61,6 +67,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
         hodPopup.removeAllItems()
         hodPopup.addItems(withTitles: hodNames)
         populateClients()
+        populateTasks()
     }
     
     override func viewWillDisappear() {
@@ -78,10 +85,14 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
         L.d("selected client \(sender.indexOfSelectedItem)")
         populateProjects()
     }
+    @IBAction func selectedProjectChanged(_ sender: NSPopUpButtonCell) {
+        L.d("selected project \(sender.indexOfSelectedItem)")
+        populateTasks()
+    }
     
     @IBAction func startClicked(_ sender: AnyObject) {
         
-        guard let selectedProject = selectedProject , taskLabel.stringValue.count > 0 else {
+        guard let selectedProject = selectedProject , taskComboBox.stringValue.count > 0 else {
             L.e("Cannot start task. Were all fields set?")
             showError("Did you set all fields?")
             return
@@ -91,7 +102,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
             _ = TaskProviderManager.instance.stopRunningTask()
         }
         
-        TaskProviderManager.instance.startTask(taskLabel.stringValue, inProject: selectedProject)
+        TaskProviderManager.instance.startTask(taskComboBox.stringValue, inProject: selectedProject)
         setCurrentTaskLabels()
     }
     
@@ -163,6 +174,37 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged 
             
             projectPopup.addItems(withTitles: projectNames)
         }
+    }
+    
+    
+    fileprivate func populateTasks() {
+        
+        self.selectedProjectsTaskNames = selectedProject?.distinctTasksNames
+        
+        taskComboBox.reloadData();
+        
+        if (taskComboBox.numberOfItems > 0) {
+            taskComboBox.selectItem(at: 0)
+        }
+        
+    }
+    
+    func numberOfItems(in comboBox: NSComboBox) -> Int {
+        return self.selectedProjectsTaskNames?.count ?? 0
+    }
+    
+    func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
+        return self.selectedProjectsTaskNames![index]
+    }
+    
+    func comboBox(_ comboBox: NSComboBox, completedString string: String) -> String? {
+        return self.selectedProjectsTaskNames?.filter({ (taskTitle) -> Bool in
+            return taskTitle.starts(with: string)
+        }).first
+    }
+    
+    func comboBox(_ comboBox: NSComboBox, indexOfItemWithStringValue string: String) -> Int {
+        return self.selectedProjectsTaskNames?.firstIndex(of: string) ?? NSNotFound
     }
     
 }

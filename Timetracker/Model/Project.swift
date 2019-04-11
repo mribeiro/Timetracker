@@ -22,4 +22,21 @@ class Project: NSManagedObject {
     
     @objc var children = [] as NSArray
     
+    var distinctTasksNames: [String] {
+        
+        guard let allTasks = self.tasks else {
+            return []
+        }
+        
+        return allTasks.map { (t) -> String in
+            return t.title!
+        }.unique.sorted()
+    }
+    
+}
+
+extension Array where Element : Hashable {
+    var unique: [Element] {
+        return Array(Set(self))
+    }
 }
