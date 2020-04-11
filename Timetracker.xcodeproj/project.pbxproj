@@ -11,6 +11,9 @@
 		A947677E6E5D59CD5BAA648E /* Pods_TimetrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72C3BE4F172AA9F004B0C77 /* Pods_TimetrackerTests.framework */; };
 		E612F3411CD2293800FC1D85 /* TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */; };
 		E6281D2524420F4900CD467C /* AppDelegate+NSMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */; };
+		E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */; };
+		E6281D2B24421C1D00CD467C /* PreferenceMiscView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */; };
+		E6281D2D24422BD200CD467C /* DockIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2C24422BD200CD467C /* DockIconManager.swift */; };
 		E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */; };
 		E65EF088224E85F50023A7B5 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EF087224E85F50023A7B5 /* LogManager.swift */; };
 		E662723B1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662723A1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift */; };
@@ -66,6 +69,9 @@
 		DE08661C18BDE41076AA0836 /* Pods-TimetrackerTests.debug prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimetrackerTests.debug prod.xcconfig"; path = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests.debug prod.xcconfig"; sourceTree = "<group>"; };
 		E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPingReceiver.swift; sourceTree = "<group>"; };
 		E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+NSMenuDelegate.swift"; sourceTree = "<group>"; };
+		E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceMiscViewController.swift; sourceTree = "<group>"; };
+		E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceMiscView.xib; sourceTree = "<group>"; };
+		E6281D2C24422BD200CD467C /* DockIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockIconManager.swift; sourceTree = "<group>"; };
 		E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBuilderViewController.swift; sourceTree = "<group>"; };
 		E65EF087224E85F50023A7B5 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		E662723A1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabSeparatedValuesExporter.swift; path = Exporters/TabSeparatedValuesExporter.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 				E6910F461CCE5CFF003CBA90 /* Main.storyboard */,
 				E6D964CD223DB4AC00B1C534 /* PreferenceBuilderView.xib */,
 				E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */,
+				E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */,
 				E6910F491CCE5CFF003CBA90 /* Info.plist */,
 				E6910F411CCE5CFF003CBA90 /* Timetracker.xcdatamodeld */,
 				E6E1B4501CD899C300FE24CD /* Builder.swift */,
@@ -206,6 +213,7 @@
 				E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */,
 				E6FE83971CDB6D8300794723 /* ErrorView.xib */,
 				E6D964CF223E795200B1C534 /* BuilderManager.swift */,
+				E6281D2C24422BD200CD467C /* DockIconManager.swift */,
 			);
 			path = Timetracker;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 				E6FE83951CDB6AF300794723 /* ErrorViewController.swift */,
 				E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */,
 				E6F788D622579BBB00AE3DF3 /* PreferenceLogViewController.swift */,
+				E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -377,6 +386,7 @@
 				E6910F451CCE5CFF003CBA90 /* Assets.xcassets in Resources */,
 				E6910F481CCE5CFF003CBA90 /* Main.storyboard in Resources */,
 				E6F788D522579BA000AE3DF3 /* PreferenceLogView.xib in Resources */,
+				E6281D2B24421C1D00CD467C /* PreferenceMiscView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +482,9 @@
 				E6910F5E1CCE65B5003CBA90 /* CoreDataTaskProvider.swift in Sources */,
 				E6D680651CD5018F00C45179 /* TaskListViewController.swift in Sources */,
 				E6D964D0223E795200B1C534 /* BuilderManager.swift in Sources */,
+				E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */,
 				E6FE83941CDB5D5F00794723 /* NSDate+Utils.swift in Sources */,
+				E6281D2D24422BD200CD467C /* DockIconManager.swift in Sources */,
 				E6F788D722579BBB00AE3DF3 /* PreferenceLogViewController.swift in Sources */,
 				E6FE83901CDB34C900794723 /* TaskRunnerWindowController.swift in Sources */,
 				E6910F681CCE6F1E003CBA90 /* Client.swift in Sources */,
@@ -640,6 +652,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 5;
 				DB_NAME = DEV;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -647,6 +660,7 @@
 				INFOPLIST_FILE = Timetracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -662,6 +676,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 5;
 				DB_NAME = release;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -669,6 +684,7 @@
 				INFOPLIST_FILE = Timetracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.5;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -771,6 +787,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 5;
 				DB_NAME = PRD;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -778,6 +795,7 @@
 				INFOPLIST_FILE = Timetracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
