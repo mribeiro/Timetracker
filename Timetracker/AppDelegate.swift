@@ -28,7 +28,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
     let preferencesWindowController = PreferencesWindowController(
         viewControllers: [
             PreferenceBuilderViewController(),
-            PreferenceLogViewController()
+            PreferenceLogViewController(),
+            PreferenceMiscViewController()
         ]
     )
     
@@ -50,6 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
             NSUserNotificationCenter.default.removeScheduledNotification($0)
         }
         self.scheduleNotification(appJustOpened: true)
+        DockIconManager.setIconPerConfiguration()
 
     }
     
