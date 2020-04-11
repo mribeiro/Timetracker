@@ -1,6 +1,0 @@
-framework module Pods_TimetrackerTests {
-  umbrella header "Pods-TimetrackerTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
