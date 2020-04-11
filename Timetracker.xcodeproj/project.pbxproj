@@ -10,6 +10,7 @@
 		3518DBB31964AD7EE52B21D7 /* Pods_Timetracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E8EA8844338E2A49DBD553 /* Pods_Timetracker.framework */; };
 		A947677E6E5D59CD5BAA648E /* Pods_TimetrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72C3BE4F172AA9F004B0C77 /* Pods_TimetrackerTests.framework */; };
 		E612F3411CD2293800FC1D85 /* TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */; };
+		E6281D2524420F4900CD467C /* AppDelegate+NSMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */; };
 		E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */; };
 		E65EF088224E85F50023A7B5 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EF087224E85F50023A7B5 /* LogManager.swift */; };
 		E662723B1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662723A1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift */; };
@@ -64,6 +65,7 @@
 		C603C62C80454B09B6C271E4 /* Pods-Timetracker.debug dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timetracker.debug dev.xcconfig"; path = "Target Support Files/Pods-Timetracker/Pods-Timetracker.debug dev.xcconfig"; sourceTree = "<group>"; };
 		DE08661C18BDE41076AA0836 /* Pods-TimetrackerTests.debug prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimetrackerTests.debug prod.xcconfig"; path = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests.debug prod.xcconfig"; sourceTree = "<group>"; };
 		E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPingReceiver.swift; sourceTree = "<group>"; };
+		E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+NSMenuDelegate.swift"; sourceTree = "<group>"; };
 		E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBuilderViewController.swift; sourceTree = "<group>"; };
 		E65EF087224E85F50023A7B5 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		E662723A1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabSeparatedValuesExporter.swift; path = Exporters/TabSeparatedValuesExporter.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				E6910F3D1CCE5CFF003CBA90 /* AppDelegate.swift */,
+				E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				E6910F401CCE5CFF003CBA90 /* TaskRunnerViewController.swift in Sources */,
 				E6E1B4531CD899EA00FE24CD /* JackTheMonkey.swift in Sources */,
 				E6910F8E1CCF78C0003CBA90 /* CostCentreListController.swift in Sources */,
+				E6281D2524420F4900CD467C /* AppDelegate+NSMenuDelegate.swift in Sources */,
 				E6910F3E1CCE5CFF003CBA90 /* AppDelegate.swift in Sources */,
 				E6D6805C1CD4F76B00C45179 /* TaskProvider.swift in Sources */,
 				E6E1B4511CD899C300FE24CD /* Builder.swift in Sources */,
