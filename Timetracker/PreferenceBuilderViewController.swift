@@ -13,7 +13,7 @@ import Preferences
 
 class PreferenceBuilderViewController: NSViewController, Preferenceable {
     
-    var toolbarItemIcon: NSImage = NSImage(named: "settings")!
+    var toolbarItemIcon: NSImage = NSImage(named: "icon-worker")!
     
     var toolbarItemTitle: String = "Builder"
     

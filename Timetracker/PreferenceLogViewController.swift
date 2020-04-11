@@ -14,7 +14,7 @@ class PreferenceLogViewController: NSViewController, Preferenceable {
     
     var toolbarItemTitle: String = "Log"
     
-    var toolbarItemIcon: NSImage = NSImage(named: "log")!
+    var toolbarItemIcon: NSImage = NSImage(named: "icon-log")!
     
     @IBOutlet weak var logFolderPath: NSTextField!
     @IBOutlet weak var logEnabled: NSButton!
