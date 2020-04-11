@@ -15,34 +15,32 @@ import SwiftLog
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNotificationCenterDelegate {
     
+    let menu = NSMenu()
     let databaseName = Bundle.main.object(forInfoDictionaryKey: "DB_NAME") as! String
-    
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    
     let idleTime = Int(Bundle.main.object(forInfoDictionaryKey: "IDLE_SECONDS") as! String)!
     
+    var currentTaskTime: String?
+    var showingIdleDialog = false;
+    var taskProvider: TaskProvider!
     var builder: Builder = BuilderManager.getFromConfiguration()
     
-    let menu = NSMenu()
+    let preferencesWindowController = PreferencesWindowController(
+        viewControllers: [
+            PreferenceBuilderViewController(),
+            PreferenceLogViewController()
+        ]
+    )
     
-    var taskProvider: TaskProvider!
-    
-    var currentTaskTime: String?
-    
-    func builderChanged(_ newBuilder: Builder) {
-        
-        self.builder = newBuilder
-        if (!self.taskProvider.isTaskRunning) {
-            statusItem.button?.title = builder.idle
-        }
-    }
+    @IBOutlet weak var taskRunnerMenuItem: NSMenuItem!
+    @IBOutlet weak var costCentresMenuItem: NSMenuItem!
+    @IBOutlet weak var taskListMenuItem: NSMenuItem!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
         taskProvider = TaskProviderManager.setup(managedObjectContext)
         taskProvider.addPingReceiver(self)
         
-        //button.image = NSImage(named: "StatusBarButtonImage")
         statusItem.button?.title = builder.idle
         
         statusItem.menu = menu
@@ -53,6 +51,18 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
         }
         self.scheduleNotification(appJustOpened: true)
 
+    }
+    
+    func applicationWillTerminate(_ aNotification: Notification) {
+        _ = taskProvider.stopRunningTask()
+    }
+
+    func builderChanged(_ newBuilder: Builder) {
+        
+        self.builder = newBuilder
+        if (!self.taskProvider.isTaskRunning) {
+            statusItem.button?.title = builder.idle
+        }
     }
     
     private func scheduleNotification(appJustOpened: Bool = false) {
@@ -85,8 +95,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
         notification.soundName = NSUserNotificationDefaultSoundName
         notification.deliveryDate = triggerDate
         
-        //notification.deliveryRepeatInterval = componentsForRepeat
-        
         NSUserNotificationCenter.default.delegate = self
         NSUserNotificationCenter.default.scheduleNotification(notification)
         print("scheduled to \(notification.deliveryDate!)")
@@ -96,23 +104,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
         self.scheduleNotification(appJustOpened: false)
     }
     
-    func applicationWillTerminate(_ aNotification: Notification) {
-        _ = taskProvider.stopRunningTask()
-    }
-
-    let preferencesWindowController = PreferencesWindowController(
-        viewControllers: [
-            PreferenceBuilderViewController(),
-            PreferenceLogViewController()
-        ]
-    )
-    
     @IBAction func openPreferences(_ sender: NSMenuItem) {
         preferencesWindowController.showWindow()
     }
     
-    
-    var showingIdleDialog = false;
     func showIdleDialogWithIdleDate(_ idleDate: Date) -> NSApplication.ModalResponse {
         self.showingIdleDialog = true
         let alert = NSAlert()
@@ -149,6 +144,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
     }
     
     // MARK: - TaskPingReceiver implementation
+    
     func ping(_ interval: TimeInterval) {
         if let button = statusItem.button {
             let string = interval.toProperString()
@@ -330,142 +326,3 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
     
 }
 
-extension AppDelegate: NSMenuDelegate {
-    
-    func menuWillOpen(_ menu: NSMenu) {
-        
-        menu.removeAllItems()
-    
-        
-        loadBasicMenuItems(menu)
-        loadTree(menu)
-        loadCurrentTask(menu)
-        
-    }
-    
-    func open(_ action: AnyObject) {
-        if let controller = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "id_task_runner") as? NSWindowController {
-            //NSApplication.shared().mainWindow
-            controller.showWindow(self)
-        }
-    }
-    
-    
-    func loadTree(_ sender: NSMenu) {
-        taskProvider.getHeadOfDevelopments().forEach { hod in
-            
-            let hodItem = menu.addItem(withTitle: hod.name!, action: nil, keyEquivalent: "")
-            
-            let clients = hod.children 
-            
-            if clients.count > 0 {
-                
-                let clientsMenu = NSMenu()
-                hodItem.submenu = clientsMenu
-                clients.forEach { client in
-                    let clientItem = clientsMenu.addItem(withTitle: client.name!, action: nil, keyEquivalent: "")
-                    
-                    let projects = client.children
-                    
-                    if projects.count > 0 {
-                        
-                        let projectsMenu = NSMenu()
-                        clientItem.submenu = projectsMenu
-                        
-                        projects.forEach { project in
-                            let projectItem = projectsMenu.addItem(withTitle: project.name!, action: nil, keyEquivalent: "")
-                            
-                            let tasks = project.tasks
-                            if tasks?.count ?? 0 > 0 {
-                                
-                                let tasksMenu = NSMenu()
-                                projectItem.submenu = tasksMenu
-                                
-                                var distinctNames = [String]()
-                                
-                                let distinctTasks = tasks!.filter { task in
-                                    if !distinctNames.contains(task.title!) {
-                                        distinctNames.append(task.title!)
-                                        return true
-                                    }
-                                    return false
-                                    }.sorted { (task1, task2) in
-                                        return task1.title!.compare(task2.title!) == .orderedAscending
-                                }
-                                
-                                distinctTasks.forEach { task in
-                                    let taskItem = tasksMenu.addItem(withTitle: task.title!, action: #selector(taskClicked), keyEquivalent: "")
-                                    taskItem.isEnabled = true
-                                    
-                                    taskItem.representedObject = task
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-    }
-    
-    @objc func taskClicked(_ sender: NSMenuItem) {
-        if let task = sender.representedObject as? Task {
-            
-            L.i("Starting task \(task.title!) in project \(task.project!) from menu bar")
-            
-            if taskProvider.isTaskRunning {
-                _ = taskProvider.stopRunningTask()
-            }
-            
-            taskProvider.startTask(task.title!, inProject: task.project!)
-        }
-    }
-    
-    @objc func stopTaskClicked(_ sender: NSMenuItem) {
-        _ = taskProvider.stopRunningTask()
-    }
-    
-    func loadBasicMenuItems(_ menu: NSMenu) {
-        
-        if taskProvider.isTaskRunning {
-            
-            let timePassed = NSMenuItem(title: currentTaskTime ?? "", action: nil, keyEquivalent: "")
-            timePassed.isEnabled = false
-            timePassed.tag = 1
-            
-            menu.addItem(timePassed)
-            
-            let stop = NSMenuItem(title: "Stop", action: #selector(stopTaskClicked), keyEquivalent: "")
-            stop.isEnabled = true
-            menu.addItem(stop)
-        }
-        
-        menu.addItem(NSMenuItem.separator())
-
-    }
-    
-    func loadCurrentTask(_ menu:NSMenu) {
-        if let task = taskProvider.runningTask , let project = taskProvider.projectOfRunningTask {
-            
-            menu.addItem(NSMenuItem.separator())
-            
-            let client = project.client!
-            let hod = client.headOfDevelopment!
-            
-            let hodItem = NSMenuItem(title: hod.name!, action: nil, keyEquivalent: "")
-            hodItem.isEnabled = false
-            let projectItem = NSMenuItem(title: project.name!,  action: nil, keyEquivalent: "")
-            projectItem.isEnabled = false
-            let clientItem = NSMenuItem(title: client.name!, action: nil, keyEquivalent: "")
-            clientItem.isEnabled = false
-            let taskItem = NSMenuItem(title: task.title!, action: nil, keyEquivalent: "")
-            taskItem.isEnabled = false
-            
-            menu.addItem(hodItem)
-            menu.addItem(projectItem)
-            menu.addItem(clientItem)
-            menu.addItem(taskItem)
-            
-        }
-    }
-}
