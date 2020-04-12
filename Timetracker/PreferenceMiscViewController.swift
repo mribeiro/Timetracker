@@ -19,7 +19,7 @@ class PreferenceMiscViewController: NSViewController, PreferencePane {
     
     var toolbarItemTitle: String = "Misc"
     
-    var toolbarItemIcon: NSImage = NSImage(named: "log")!
+    var toolbarItemIcon: NSImage = NSImage(named: "icon-switch")!
     
     override var nibName: NSNib.Name? {
         "PreferenceMiscView"

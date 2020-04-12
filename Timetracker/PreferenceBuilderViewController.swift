@@ -22,7 +22,7 @@ class PreferenceBuilderViewController: NSViewController, PreferencePane {
     
     var preferencePaneTitle: String = "Builder"
     
-    var toolbarItemIcon: NSImage = NSImage(named: "settings")!
+    var toolbarItemIcon: NSImage = NSImage(named: "icon-worker")!
     
     var toolbarItemTitle: String = "Builder"
     
