@@ -35,7 +35,6 @@ extension AppDelegate: NSMenuDelegate {
         }
     }
     
-    
     func loadTree(_ sender: NSMenu) {
         taskProvider.getHeadOfDevelopments().forEach { hod in
             
@@ -130,23 +129,26 @@ extension AppDelegate: NSMenuDelegate {
     }
     
     func loadBasicMenuItems(_ menu: NSMenu) {
-        let openMenu = NSMenu()
+        let openMenuItems = NSMenu()
         
         // Task runner
         let openTaskRunnerItem = NSMenuItem(title: "Task runner", action: #selector(openTaskRunner(_:)), keyEquivalent: "")
-        openMenu.addItem(openTaskRunnerItem)
+        openMenuItems.addItem(openTaskRunnerItem)
         
         // Task list
         let openTaskListItem = NSMenuItem(title: "Task list", action: #selector(openTaskList(_:)), keyEquivalent: "")
-        openMenu.addItem(openTaskListItem)
+        openMenuItems.addItem(openTaskListItem)
         
         // Cost centre
         let openCostCentreItem = NSMenuItem(title: "Cost centres", action: #selector(openCostCentre(_:)), keyEquivalent: "")
-        openMenu.addItem(openCostCentreItem)
+        openMenuItems.addItem(openCostCentreItem)
         
-        let openMenu2 = menu.addItem(withTitle: "Open", action: nil, keyEquivalent: "")
-        openMenu2.submenu = openMenu
+        // Open preferences
+        let openPreferencesItem = NSMenuItem(title: "Preferences", action: #selector(openPreferences(_:)), keyEquivalent: "")
+        openMenuItems.addItem(openPreferencesItem)
         
+        let openMenu = menu.addItem(withTitle: "Open", action: nil, keyEquivalent: "")
+        openMenu.submenu = openMenuItems
         
         if taskProvider.isTaskRunning {
             
