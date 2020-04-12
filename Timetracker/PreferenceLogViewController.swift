@@ -10,7 +10,12 @@ import Foundation
 import Cocoa
 import Preferences
 
-class PreferenceLogViewController: NSViewController, Preferenceable {
+class PreferenceLogViewController: NSViewController, PreferencePane {
+    
+    var preferencePaneIdentifier: Identifier = PreferencePaneIdentifier.Identifier.logs
+    
+    var preferencePaneTitle: String = "Log"
+    
     
     var toolbarItemTitle: String = "Log"
     
@@ -21,7 +26,7 @@ class PreferenceLogViewController: NSViewController, Preferenceable {
     @IBOutlet weak var logLevelsPopup: NSPopUpButton!
     
     override var nibName: NSNib.Name? {
-        return "PreferenceLogView"
+        "PreferenceLogView"
     }
     
     override func viewDidLoad() {
@@ -29,6 +34,7 @@ class PreferenceLogViewController: NSViewController, Preferenceable {
         logFolderPath.stringValue = LogManager.shared.logFolder
         logEnabled.state = LogManager.shared.enabled ? .on : .off
         loadLogLevels()
+        preferredContentSize = NSSize(width: 600, height: 200)
     }
     
     @IBAction func logsToggled(_ sender: NSButtonCell) {
