@@ -10,15 +10,23 @@ import Foundation
 import AppKit
 import Preferences
 
-class PreferenceMiscViewController: NSViewController, Preferenceable {
+class PreferenceMiscViewController: NSViewController, PreferencePane {
+    var preferencePaneIdentifier: Identifier = PreferencePaneIdentifier.Identifier.misc
+    
+    var preferencePaneTitle: String = "Misc"
+    
     @IBOutlet weak var checkboxHideDockIcon: NSButton!
     
     var toolbarItemTitle: String = "Misc"
     
-    var toolbarItemIcon: NSImage = NSImage(named: "log")!
+    var toolbarItemIcon: NSImage = NSImage(named: "icon-switch")!
     
     override var nibName: NSNib.Name? {
-        return "PreferenceMiscView"
+        "PreferenceMiscView"
+    }
+    
+    override func viewDidLoad() {
+        preferredContentSize = NSSize(width: 600, height: 200)
     }
     
     override func viewWillAppear() {

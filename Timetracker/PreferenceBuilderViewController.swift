@@ -10,10 +10,19 @@ import Foundation
 import Cocoa
 import Preferences
 
+extension PreferencePane.Identifier {
+    static let builder = Identifier("builder")
+    static let logs = Identifier("logs")
+    static let misc = Identifier("misc")
+}
 
-class PreferenceBuilderViewController: NSViewController, Preferenceable {
+class PreferenceBuilderViewController: NSViewController, PreferencePane {
     
-    var toolbarItemIcon: NSImage = NSImage(named: "settings")!
+    var preferencePaneIdentifier: Identifier = PreferencePane.Identifier.builder
+    
+    var preferencePaneTitle: String = "Builder"
+    
+    var toolbarItemIcon: NSImage = NSImage(named: "icon-worker")!
     
     var toolbarItemTitle: String = "Builder"
     
@@ -23,7 +32,7 @@ class PreferenceBuilderViewController: NSViewController, Preferenceable {
     
     
     override var nibName: NSNib.Name? {
-        return "PreferenceBuilderView"
+        "PreferenceBuilderView"
     }
     
     override func viewDidLoad() {
@@ -38,6 +47,8 @@ class PreferenceBuilderViewController: NSViewController, Preferenceable {
         default:
             self.monkeyRadio.state = .on
         }
+        
+        preferredContentSize = NSSize(width: 600, height: 200)
         
     }
     

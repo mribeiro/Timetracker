@@ -26,11 +26,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
     var builder: Builder = BuilderManager.getFromConfiguration()
     
     let preferencesWindowController = PreferencesWindowController(
-        viewControllers: [
+        preferencePanes: [
             PreferenceBuilderViewController(),
             PreferenceLogViewController(),
             PreferenceMiscViewController()
-        ]
+        ], style: .toolbarItems
     )
     
     @IBOutlet weak var taskRunnerMenuItem: NSMenuItem!
@@ -107,7 +107,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
     }
     
     @IBAction func openPreferences(_ sender: NSMenuItem) {
-        preferencesWindowController.showWindow()
+        preferencesWindowController.show()
     }
     
     func showIdleDialogWithIdleDate(_ idleDate: Date) -> NSApplication.ModalResponse {
