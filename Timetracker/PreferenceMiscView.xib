@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PreferenceMiscViewController" customModule="Timetracker" customModuleProvider="target">
             <connections>
+                <outlet property="checkboxAutoStart" destination="btU-qh-KSJ" id="bmW-ra-jVG"/>
                 <outlet property="checkboxHideDockIcon" destination="FIw-kP-UfD" id="DU9-Hl-0tY"/>
                 <outlet property="view" destination="c22-O7-iKe" id="FVV-sG-ed5"/>
             </connections>
@@ -26,9 +27,21 @@
                         <action selector="hideDockIconChanged:" target="-2" id="4Zh-Ka-NXK"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="btU-qh-KSJ">
+                    <rect key="frame" x="18" y="216" width="168" height="18"/>
+                    <buttonCell key="cell" type="check" title="Open on system startup" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="uT9-x3-edv">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="autoStartChanged:" target="-2" id="zDt-xj-9kB"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="FIw-kP-UfD" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="1UI-0S-A91"/>
+                <constraint firstItem="btU-qh-KSJ" firstAttribute="top" secondItem="FIw-kP-UfD" secondAttribute="bottom" constant="6" id="3V6-sY-3aM"/>
+                <constraint firstItem="btU-qh-KSJ" firstAttribute="leading" secondItem="FIw-kP-UfD" secondAttribute="leading" id="CRW-pM-lrv"/>
                 <constraint firstItem="FIw-kP-UfD" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="nSO-HH-zpn"/>
             </constraints>
             <point key="canvasLocation" x="124" y="154"/>

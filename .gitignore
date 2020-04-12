@@ -74,3 +74,16 @@ DerivedData/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.gitignore.io/api/xcode,macos,cocoapods
+
+# Created by https://www.gitignore.io/api/carthage
+# Edit at https://www.gitignore.io/?templates=carthage
+
+### Carthage ###
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+Carthage/Checkouts
+
+Carthage/Build
+
+# End of https://www.gitignore.io/api/carthage

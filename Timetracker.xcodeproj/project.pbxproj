@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3518DBB31964AD7EE52B21D7 /* Pods_Timetracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E8EA8844338E2A49DBD553 /* Pods_Timetracker.framework */; };
 		A947677E6E5D59CD5BAA648E /* Pods_TimetrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72C3BE4F172AA9F004B0C77 /* Pods_TimetrackerTests.framework */; };
 		E612F3411CD2293800FC1D85 /* TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */; };
 		E6281D2524420F4900CD467C /* AppDelegate+NSMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */; };
@@ -39,6 +38,7 @@
 		E6E1B4531CD899EA00FE24CD /* JackTheMonkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */; };
 		E6E1B4551CD89CE900FE24CD /* MoonPhases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */; };
 		E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */; };
+		E6F62F9924435E6700A9C8C9 /* Pods_Timetracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E8EA8844338E2A49DBD553 /* Pods_Timetracker.framework */; };
 		E6F788D522579BA000AE3DF3 /* PreferenceLogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */; };
 		E6F788D722579BBB00AE3DF3 /* PreferenceLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F788D622579BBB00AE3DF3 /* PreferenceLogViewController.swift */; };
 		E6FE838C1CDA5F9300794723 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE838B1CDA5F9300794723 /* ExportViewController.swift */; };
@@ -101,6 +101,7 @@
 		E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JackTheMonkey.swift; sourceTree = "<group>"; };
 		E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonPhases.swift; sourceTree = "<group>"; };
 		E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Timer+Utils.swift"; path = "Utils/Timer+Utils.swift"; sourceTree = "<group>"; };
+		E6F62F9C24435F9800A9C8C9 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceLogView.xib; sourceTree = "<group>"; };
 		E6F788D622579BBB00AE3DF3 /* PreferenceLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceLogViewController.swift; sourceTree = "<group>"; };
 		E6FE838B1CDA5F9300794723 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
@@ -117,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3518DBB31964AD7EE52B21D7 /* Pods_Timetracker.framework in Frameworks */,
+				E6F62F9924435E6700A9C8C9 /* Pods_Timetracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				26E8EA8844338E2A49DBD553 /* Pods_Timetracker.framework */,
+				E6F62F9C24435F9800A9C8C9 /* LaunchAtLogin.framework */,
 				E72C3BE4F172AA9F004B0C77 /* Pods_TimetrackerTests.framework */,
 			);
 			name = Frameworks;
@@ -305,6 +307,8 @@
 				E6910F371CCE5CFF003CBA90 /* Frameworks */,
 				E6910F381CCE5CFF003CBA90 /* Resources */,
 				B2976BC385F9B3F6748947A9 /* [CP] Embed Pods Frameworks */,
+				E6F62F9824435D2500A9C8C9 /* ShellScript */,
+				E6F62FA324437ADB00A9C8C9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -463,6 +467,42 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Timetracker/Pods-Timetracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E6F62F9824435D2500A9C8C9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/LaunchAtLogin.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/LaunchAtLogin.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+		E6F62FA324437ADB00A9C8C9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -648,15 +688,19 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DB_NAME = DEV;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				IDLE_SECONDS = 3;
 				INFOPLIST_FILE = Timetracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.5;
+				MARKETING_VERSION = 0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -672,15 +716,19 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DB_NAME = release;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				IDLE_SECONDS = 300;
 				INFOPLIST_FILE = Timetracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.5;
+				MARKETING_VERSION = 0.6;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -783,15 +831,19 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DB_NAME = PRD;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				IDLE_SECONDS = 300;
 				INFOPLIST_FILE = Timetracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = 0.5;
+				MARKETING_VERSION = 0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
