@@ -14,6 +14,7 @@ extension PreferencePane.Identifier {
     static let builder = Identifier("builder")
     static let logs = Identifier("logs")
     static let misc = Identifier("misc")
+    static let about = Identifier("about")
 }
 
 class PreferenceBuilderViewController: NSViewController, PreferencePane {
