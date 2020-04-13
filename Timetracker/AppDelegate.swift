@@ -162,7 +162,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
             
             if (Int(lastEvent) > idleTime) {
                 if (!showingIdleDialog) {
-                    let idleDate = Date();
+                    let idleDate = Date() - TimeInterval(idleTime);
                     L.d("Showing idle dialog")
                     handleIdleDialog(withResponse: showIdleDialogWithIdleDate(idleDate), andIdleStart: idleDate)
                     showingIdleDialog = false
