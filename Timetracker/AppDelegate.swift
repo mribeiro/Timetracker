@@ -30,7 +30,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
         preferencePanes: [
             PreferenceBuilderViewController(),
             PreferenceLogViewController(),
-            PreferenceMiscViewController()
+            PreferenceMiscViewController(),
+            PreferenceAboutViewController()
         ], style: .toolbarItems
     )
     
