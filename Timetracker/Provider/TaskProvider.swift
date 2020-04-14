@@ -68,4 +68,6 @@ protocol TaskProvider {
     
     func removeChangesListener(_ listener: DataChanged)
     
+    func countProjects() -> Int 
+    
 }

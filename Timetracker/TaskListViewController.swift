@@ -174,8 +174,14 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
             
             break;
         case 1: // new task
-            self.editingTask = nil
-            performSegue(withIdentifier: "add_line", sender: self)
+            let countProjects = TaskProviderManager.instance.countProjects()
+            if countProjects > 0 {
+                self.editingTask = nil
+                performSegue(withIdentifier: "add_line", sender: self)
+                
+            } else {
+                showError("You need to have at least one project")
+            }
             
             break;
         default:
