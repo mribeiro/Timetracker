@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
     let menu = NSMenu()
     let databaseName = Bundle.main.object(forInfoDictionaryKey: "DB_NAME") as! String
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-    let idleTime = Int(Bundle.main.object(forInfoDictionaryKey: "IDLE_SECONDS") as! String)!
+    let maxIdleSeconds = Int(Bundle.main.object(forInfoDictionaryKey: "IDLE_SECONDS") as! String)!
     
     var currentTaskTime: String?
     var showingIdleDialog = false;
@@ -160,10 +160,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
             var lastEvent:CFTimeInterval = 0
             lastEvent = CGEventSource.secondsSinceLastEventType(CGEventSourceStateID.hidSystemState, eventType: CGEventType(rawValue: ~0)!)
             
-            if (Int(lastEvent) > idleTime) {
+            if (Int(lastEvent) > maxIdleSeconds) {
                 if (!showingIdleDialog) {
-                    let idleDate = Date() - TimeInterval(idleTime);
-                    L.d("Showing idle dialog")
+                    let now = Date()
+                    let idleDate = now - TimeInterval(maxIdleSeconds);
+                    L.d("Showing idle dialog. Now is \(now) and the user was idle for \(maxIdleSeconds). Started idling at \(idleDate)")
                     handleIdleDialog(withResponse: showIdleDialogWithIdleDate(idleDate), andIdleStart: idleDate)
                     showingIdleDialog = false
                     
