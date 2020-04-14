@@ -26,7 +26,7 @@ class ManualTaskViewController: NSViewController {
     weak var editingTask: Task?
     
     fileprivate var selectedHod: HeadOfDevelopment? {
-        return hods?[hodsPopup.indexOfSelectedItem]
+        return hods?[safe: hodsPopup.indexOfSelectedItem]
     }
     
     fileprivate var selectedClient: Client? {

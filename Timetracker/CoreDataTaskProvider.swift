@@ -58,6 +58,16 @@ class CoreDataTaskProvider: TaskProvider {
         CoreDataTaskProvider.pingReceivers = CoreDataTaskProvider.pingReceivers?.filter { ($0 as AnyObject) !== (pingReceiver as AnyObject) }
     }
     
+    func countProjects() -> Int {
+        let fetchRequest = NSFetchRequest<Project>(entityName: Project.entityName)
+        do {
+            return try coreDataCtx.count(for: fetchRequest)
+        } catch {
+            L.e("\(error)")
+        }
+        return 0
+    }
+    
     func getHeadOfDevelopments() -> [HeadOfDevelopment] {
         
         let fetchRequest = NSFetchRequest<HeadOfDevelopment>(entityName: HeadOfDevelopment.entityName)
