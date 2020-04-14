@@ -16,6 +16,7 @@
 		E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */; };
 		E65EF088224E85F50023A7B5 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EF087224E85F50023A7B5 /* LogManager.swift */; };
 		E662723B1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662723A1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift */; };
+		E67203D92446174300AFCF31 /* Collection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67203D82446174300AFCF31 /* Collection+Utils.swift */; };
 		E6910F3E1CCE5CFF003CBA90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6910F3D1CCE5CFF003CBA90 /* AppDelegate.swift */; };
 		E6910F401CCE5CFF003CBA90 /* TaskRunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6910F3F1CCE5CFF003CBA90 /* TaskRunnerViewController.swift */; };
 		E6910F431CCE5CFF003CBA90 /* Timetracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6910F411CCE5CFF003CBA90 /* Timetracker.xcdatamodeld */; };
@@ -77,6 +78,7 @@
 		E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBuilderViewController.swift; sourceTree = "<group>"; };
 		E65EF087224E85F50023A7B5 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		E662723A1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabSeparatedValuesExporter.swift; path = Exporters/TabSeparatedValuesExporter.swift; sourceTree = "<group>"; };
+		E67203D82446174300AFCF31 /* Collection+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Collection+Utils.swift"; path = "Utils/Collection+Utils.swift"; sourceTree = "<group>"; };
 		E6910F3A1CCE5CFF003CBA90 /* Timetracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timetracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6910F3D1CCE5CFF003CBA90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6910F3F1CCE5CFF003CBA90 /* TaskRunnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRunnerViewController.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				E6FE83911CDB5D4100794723 /* NSTextView+Utils.swift */,
 				E6FE83931CDB5D5F00794723 /* NSDate+Utils.swift */,
 				E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */,
+				E67203D82446174300AFCF31 /* Collection+Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */,
 				E6E1B4551CD89CE900FE24CD /* MoonPhases.swift in Sources */,
 				E6910F5E1CCE65B5003CBA90 /* CoreDataTaskProvider.swift in Sources */,
+				E67203D92446174300AFCF31 /* Collection+Utils.swift in Sources */,
 				E6D680651CD5018F00C45179 /* TaskListViewController.swift in Sources */,
 				E6D964D0223E795200B1C534 /* BuilderManager.swift in Sources */,
 				E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */,
