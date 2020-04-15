@@ -11,7 +11,6 @@ import IOKit
 import AppKit
 import Preferences
 import SwiftLog
-import LaunchAtLogin
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNotificationCenterDelegate {
@@ -54,9 +53,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
         }
         self.scheduleNotification(appJustOpened: true)
         DockIconManager.setIconPerConfiguration()
-        
-        print("App is set to login at launch: \(LaunchAtLogin.isEnabled)")
-        
 
     }
     
