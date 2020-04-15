@@ -98,7 +98,6 @@
 		E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JackTheMonkey.swift; sourceTree = "<group>"; };
 		E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonPhases.swift; sourceTree = "<group>"; };
 		E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Timer+Utils.swift"; path = "Utils/Timer+Utils.swift"; sourceTree = "<group>"; };
-		E6F62F9C24435F9800A9C8C9 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceAboutView.xib; sourceTree = "<group>"; };
 		E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceAboutViewController.swift; sourceTree = "<group>"; };
 		E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceLogView.xib; sourceTree = "<group>"; };
@@ -131,14 +130,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC127D679C7E4785E04ED960 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E6F62F9C24435F9800A9C8C9 /* LaunchAtLogin.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E65EF086224E85CE0023A7B5 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,7 +152,6 @@
 				E6910F3C1CCE5CFF003CBA90 /* Timetracker */,
 				E6910F511CCE5CFF003CBA90 /* TimetrackerTests */,
 				E6910F3B1CCE5CFF003CBA90 /* Products */,
-				BC127D679C7E4785E04ED960 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
