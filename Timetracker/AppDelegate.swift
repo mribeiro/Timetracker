@@ -10,7 +10,6 @@ import Cocoa
 import IOKit
 import AppKit
 import Preferences
-import SwiftLog
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNotificationCenterDelegate {
@@ -69,26 +68,26 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
     }
     
     private func scheduleNotification(appJustOpened: Bool = false) {
-        print("scheduling notification...")
+        L.d("scheduling notification...")
         let now = Date()
         let currentCalendar = Calendar.current
         
         var triggerDate: Date?
         
         if appJustOpened {
-            print("app just opened, let's remind the user")
+            L.i("app just opened, let's remind the user")
            triggerDate = Date()
         } else {
             // today @ 8am
             triggerDate = currentCalendar.date(bySettingHour: 8, minute: 0, second: 0, of: now)
             
-            print("trigger date is \(String(describing: triggerDate))")
+            L.d("trigger date is \(String(describing: triggerDate))")
             
             // trigger date has passed
             if triggerDate! < now {
                 // tomorrow @ 8am
                 triggerDate = currentCalendar.date(byAdding: .day, value: 1, to: triggerDate!);
-                print("trigger date has passed, scheduling for tomorrow: \(String(describing: triggerDate))")
+                L.d("trigger date has passed, scheduling for tomorrow: \(String(describing: triggerDate))")
             }
         }
         
@@ -100,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
         
         NSUserNotificationCenter.default.delegate = self
         NSUserNotificationCenter.default.scheduleNotification(notification)
-        print("scheduled to \(notification.deliveryDate!)")
+        L.d("scheduled to \(notification.deliveryDate!)")
     }
     
     func userNotificationCenter(_ center: NSUserNotificationCenter, didDeliver notification: NSUserNotification) {

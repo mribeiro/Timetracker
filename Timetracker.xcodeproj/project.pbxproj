@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52634DA464726990A01313EA /* Pods_Timetracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B9DC0AF50A0EC9997048296 /* Pods_Timetracker.framework */; };
-		CF82C048ADEFDCD478D92B95 /* Pods_TimetrackerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB27488E07E3EC027349015B /* Pods_TimetrackerTests.framework */; };
 		E612F3411CD2293800FC1D85 /* TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */; };
 		E6281D2524420F4900CD467C /* AppDelegate+NSMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */; };
 		E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */; };
@@ -39,6 +37,8 @@
 		E6E1B4511CD899C300FE24CD /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B4501CD899C300FE24CD /* Builder.swift */; };
 		E6E1B4531CD899EA00FE24CD /* JackTheMonkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */; };
 		E6E1B4551CD89CE900FE24CD /* MoonPhases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */; };
+		E6E9E5B424472D6C000D7D65 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = E6E9E5B324472D6C000D7D65 /* Preferences */; };
+		E6E9E5B724473C42000D7D65 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = E6E9E5B624473C42000D7D65 /* SwiftyBeaver */; };
 		E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */; };
 		E6F62FA524439EA900A9C8C9 /* PreferenceAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */; };
 		E6F62FA724439EE700A9C8C9 /* PreferenceAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */; };
@@ -63,13 +63,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		39745E26EF8017E493A5BCF3 /* Pods-Timetracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timetracker.release.xcconfig"; path = "Target Support Files/Pods-Timetracker/Pods-Timetracker.release.xcconfig"; sourceTree = "<group>"; };
-		39D21E72F86E560A404C63EC /* Pods-TimetrackerTests.debug dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimetrackerTests.debug dev.xcconfig"; path = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests.debug dev.xcconfig"; sourceTree = "<group>"; };
-		8B9DC0AF50A0EC9997048296 /* Pods_Timetracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Timetracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9143300C45E99C0B47A748F6 /* Pods-TimetrackerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimetrackerTests.release.xcconfig"; path = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests.release.xcconfig"; sourceTree = "<group>"; };
-		A3F725926751AC46547B7EBD /* Pods-Timetracker.debug prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timetracker.debug prod.xcconfig"; path = "Target Support Files/Pods-Timetracker/Pods-Timetracker.debug prod.xcconfig"; sourceTree = "<group>"; };
-		C603C62C80454B09B6C271E4 /* Pods-Timetracker.debug dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timetracker.debug dev.xcconfig"; path = "Target Support Files/Pods-Timetracker/Pods-Timetracker.debug dev.xcconfig"; sourceTree = "<group>"; };
-		DE08661C18BDE41076AA0836 /* Pods-TimetrackerTests.debug prod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimetrackerTests.debug prod.xcconfig"; path = "Target Support Files/Pods-TimetrackerTests/Pods-TimetrackerTests.debug prod.xcconfig"; sourceTree = "<group>"; };
 		E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPingReceiver.swift; sourceTree = "<group>"; };
 		E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+NSMenuDelegate.swift"; sourceTree = "<group>"; };
 		E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceMiscViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +109,6 @@
 		E6FE83931CDB5D5F00794723 /* NSDate+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+Utils.swift"; path = "Utils/NSDate+Utils.swift"; sourceTree = "<group>"; };
 		E6FE83951CDB6AF300794723 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		E6FE83971CDB6D8300794723 /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
-		FB27488E07E3EC027349015B /* Pods_TimetrackerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimetrackerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +116,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52634DA464726990A01313EA /* Pods_Timetracker.framework in Frameworks */,
+				E6E9E5B424472D6C000D7D65 /* Preferences in Frameworks */,
+				E6E9E5B724473C42000D7D65 /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,32 +125,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF82C048ADEFDCD478D92B95 /* Pods_TimetrackerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8944DD49137FF6142999AEB7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C603C62C80454B09B6C271E4 /* Pods-Timetracker.debug dev.xcconfig */,
-				A3F725926751AC46547B7EBD /* Pods-Timetracker.debug prod.xcconfig */,
-				39745E26EF8017E493A5BCF3 /* Pods-Timetracker.release.xcconfig */,
-				39D21E72F86E560A404C63EC /* Pods-TimetrackerTests.debug dev.xcconfig */,
-				DE08661C18BDE41076AA0836 /* Pods-TimetrackerTests.debug prod.xcconfig */,
-				9143300C45E99C0B47A748F6 /* Pods-TimetrackerTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		BC127D679C7E4785E04ED960 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				E6F62F9C24435F9800A9C8C9 /* LaunchAtLogin.framework */,
-				8B9DC0AF50A0EC9997048296 /* Pods_Timetracker.framework */,
-				FB27488E07E3EC027349015B /* Pods_TimetrackerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,7 +161,6 @@
 				E6910F3C1CCE5CFF003CBA90 /* Timetracker */,
 				E6910F511CCE5CFF003CBA90 /* TimetrackerTests */,
 				E6910F3B1CCE5CFF003CBA90 /* Products */,
-				8944DD49137FF6142999AEB7 /* Pods */,
 				BC127D679C7E4785E04ED960 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -311,17 +287,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6910F571CCE5CFF003CBA90 /* Build configuration list for PBXNativeTarget "Timetracker" */;
 			buildPhases = (
-				62CC8243D60FC643C3302364 /* [CP] Check Pods Manifest.lock */,
 				E6910F361CCE5CFF003CBA90 /* Sources */,
 				E6910F371CCE5CFF003CBA90 /* Frameworks */,
 				E6910F381CCE5CFF003CBA90 /* Resources */,
-				21051689A2C493893C309689 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Timetracker;
+			packageProductDependencies = (
+				E6E9E5B324472D6C000D7D65 /* Preferences */,
+				E6E9E5B624473C42000D7D65 /* SwiftyBeaver */,
+			);
 			productName = Timetracker;
 			productReference = E6910F3A1CCE5CFF003CBA90 /* Timetracker.app */;
 			productType = "com.apple.product-type.application";
@@ -330,7 +308,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6910F5A1CCE5CFF003CBA90 /* Build configuration list for PBXNativeTarget "TimetrackerTests" */;
 			buildPhases = (
-				9BA3393E4D58917B6167A4DB /* [CP] Check Pods Manifest.lock */,
 				E6910F4A1CCE5CFF003CBA90 /* Sources */,
 				E6910F4B1CCE5CFF003CBA90 /* Frameworks */,
 				E6910F4C1CCE5CFF003CBA90 /* Resources */,
@@ -377,6 +354,10 @@
 				Base,
 			);
 			mainGroup = E6910F311CCE5CFF003CBA90;
+			packageReferences = (
+				E6E9E5B224472D6C000D7D65 /* XCRemoteSwiftPackageReference "Preferences" */,
+				E6E9E5B524473C42000D7D65 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+			);
 			productRefGroup = E6910F3B1CCE5CFF003CBA90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -410,73 +391,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		21051689A2C493893C309689 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Timetracker/Pods-Timetracker-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Preferences/Preferences.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftLog/SwiftLog.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Preferences.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLog.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Timetracker/Pods-Timetracker-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		62CC8243D60FC643C3302364 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Timetracker-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9BA3393E4D58917B6167A4DB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TimetrackerTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E6910F361CCE5CFF003CBA90 /* Sources */ = {
@@ -650,13 +564,13 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
 		E6910F581CCE5CFF003CBA90 /* Debug dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C603C62C80454B09B6C271E4 /* Pods-Timetracker.debug dev.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = icon_dev;
 				BUILD_TYPE = DEBUG_DEV;
@@ -670,7 +584,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				IDLE_SECONDS = 62;
 				INFOPLIST_FILE = Timetracker/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
@@ -682,7 +599,6 @@
 		};
 		E6910F591CCE5CFF003CBA90 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39745E26EF8017E493A5BCF3 /* Pods-Timetracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = icon_prod;
 				BUILD_TYPE = RELEASE;
@@ -696,7 +612,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				IDLE_SECONDS = 300;
 				INFOPLIST_FILE = Timetracker/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 0.8;
 				ONLY_ACTIVE_ARCH = YES;
@@ -709,12 +628,15 @@
 		};
 		E6910F5B1CCE5CFF003CBA90 /* Debug dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39D21E72F86E560A404C63EC /* Pods-TimetrackerTests.debug dev.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TimetrackerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.TimetrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -724,12 +646,15 @@
 		};
 		E6910F5C1CCE5CFF003CBA90 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9143300C45E99C0B47A748F6 /* Pods-TimetrackerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TimetrackerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.TimetrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -795,7 +720,6 @@
 		};
 		E6C7CF311D91A79B00B16652 /* Debug prod */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3F725926751AC46547B7EBD /* Pods-Timetracker.debug prod.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = icon_pre;
 				BUILD_TYPE = DEBUG_RELEASE;
@@ -809,7 +733,10 @@
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				IDLE_SECONDS = 300;
 				INFOPLIST_FILE = Timetracker/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.Timetracker;
@@ -821,12 +748,15 @@
 		};
 		E6C7CF321D91A79B00B16652 /* Debug prod */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE08661C18BDE41076AA0836 /* Pods-TimetrackerTests.debug prod.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = TimetrackerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.TimetrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -868,6 +798,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E6E9E5B224472D6C000D7D65 /* XCRemoteSwiftPackageReference "Preferences" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Preferences";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+		E6E9E5B524473C42000D7D65 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E6E9E5B324472D6C000D7D65 /* Preferences */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6E9E5B224472D6C000D7D65 /* XCRemoteSwiftPackageReference "Preferences" */;
+			productName = Preferences;
+		};
+		E6E9E5B624473C42000D7D65 /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6E9E5B524473C42000D7D65 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E6910F411CCE5CFF003CBA90 /* Timetracker.xcdatamodeld */ = {

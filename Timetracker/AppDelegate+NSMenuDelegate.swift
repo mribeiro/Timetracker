@@ -10,7 +10,6 @@ import Cocoa
 import IOKit
 import AppKit
 import Preferences
-import SwiftLog
 
 extension AppDelegate: NSMenuDelegate {
     

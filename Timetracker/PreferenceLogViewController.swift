@@ -48,11 +48,11 @@ class PreferenceLogViewController: NSViewController, PreferencePane {
             level.asString
         }))
         
-        self.logLevelsPopup.selectItem(at: LogManager.shared.level.intVal)
+        self.logLevelsPopup.selectItem(at: LogManager.shared.level.intVal - 1)
     }
     
     @IBAction func logLevelChanged(_ sender: NSPopUpButton) {
-        let selectedLevel = LogManager.Level(rawValue: sender.indexOfSelectedItem)
+        let selectedLevel = LogManager.Level(rawValue: sender.indexOfSelectedItem + 1)
         LogManager.shared.setLevel(selectedLevel!)
     }
     
