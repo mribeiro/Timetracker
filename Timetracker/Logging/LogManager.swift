@@ -7,7 +7,8 @@
 //
 
 import Foundation
-import SwiftLog
+import SwiftyBeaver
+import Cocoa
 
 typealias L = LogManager
 
@@ -17,31 +18,37 @@ final class LogManager {
     
     private(set) var level: Level
     private(set) var enabled: Bool
+    private let logger = SwiftyBeaver.self
     
-    var logFolder: String {
-        return Log.logger.directory
-    }
+    var logFolder: String
     
     enum Level: Int {
-        case Debug = 0
-        case Info = 1
-        case Error = 2
+        // These values must be in sync with SwiftyBeaver
+        case Verbose = 1
+        case Debug = 2
+        case Info = 3
+        case Warning = 4
+        case Error = 5
         
         var asString: String {
             get {
                 switch self {
+                case .Verbose:
+                    return "VERBOSE"
                 case .Debug:
                     return "DEBUG"
-                case .Error:
-                    return "ERROR"
                 case .Info:
                     return "INFO"
+                case .Warning:
+                    return "WARNING"
+                case .Error:
+                    return "ERROR"
                 }
             }
         }
         
         static var all: [Level] {
-            return [.Debug, .Info, .Error]
+            return [.Verbose, .Debug, .Info, .Warning ,.Error]
         }
         
         var intVal: Int {
@@ -74,27 +81,38 @@ final class LogManager {
     }
     
     private func i(_ message: String) {
-        self.logMessage(message, withLevel: .Info)
+        logMessage(message, withLevel: .Info)
     }
     
     private func d(_ message: String) {
-        self.logMessage(message, withLevel: .Debug)
+        logMessage(message, withLevel: .Debug)
     }
     
     private func e(_ message: String) {
-        self.logMessage(message, withLevel: .Error)
+        logMessage(message, withLevel: .Error)
     }
     
     private init() {
-        Log.logger.directory = "\(Log.logger.directory)/Timetracker"
+        let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last?.appendingPathComponent("timetracker/timetracker.log")
+        
+        let consoleLog = ConsoleDestination()
+        let fileLog = FileDestination(logFileURL: url)
+        
+        self.logger.addDestination(consoleLog)
+        self.logger.addDestination(fileLog)
+        
+        self.logFolder = fileLog.logFileURL?.path ?? "NA"
+        
         self.enabled = UserDefaults().bool(forKey: "log_enabled")
         self.level = Level(rawValue: UserDefaults().integer(forKey: "log_level")) ?? .Error
+        
     }
     
     private func logMessage(_ message: String, withLevel level: Level) {
         if (enabled && level.rawValue >= self.level.rawValue) {
+            let swiftBeaverLevel = SwiftyBeaver.Level(rawValue: level.rawValue) ?? SwiftyBeaver.Level.error
             let message = "\(level.asString) | \(message)"
-            logw(message)
+            self.logger.custom(level: swiftBeaverLevel, message: message)
         }
     }
     
