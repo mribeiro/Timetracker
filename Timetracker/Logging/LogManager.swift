@@ -69,6 +69,10 @@ final class LogManager {
         shared.e(message)
     }
     
+    static func v(_ message: String) {
+        shared.v(message)
+    }
+    
     
     func setEnabled(_ enabled: Bool) {
         UserDefaults().set(enabled, forKey: "log_enabled")
@@ -90,6 +94,10 @@ final class LogManager {
     
     private func e(_ message: String) {
         logMessage(message, withLevel: .Error)
+    }
+    
+    private func v(_ message: String) {
+        logMessage(message, withLevel: .Verbose)
     }
     
     private init() {
