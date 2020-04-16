@@ -40,6 +40,9 @@
 		E6E9E5B424472D6C000D7D65 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = E6E9E5B324472D6C000D7D65 /* Preferences */; };
 		E6E9E5B724473C42000D7D65 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = E6E9E5B624473C42000D7D65 /* SwiftyBeaver */; };
 		E6E9E5B92447BCA1000D7D65 /* CurrentTaskEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5B82447BCA0000D7D65 /* CurrentTaskEditorViewController.swift */; };
+		E6E9E5BD24483B8D000D7D65 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5BC24483B8D000D7D65 /* Clock.swift */; };
+		E6E9E5BF24483F29000D7D65 /* TrafficLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5BE24483F29000D7D65 /* TrafficLights.swift */; };
+		E6E9E5C1244840B8000D7D65 /* TimeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5C0244840B8000D7D65 /* TimeCounter.swift */; };
 		E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */; };
 		E6F62FA524439EA900A9C8C9 /* PreferenceAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */; };
 		E6F62FA724439EE700A9C8C9 /* PreferenceAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */; };
@@ -99,6 +102,9 @@
 		E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JackTheMonkey.swift; sourceTree = "<group>"; };
 		E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonPhases.swift; sourceTree = "<group>"; };
 		E6E9E5B82447BCA0000D7D65 /* CurrentTaskEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTaskEditorViewController.swift; sourceTree = "<group>"; };
+		E6E9E5BC24483B8D000D7D65 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		E6E9E5BE24483F29000D7D65 /* TrafficLights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLights.swift; sourceTree = "<group>"; };
+		E6E9E5C0244840B8000D7D65 /* TimeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounter.swift; sourceTree = "<group>"; };
 		E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Timer+Utils.swift"; path = "Utils/Timer+Utils.swift"; sourceTree = "<group>"; };
 		E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceAboutView.xib; sourceTree = "<group>"; };
 		E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceAboutViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 		E6910F3C1CCE5CFF003CBA90 /* Timetracker */ = {
 			isa = PBXGroup;
 			children = (
+				E6E9E5BB24483B65000D7D65 /* Builders */,
 				E65EF086224E85CE0023A7B5 /* Logging */,
 				E6FE838E1CDB34B600794723 /* WindowControllers */,
 				E66272391CD8E82600B50E38 /* Exporters */,
@@ -184,11 +191,7 @@
 				E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */,
 				E6910F491CCE5CFF003CBA90 /* Info.plist */,
 				E6910F411CCE5CFF003CBA90 /* Timetracker.xcdatamodeld */,
-				E6E1B4501CD899C300FE24CD /* Builder.swift */,
-				E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */,
-				E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */,
 				E6FE83971CDB6D8300794723 /* ErrorView.xib */,
-				E6D964CF223E795200B1C534 /* BuilderManager.swift */,
 				E6281D2C24422BD200CD467C /* DockIconManager.swift */,
 				E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */,
 			);
@@ -263,6 +266,20 @@
 				E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		E6E9E5BB24483B65000D7D65 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				E6E1B4501CD899C300FE24CD /* Builder.swift */,
+				E6D964CF223E795200B1C534 /* BuilderManager.swift */,
+				E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */,
+				E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */,
+				E6E9E5BC24483B8D000D7D65 /* Clock.swift */,
+				E6E9E5BE24483F29000D7D65 /* TrafficLights.swift */,
+				E6E9E5C0244840B8000D7D65 /* TimeCounter.swift */,
+			);
+			path = Builders;
 			sourceTree = "<group>";
 		};
 		E6FE838E1CDB34B600794723 /* WindowControllers */ = {
@@ -405,15 +422,18 @@
 				E6F788D722579BBB00AE3DF3 /* PreferenceLogViewController.swift in Sources */,
 				E6FE83901CDB34C900794723 /* TaskRunnerWindowController.swift in Sources */,
 				E6910F681CCE6F1E003CBA90 /* Client.swift in Sources */,
+				E6E9E5C1244840B8000D7D65 /* TimeCounter.swift in Sources */,
 				E612F3411CD2293800FC1D85 /* TaskPingReceiver.swift in Sources */,
 				E6910F6C1CCE6F1E003CBA90 /* Project.swift in Sources */,
 				E6F62FA724439EE700A9C8C9 /* PreferenceAboutViewController.swift in Sources */,
 				E6910F6E1CCE6F1E003CBA90 /* Task.swift in Sources */,
 				E6910F431CCE5CFF003CBA90 /* Timetracker.xcdatamodeld in Sources */,
+				E6E9E5BF24483F29000D7D65 /* TrafficLights.swift in Sources */,
 				E6FE838C1CDA5F9300794723 /* ExportViewController.swift in Sources */,
 				E6D680581CD4F5F000C45179 /* NSTimeInterval+Utils.swift in Sources */,
 				E6910F6A1CCE6F1E003CBA90 /* HeadOfDevelopment.swift in Sources */,
 				E6D680671CD88CE300C45179 /* ManualTaskViewController.swift in Sources */,
+				E6E9E5BD24483B8D000D7D65 /* Clock.swift in Sources */,
 				E6FE83961CDB6AF300794723 /* ErrorViewController.swift in Sources */,
 				E6FE83921CDB5D4100794723 /* NSTextView+Utils.swift in Sources */,
 				E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */,

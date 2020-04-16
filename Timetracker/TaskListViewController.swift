@@ -304,9 +304,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         if let destination = segue.destinationController as? CurrentTaskEditorViewController {
             destination.delegate = self
         }
-        
-        #warning("TODO")
-        // Handle the case when the sheet is opened and the task stops (should just close the sheet)        
+                
     }
     
 }
