@@ -34,5 +34,20 @@ class PreferenceAboutViewController: NSViewController, PreferencePane {
         labelCopyright.stringValue = copyright
     }
     
+    @IBAction func acknowledgementsClicked(_ sender: Any) {
+        
+        let textDisplayer = TextDisplayerViewController()
+        
+        if let path = Bundle.main.path(forResource: "copyright", ofType: "txt") {
+            do {
+                textDisplayer.text = try String(contentsOfFile: path)
+            } catch {
+                L.e("Error reading text from \(path)")
+            }
+        }
+        
+        presentAsSheet(textDisplayer)
+        
+    }
     
 }
