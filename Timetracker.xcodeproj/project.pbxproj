@@ -39,6 +39,7 @@
 		E6E1B4551CD89CE900FE24CD /* MoonPhases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */; };
 		E6E9E5B424472D6C000D7D65 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = E6E9E5B324472D6C000D7D65 /* Preferences */; };
 		E6E9E5B724473C42000D7D65 /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = E6E9E5B624473C42000D7D65 /* SwiftyBeaver */; };
+		E6E9E5B92447BCA1000D7D65 /* CurrentTaskEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5B82447BCA0000D7D65 /* CurrentTaskEditorViewController.swift */; };
 		E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */; };
 		E6F62FA524439EA900A9C8C9 /* PreferenceAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */; };
 		E6F62FA724439EE700A9C8C9 /* PreferenceAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */; };
@@ -97,6 +98,7 @@
 		E6E1B4501CD899C300FE24CD /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		E6E1B4521CD899EA00FE24CD /* JackTheMonkey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JackTheMonkey.swift; sourceTree = "<group>"; };
 		E6E1B4541CD89CE900FE24CD /* MoonPhases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoonPhases.swift; sourceTree = "<group>"; };
+		E6E9E5B82447BCA0000D7D65 /* CurrentTaskEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTaskEditorViewController.swift; sourceTree = "<group>"; };
 		E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Timer+Utils.swift"; path = "Utils/Timer+Utils.swift"; sourceTree = "<group>"; };
 		E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceAboutView.xib; sourceTree = "<group>"; };
 		E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceAboutViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				E6F788D622579BBB00AE3DF3 /* PreferenceLogViewController.swift */,
 				E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */,
 				E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */,
+				E6E9E5B82447BCA0000D7D65 /* CurrentTaskEditorViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				E6E1B4551CD89CE900FE24CD /* MoonPhases.swift in Sources */,
 				E6910F5E1CCE65B5003CBA90 /* CoreDataTaskProvider.swift in Sources */,
 				E67203D92446174300AFCF31 /* Collection+Utils.swift in Sources */,
+				E6E9E5B92447BCA1000D7D65 /* CurrentTaskEditorViewController.swift in Sources */,
 				E6D680651CD5018F00C45179 /* TaskListViewController.swift in Sources */,
 				E6D964D0223E795200B1C534 /* BuilderManager.swift in Sources */,
 				E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */,

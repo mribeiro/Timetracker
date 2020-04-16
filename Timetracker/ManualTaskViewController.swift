@@ -100,9 +100,8 @@ class ManualTaskViewController: NSViewController {
             projectsPopup.selectItem(withTitle: selected)
         }
     }
-    
-    override func dismiss(_ sender: Any?) {
-        super.dismiss(sender)
+
+    override func viewWillDisappear() {
         self.editingTask = nil
         delegate?.manualTaskViewDidDismiss()
     }
