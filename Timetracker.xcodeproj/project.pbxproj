@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E603199524487E57000FB79C /* copyright.txt in Resources */ = {isa = PBXBuildFile; fileRef = E603199424487E57000FB79C /* copyright.txt */; };
 		E612F3411CD2293800FC1D85 /* TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */; };
 		E6281D2524420F4900CD467C /* AppDelegate+NSMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */; };
 		E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */; };
@@ -43,6 +44,8 @@
 		E6E9E5BD24483B8D000D7D65 /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5BC24483B8D000D7D65 /* Clock.swift */; };
 		E6E9E5BF24483F29000D7D65 /* TrafficLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5BE24483F29000D7D65 /* TrafficLights.swift */; };
 		E6E9E5C1244840B8000D7D65 /* TimeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5C0244840B8000D7D65 /* TimeCounter.swift */; };
+		E6E9E5C524485F3B000D7D65 /* TextDisplayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6E9E5C424485F3B000D7D65 /* TextDisplayerView.xib */; };
+		E6E9E5C724486009000D7D65 /* TextDisplayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */; };
 		E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */; };
 		E6F62FA524439EA900A9C8C9 /* PreferenceAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */; };
 		E6F62FA724439EE700A9C8C9 /* PreferenceAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */; };
@@ -67,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E603199424487E57000FB79C /* copyright.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPingReceiver.swift; sourceTree = "<group>"; };
 		E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+NSMenuDelegate.swift"; sourceTree = "<group>"; };
 		E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceMiscViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 		E6E9E5BC24483B8D000D7D65 /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		E6E9E5BE24483F29000D7D65 /* TrafficLights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLights.swift; sourceTree = "<group>"; };
 		E6E9E5C0244840B8000D7D65 /* TimeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounter.swift; sourceTree = "<group>"; };
+		E6E9E5C424485F3B000D7D65 /* TextDisplayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextDisplayerView.xib; sourceTree = "<group>"; };
+		E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplayerViewController.swift; sourceTree = "<group>"; };
 		E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Timer+Utils.swift"; path = "Utils/Timer+Utils.swift"; sourceTree = "<group>"; };
 		E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceAboutView.xib; sourceTree = "<group>"; };
 		E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceAboutViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +200,8 @@
 				E6FE83971CDB6D8300794723 /* ErrorView.xib */,
 				E6281D2C24422BD200CD467C /* DockIconManager.swift */,
 				E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */,
+				E6E9E5C424485F3B000D7D65 /* TextDisplayerView.xib */,
+				E603199424487E57000FB79C /* copyright.txt */,
 			);
 			path = Timetracker;
 			sourceTree = "<group>";
@@ -245,6 +253,7 @@
 				E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */,
 				E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */,
 				E6E9E5B82447BCA0000D7D65 /* CurrentTaskEditorViewController.swift */,
+				E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -386,9 +395,11 @@
 				E6FE83981CDB6D8300794723 /* ErrorView.xib in Resources */,
 				E6D964CE223DB4AC00B1C534 /* PreferenceBuilderView.xib in Resources */,
 				E6910F451CCE5CFF003CBA90 /* Assets.xcassets in Resources */,
+				E6E9E5C524485F3B000D7D65 /* TextDisplayerView.xib in Resources */,
 				E6910F481CCE5CFF003CBA90 /* Main.storyboard in Resources */,
 				E6F788D522579BA000AE3DF3 /* PreferenceLogView.xib in Resources */,
 				E6F62FA524439EA900A9C8C9 /* PreferenceAboutView.xib in Resources */,
+				E603199524487E57000FB79C /* copyright.txt in Resources */,
 				E6281D2B24421C1D00CD467C /* PreferenceMiscView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +425,7 @@
 				E6910F5E1CCE65B5003CBA90 /* CoreDataTaskProvider.swift in Sources */,
 				E67203D92446174300AFCF31 /* Collection+Utils.swift in Sources */,
 				E6E9E5B92447BCA1000D7D65 /* CurrentTaskEditorViewController.swift in Sources */,
+				E6E9E5C724486009000D7D65 /* TextDisplayerViewController.swift in Sources */,
 				E6D680651CD5018F00C45179 /* TaskListViewController.swift in Sources */,
 				E6D964D0223E795200B1C534 /* BuilderManager.swift in Sources */,
 				E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */,

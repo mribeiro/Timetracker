@@ -1,0 +1,9 @@
+IMAGES AND ICONS
+
+Play, stop, switch, logs and builder icons made by Freepik from www.flaticon.com
+About icon made by inipagistudio from www.flaticon.com
+
+FRAMEWORKS:
+
+SwiftyBeaver (https://github.com/SwiftyBeaver/SwiftyBeaver)
+Preferences (https://github.com/sindresorhus/Preferences)

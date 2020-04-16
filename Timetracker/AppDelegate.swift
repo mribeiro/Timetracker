@@ -107,7 +107,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
     }
     
     @IBAction func openPreferences(_ sender: NSMenuItem) {
-        preferencesWindowController.show()
+        let prefId = PreferencePaneIdentifier(sender.identifier?.rawValue ?? "")
+        preferencesWindowController.show(preferencePane: prefId)
     }
     
     func showIdleDialogWithIdleDate(_ idleDate: Date) -> NSApplication.ModalResponse {
