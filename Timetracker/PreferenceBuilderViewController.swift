@@ -29,6 +29,9 @@ class PreferenceBuilderViewController: NSViewController, PreferencePane {
     
     @IBOutlet weak var monkeyRadio: NSButton!
     @IBOutlet weak var moonRadio: NSButton!
+    @IBOutlet weak var clockRadio: NSButton!
+    @IBOutlet weak var trafficLightsRadio: NSButton!
+    @IBOutlet weak var timeCounterRadio: NSButton!
     
     
     
@@ -45,6 +48,12 @@ class PreferenceBuilderViewController: NSViewController, PreferencePane {
         switch builderName {
         case "moon":
             self.moonRadio.state = .on
+        case "clock":
+            self.clockRadio.state = .on
+        case "traffic_lights":
+            self.trafficLightsRadio.state = .on
+        case "time_counter":
+            self.timeCounterRadio.state = .on
         default:
             self.monkeyRadio.state = .on
         }

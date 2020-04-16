@@ -31,6 +31,12 @@ class BuilderManager {
         switch name {
         case "moon":
             return MoonPhases.one
+        case "clock":
+            return Clock.one
+        case "traffic_lights":
+            return TrafficLights.one
+        case "time_counter":
+            return TimeCounter.one
         default: // monkey is the default
             return JackTheMonkey.one
         }
