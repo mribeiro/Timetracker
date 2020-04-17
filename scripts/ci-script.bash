@@ -41,7 +41,7 @@ security import ./scripts/certs/development-key.p12 -k ios-build.keychain -P $SE
 
 # Fix for OS X Sierra that hungs in the codesign step
 echo 'workaround for sierra'
-security set-key-partition-list -S apple-tool:,apple: -s -k $SECURITY_PASSWORD ios-build.keychain > /dev/null
+security set-key-partition-list -S apple-tool:,apple: -s -k $CUSTOM_KEYCHAIN_PASSWORD ios-build.keychain > /dev/null
 
 echo 'creating archive'
 xcodebuild archive -project Timetracker.xcodeproj -configuration Release -archivePath xcbuild/timetracker.xcarchive -scheme Timetracker
