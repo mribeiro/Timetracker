@@ -8,8 +8,8 @@ echo 'starting script'
 
 echo 'importing certificates'
 
-openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/development-cert.cer.enc -d -a -out scripts/certs/development-cert.cer
-openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/development-key.p12.enc -d -a -out scripts/certs/development-key.p12
+openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/enc-development-cert.cer -d -a -out scripts/certs/development-cert.cer
+openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/enc-development-key.p12 -d -a -out scripts/certs/development-key.p12
 
 # Create custom keychain
 
