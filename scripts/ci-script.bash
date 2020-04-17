@@ -45,7 +45,7 @@ security set-key-partition-list -S apple-tool:,apple: -s -k $CUSTOM_KEYCHAIN_PAS
 
 
 shortSha=${TRAVIS_GIT: -7}
-version=${TRAVIS_TAG\\.}
+version=${TRAVIS_TAG//.}
 mktversion="$TRAVIS_TAG ($shortSha)"
 
 echo "Setting version info"
