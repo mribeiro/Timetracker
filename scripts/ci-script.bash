@@ -1,10 +1,12 @@
 #!/bin/sh
 
-sleep 10
+sleep 60
 
 echo 'starting script'
 
 # DECIPHER DEVELOPMENT CERTIFICATES
+
+echo 'importing certificates'
 
 openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/development-cert.cer.enc -d -a -out scripts/certs/development-cert.cer
 openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/development-key.p12.enc -d -a -out scripts/certs/development-key.p12
