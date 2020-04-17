@@ -4,5 +4,11 @@ osx_image: xcode11.4
 script:
   - ./scripts/ci-script.bash
 
-#xcode_project: Timetracker.xcodeproj # path to your xcodeproj folder
-#xcode_scheme: Timetracker
+deploy:
+  provider: releases
+  api_key: "$GITHUB_TOKEN"
+  file: "xcbuild/output/Timetracker.$TRAVIS_TAG.zip"
+  skip_cleanup: true
+  draft: true
+  on:
+    tags: true

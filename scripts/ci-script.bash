@@ -49,4 +49,7 @@ xcodebuild archive -project Timetracker.xcodeproj -configuration Release -archiv
 echo 'exporting archive'
 xcodebuild -exportArchive -archivePath xcbuild/timetracker.xcarchive -exportPath xcbuild/output -project Timetracker.xcodeproj -configuration Release -exportOptionsPlist exportOptions.plist 
 
-
+echo 'zipping app'
+pushd xcbuild/output
+zip -r Timetracker.$TRAVIS_TAG.zip Timetracker.app
+popd
