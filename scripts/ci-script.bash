@@ -44,7 +44,7 @@ echo 'workaround for sierra'
 security set-key-partition-list -S apple-tool:,apple: -s -k $CUSTOM_KEYCHAIN_PASSWORD ios-build.keychain > /dev/null
 
 
-shortSha=${TRAVIS_GIT: -7}
+shortSha=${TRAVIS_COMMIT: -7}
 version=${TRAVIS_TAG//.}
 mktversion="$TRAVIS_TAG ($shortSha)"
 
