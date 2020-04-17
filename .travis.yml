@@ -10,5 +10,6 @@ deploy:
   file: "xcbuild/output/Timetracker.$TRAVIS_TAG.zip"
   skip_cleanup: true
   draft: true
+  name: "$TRAVIS_TAG"
   on:
     tags: true
