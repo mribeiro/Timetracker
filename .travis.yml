@@ -1,4 +1,7 @@
 language: swift
 osx_image: xcode11.4
-xcode_project: Timetracker.xcodeproj # path to your xcodeproj folder
-xcode_scheme: Timetracker
+script:
+  - ./scripts/ci-script.bash
+
+#xcode_project: Timetracker.xcodeproj # path to your xcodeproj folder
+#xcode_scheme: Timetracker
