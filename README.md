@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mribeiro/Timetracker.svg?branch=master)](https://travis-ci.org/mribeiro/Timetracker)
+
 # Timetracker
 
 Timetracker is an open source time tracker for macOS, released under the MIT license. The author stole the name from any of the 239487 apps that do something similar.
