@@ -60,7 +60,7 @@ if [ -n "$TRAVIS_TAG" ]; then
     echo "SHORTSHA   =[$shortSha]"
     
     agvtool new-version $version
-    agvtool new-marketing-version $mktversion
+    agvtool new-marketing-version "$mktversion"
 
 else
     echo "This is not a TAG, no need for setting version"
