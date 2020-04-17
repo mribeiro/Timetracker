@@ -43,23 +43,28 @@ security import ./scripts/certs/development-key.p12 -k ios-build.keychain -P $SE
 echo 'workaround for sierra'
 security set-key-partition-list -S apple-tool:,apple: -s -k $CUSTOM_KEYCHAIN_PASSWORD ios-build.keychain > /dev/null
 
-
-shortSha=${TRAVIS_COMMIT: -7}
-version=${TRAVIS_TAG//.}
-mktversion="$TRAVIS_TAG ($shortSha)"
-
 echo "Setting version info"
 echo "BRANCH     =[$TRAVIS_BRANCH]"
-echo "TAG        =[$TRAVIS_TAG]"
 echo "SHA        =[$TRAVIS_COMMIT]"
-echo "SHORTSHA   =[$shortSha]"
-echo "VERSION    =[$version]"
-echo "MKTVERSION =[$mktversion]"
 
 if [ -n "$TRAVIS_TAG" ]; then
     echo "This is a tag and means new version. Set the version with agvtool"
+    
+    shortSha=${TRAVIS_COMMIT: -7}
+    version=${TRAVIS_TAG//.}
+    mktversion="$TRAVIS_TAG ($shortSha)"
+
+    echo "TAG        =[$TRAVIS_TAG]"
+    echo "VERSION    =[$version]"
+    echo "MKTVERSION =[$mktversion]"
+    echo "SHORTSHA   =[$shortSha]"
+    
     agvtool new-version $version
     agvtool new-marketing-version $mktversion
+
+else
+    echo "This is not a TAG, no need for setting version"
+
 fi
 
 echo 'creating archive'
