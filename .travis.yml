@@ -1,0 +1,14 @@
+language: objective-c
+os: osx
+osx_image: xcode11.4
+script:
+  - ./scripts/ci-script.bash
+
+deploy:
+  provider: releases
+  api_key: "$GITHUB_TOKEN"
+  file: "xcbuild/output/Timetracker.$TRAVIS_TAG.zip"
+  skip_cleanup: true
+  name: "$TRAVIS_TAG"
+  on:
+    tags: true
