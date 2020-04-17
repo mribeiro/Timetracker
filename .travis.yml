@@ -1,4 +1,5 @@
-language: swift
+language: objective-c
+os: osx
 osx_image: xcode11.4
 script:
   - ./scripts/ci-script.bash

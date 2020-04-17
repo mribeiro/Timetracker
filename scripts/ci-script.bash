@@ -1,3 +1,6 @@
+#!/bin/sh
+
+
 echo 'starting script'
 
 # DECIPHER DEVELOPMENT CERTIFICATES
