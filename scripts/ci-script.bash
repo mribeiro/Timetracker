@@ -7,12 +7,10 @@ echo 'starting script'
 # DECIPHER DEVELOPMENT CERTIFICATES
 
 echo 'deciphering dev certificate'
-#openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/enc-development-cert.cer -d -a -out scripts/certs/development-cert.cer
-openssl enc -aes-256-cbc -base64 -pass pass:$SECURITY_PASSWORD -d -p -i scripts/certs/enc-development-cert.cer -out scripts/certs/development-cert.cer
+openssl enc -aes-256-cbc -base64 -pass pass:$SECURITY_PASSWORD -d -in scripts/certs/enc-development-cert.cer -out scripts/certs/development-cert.cer
 
 echo 'deciphering dev key'
-#openssl aes-256-cbc -k "$SECURITY_PASSWORD" -in scripts/certs/enc-development-key.p12 -d -a -out scripts/certs/development-key.p12
-openssl enc -aes-256-cbc -base64 -pass pass:$SECURITY_PASSWORD -d -p -i scripts/certs/enc-development-key.p12 -out scripts/certs/development-key.p12
+openssl enc -aes-256-cbc -base64 -pass pass:$SECURITY_PASSWORD -d -in scripts/certs/enc-development-key.p12 -out scripts/certs/development-key.p12
 
 
 # Create custom keychain
