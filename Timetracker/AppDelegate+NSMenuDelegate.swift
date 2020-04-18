@@ -27,7 +27,9 @@ extension AppDelegate: NSMenuDelegate {
     }
 
     func openScreen(withStoryboardId storyboardId: String) {
-        if let controller = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: storyboardId) as? NSWindowController {
+        if let controller = NSStoryboard(name: "Main", bundle: nil)
+            .instantiateController(withIdentifier: storyboardId) as? NSWindowController {
+
             NSApp.activate(ignoringOtherApps: true)
             controller.showWindow(self)
 
@@ -56,7 +58,9 @@ extension AppDelegate: NSMenuDelegate {
                         clientItem.submenu = projectsMenu
 
                         projects.forEach { project in
-                            let projectItem = projectsMenu.addItem(withTitle: project.name!, action: nil, keyEquivalent: "")
+                            let projectItem = projectsMenu.addItem(withTitle: project.name!,
+                                                                   action: nil,
+                                                                   keyEquivalent: "")
 
                             let tasks = project.tasks
                             if tasks?.count ?? 0 > 0 {
@@ -77,7 +81,9 @@ extension AppDelegate: NSMenuDelegate {
                                 }
 
                                 distinctTasks.forEach { task in
-                                    let taskItem = tasksMenu.addItem(withTitle: task.title!, action: #selector(taskClicked), keyEquivalent: "")
+                                    let taskItem = tasksMenu.addItem(withTitle: task.title!,
+                                                                     action: #selector(taskClicked),
+                                                                     keyEquivalent: "")
                                     taskItem.isEnabled = true
 
                                     taskItem.representedObject = task
@@ -131,7 +137,9 @@ extension AppDelegate: NSMenuDelegate {
         let openMenuItems = NSMenu()
 
         // Task runner
-        let openTaskRunnerItem = NSMenuItem(title: "Task runner", action: #selector(openTaskRunner(_:)), keyEquivalent: "")
+        let openTaskRunnerItem = NSMenuItem(title: "Task runner",
+                                            action: #selector(openTaskRunner(_:)),
+                                            keyEquivalent: "")
         openMenuItems.addItem(openTaskRunnerItem)
 
         // Task list
@@ -139,11 +147,15 @@ extension AppDelegate: NSMenuDelegate {
         openMenuItems.addItem(openTaskListItem)
 
         // Cost centre
-        let openCostCentreItem = NSMenuItem(title: "Cost centres", action: #selector(openCostCentre(_:)), keyEquivalent: "")
+        let openCostCentreItem = NSMenuItem(title: "Cost centres",
+                                            action: #selector(openCostCentre(_:)),
+                                            keyEquivalent: "")
         openMenuItems.addItem(openCostCentreItem)
 
         // Open preferences
-        let openPreferencesItem = NSMenuItem(title: "Preferences", action: #selector(openPreferences(_:)), keyEquivalent: "")
+        let openPreferencesItem = NSMenuItem(title: "Preferences",
+                                             action: #selector(openPreferences(_:)),
+                                             keyEquivalent: "")
         openMenuItems.addItem(openPreferencesItem)
 
         let openMenu = menu.addItem(withTitle: "Open", action: nil, keyEquivalent: "")

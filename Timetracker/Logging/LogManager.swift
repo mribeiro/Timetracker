@@ -17,6 +17,7 @@ typealias L = LogManager
 final class LogManager {
 
     static let shared = LogManager()
+    private let logPath = "timetracker/timetracker.log"
 
     private(set) var level: Level
     private(set) var enabled: Bool
@@ -100,7 +101,8 @@ final class LogManager {
     }
 
     private init() {
-        let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).last?.appendingPathComponent("timetracker/timetracker.log")
+        let url = FileManager.default.urls(for: .cachesDirectory,
+                                           in: .userDomainMask).last?.appendingPathComponent(logPath)
 
         let consoleLog = ConsoleDestination()
         let fileLog = FileDestination(logFileURL: url)

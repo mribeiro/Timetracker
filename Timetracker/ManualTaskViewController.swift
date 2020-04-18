@@ -137,7 +137,10 @@ class ManualTaskViewController: NSViewController {
 
             } else {
 
-                if TaskProviderManager.instance.saveTaskInProject(selectedProject, withTitle: taskName.stringValue, startingAt: taskStart.dateValue, finishingAt: taskEnd.dateValue) {
+                if TaskProviderManager.instance.saveTaskInProject(selectedProject,
+                                                                  withTitle: taskName.stringValue,
+                                                                  startingAt: taskStart.dateValue,
+                                                                  finishingAt: taskEnd.dateValue) {
                     dismiss(self)
                 } else {
                     showError("Couldn't save task")

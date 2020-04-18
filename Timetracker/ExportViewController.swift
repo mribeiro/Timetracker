@@ -22,7 +22,7 @@ class ExportViewController: NSViewController {
         textView.isSelectable = true
 
         if let sureString = string {
-            let attrs: [NSAttributedString.Key : Any] = [.foregroundColor: NSColor.textColor]
+            let attrs: [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.textColor]
             let attrString = NSAttributedString.init(string: sureString, attributes: attrs)
             textView.textStorage?.append(attrString)
         }

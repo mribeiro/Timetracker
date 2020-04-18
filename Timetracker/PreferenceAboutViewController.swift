@@ -24,9 +24,11 @@ class PreferenceAboutViewController: NSViewController, PreferencePane {
 
     override func viewDidLoad() {
         preferredContentSize = NSSize(width: 600, height: 200)
-        let shortVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "CFBundleShortVersionString missing"
+        let shortVersion =
+            Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "CFBundleShortVersionString missing"
+        let copyright =
+            Bundle.main.infoDictionary!["NSHumanReadableCopyright"] as? String ?? "NSHumanReadableCopyright missing"
         let build = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "CFBundleVersion missing"
-        let copyright = Bundle.main.infoDictionary!["NSHumanReadableCopyright"] as? String ?? "NSHumanReadableCopyright missing"
         let buildType = Bundle.main.infoDictionary!["BUILD_TYPE"] as? String ?? "BUILD_TYPE missing"
 
         labelVersion.stringValue = "Version \(shortVersion) (\(build)) \(buildType)"

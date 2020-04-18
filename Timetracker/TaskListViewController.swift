@@ -59,7 +59,9 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
         let components = TimeInterval(timeAccumulated).decomposeTimeInterval()
 
-        accumulatedTime.stringValue = "Accumulated time: \(String(format: "%02d", components.hour!))h\(String(format: "%02d", components.minute!))m"
+        accumulatedTime.stringValue = """
+        Accumulated time: \(String(format: "%02d", components.hour!))h\(String(format: "%02d", components.minute!))m
+        """
 
     }
 
@@ -125,12 +127,14 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     // MARK: - CurrentTaskEditorViewDelegate
     func currentTaskEditorViewDidDismiss() {
         calculateTime()
-        self.tableView.reloadData(forRowIndexes: [self.tasks?.count ?? 1], columnIndexes: [TableColumns.startTime.rawValue])
+        self.tableView.reloadData(forRowIndexes: [self.tasks?.count ?? 1],
+                                  columnIndexes: [TableColumns.startTime.rawValue])
     }
 
     // MARK: - TableViewDelegate callbacks
 
-    func buildContent(forTask task: Task, inProject project: Project, tableColumn: NSTableColumn, inTable tableView: NSTableView) -> String {
+    func buildContent(forTask task: Task, inProject project: Project,
+                      tableColumn: NSTableColumn, inTable tableView: NSTableView) -> String {
 
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm"
@@ -191,7 +195,8 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
         let identifier: String = "hod_cell"
 
-        if let cell = tableView.makeView(withIdentifier: convertToNSUserInterfaceItemIdentifier(identifier), owner: nil) as? NSTableCellView {
+        if let cell = tableView.makeView(withIdentifier: convertToNSUserInterfaceItemIdentifier(identifier),
+                                         owner: nil) as? NSTableCellView {
             cell.textField?.stringValue = text
             return cell
         }

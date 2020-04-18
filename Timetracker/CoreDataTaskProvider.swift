@@ -41,7 +41,10 @@ class CoreDataTaskProvider: TaskProvider {
     }
 
     fileprivate func subscribeCoreDataNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(coreDataChanged), name: NSNotification.Name.NSManagedObjectContextObjectsDidChange, object: coreDataCtx)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(coreDataChanged),
+                                               name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
+                                               object: coreDataCtx)
     }
 
     func addPingReceiver(_ taskPingReceiver: TaskPingReceiver) {
@@ -53,7 +56,8 @@ class CoreDataTaskProvider: TaskProvider {
     }
 
     func removePingReceiver(_ pingReceiver: TaskPingReceiver) {
-        CoreDataTaskProvider.pingReceivers = CoreDataTaskProvider.pingReceivers?.filter { ($0 as AnyObject) !== (pingReceiver as AnyObject) }
+        CoreDataTaskProvider.pingReceivers =
+            CoreDataTaskProvider.pingReceivers?.filter { ($0 as AnyObject) !== (pingReceiver as AnyObject) }
     }
 
     func countProjects() -> Int {
@@ -91,7 +95,8 @@ class CoreDataTaskProvider: TaskProvider {
             return false
         }
 
-        guard let hod = NSEntityDescription.insertNewObject(forEntityName: HeadOfDevelopment.entityName, into: coreDataCtx) as? HeadOfDevelopment else {
+        guard let hod = NSEntityDescription.insertNewObject(forEntityName: HeadOfDevelopment.entityName,
+                                                            into: coreDataCtx) as? HeadOfDevelopment else {
             return false
         }
         hod.name = name
@@ -109,8 +114,8 @@ class CoreDataTaskProvider: TaskProvider {
 
     func saveClient(_ name: String, ofHod hod: HeadOfDevelopment) -> Bool {
 
-        guard name.count > 0,
-            let client = NSEntityDescription.insertNewObject(forEntityName: Client.entityName, into: coreDataCtx) as? Client else {
+        guard name.count > 0, let client = NSEntityDescription.insertNewObject(forEntityName: Client.entityName,
+                                                                               into: coreDataCtx) as? Client else {
             return false
         }
 
@@ -132,7 +137,8 @@ class CoreDataTaskProvider: TaskProvider {
     func saveProject(_ name: String, ofClient client: Client) -> Bool {
 
         guard name.count > 0,
-            let project = NSEntityDescription.insertNewObject(forEntityName: Project.entityName, into: coreDataCtx) as? Project else {
+            let project = NSEntityDescription.insertNewObject(forEntityName: Project.entityName,
+                                                              into: coreDataCtx) as? Project else {
             return false
         }
 
@@ -176,7 +182,12 @@ class CoreDataTaskProvider: TaskProvider {
             $0.taskStarted()
         }
 
-        CoreDataTaskProvider.timer = Timer(timeInterval: 1, target: self, selector: #selector(CoreDataTaskProvider.taskPing), userInfo: nil, repeats: true)
+        CoreDataTaskProvider.timer = Timer(timeInterval: 1,
+                                           target: self,
+                                           selector: #selector(CoreDataTaskProvider.taskPing),
+                                           userInfo: nil,
+                                           repeats: true)
+
         RunLoop.current.add(CoreDataTaskProvider.timer!, forMode: RunLoop.Mode.common)
     }
 
@@ -225,9 +236,11 @@ class CoreDataTaskProvider: TaskProvider {
         }
     }
 
-    func saveTaskInProject(_ project: Project, withTitle title: String, startingAt startDate: Date, finishingAt finishDate: Date) -> Bool {
+    func saveTaskInProject(_ project: Project, withTitle title: String,
+                           startingAt startDate: Date, finishingAt finishDate: Date) -> Bool {
 
-        guard let task = NSEntityDescription.insertNewObject(forEntityName: Task.entityName, into: coreDataCtx) as? Task else {
+        guard let task =
+            NSEntityDescription.insertNewObject(forEntityName: Task.entityName, into: coreDataCtx) as? Task else {
             return false
         }
 
@@ -248,7 +261,8 @@ class CoreDataTaskProvider: TaskProvider {
 
     func getTasksBetween(_ startDate: Date, and endDate: Date) -> [Task] {
 
-        let predicate = NSPredicate(format: "(startTime >= %@) and (endTime <= %@)", startDate as CVarArg, endDate as CVarArg)
+        let predicate =
+            NSPredicate(format: "(startTime >= %@) and (endTime <= %@)", startDate as CVarArg, endDate as CVarArg)
 
         let fetchRequest = NSFetchRequest<Task>(entityName: Task.entityName)
         fetchRequest.predicate = predicate

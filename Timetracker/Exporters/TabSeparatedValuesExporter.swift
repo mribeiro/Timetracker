@@ -87,7 +87,10 @@ class TabSeparatedValuesExporter {
 
             let startDateAtMidnight = calendar.startOfDay(for: startDate)
 
-            let tomorrowAtMidnight = (calendar as NSCalendar).date(byAdding: .day, value: 1, to: startDateAtMidnight, options: NSCalendar.Options(rawValue: 0))!
+            let tomorrowAtMidnight = (calendar as NSCalendar).date(byAdding: .day,
+                                                                   value: 1,
+                                                                   to: startDateAtMidnight,
+                                                                   options: NSCalendar.Options(rawValue: 0))!
 
             // call addStuff again
             addStuff(line, startingOn: tomorrowAtMidnight, endingOn: endDate)
@@ -113,15 +116,15 @@ class TabSeparatedValuesExporter {
 
 private struct Line: CustomStringConvertible {
 
-    var start: String!
-    var end: String!
-    var title: String!
-    var hod: String!
-    var client: String!
-    var project: String!
+    var start: String = ""
+    var end: String = ""
+    var title: String = ""
+    var hod: String = ""
+    var client: String = ""
+    var project: String = ""
 
     var description: String {
-        return "\(start as String)\t\(end as String)\t\(hod as String)\t\(client as String)\t\(project as String)\t\(title as String)\r\n"
+        return "\(start)\t\(end)\t\(hod)\t\(client)\t\(project)\t\(title)\r\n"
     }
 
 }
