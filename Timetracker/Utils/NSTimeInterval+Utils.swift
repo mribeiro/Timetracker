@@ -11,12 +11,19 @@ import Cocoa
 
 extension TimeInterval {
 
-    func decomposeTimeInterval() -> (hours: Int, minutes: Int, seconds: Int) {
+    func decomposeTimeInterval() -> DateComponents {
+    
         let interval = Int(self)
         let seconds = interval % 60
         let minutes = (interval / 60) % 60
         let hours = (interval / 3600)
-        return (hours: hours, minutes: minutes, seconds: seconds)
+        
+        var components = DateComponents()
+        components.hour = hours
+        components.minute = minutes
+        components.second = seconds
+        
+        return components
     }
 
     func toProperString() -> String {
@@ -24,9 +31,9 @@ extension TimeInterval {
         let decomposed = self.decomposeTimeInterval()
 
         var components = DateComponents()
-        components.hour = decomposed.hours
-        components.minute = decomposed.minutes
-        components.second = decomposed.seconds
+        components.hour = decomposed.hour
+        components.minute = decomposed.minute
+        components.second = decomposed.second
 
         return String(format: "%02d:%02d:%02d", components.hour!, components.minute!, components.second!)
     }

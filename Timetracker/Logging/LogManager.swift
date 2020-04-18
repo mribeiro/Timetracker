@@ -10,7 +10,9 @@ import Foundation
 import SwiftyBeaver
 import Cocoa
 
+//swiftlint:disable type_name
 typealias L = LogManager
+//swiftlint:enable type_name
 
 final class LogManager {
 
@@ -31,19 +33,17 @@ final class LogManager {
         case error = 5
 
         var asString: String {
-            get {
-                switch self {
-                case .verbose:
-                    return "VERBOSE"
-                case .debug:
-                    return "DEBUG"
-                case .info:
-                    return "INFO"
-                case .warning:
-                    return "WARNING"
-                case .error:
-                    return "ERROR"
-                }
+            switch self {
+            case .verbose:
+                return "VERBOSE"
+            case .debug:
+                return "DEBUG"
+            case .info:
+                return "INFO"
+            case .warning:
+                return "WARNING"
+            case .error:
+                return "ERROR"
             }
         }
 

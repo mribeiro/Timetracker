@@ -23,6 +23,7 @@ enum Clock: Builder {
     case eleven
     case twelve
 
+    // swiftlint:disable cyclomatic_complexity
     mutating func string() -> String {
         switch self {
         case .one:
@@ -62,8 +63,8 @@ enum Clock: Builder {
             self = .one
             return "🕛"
         }
-
     }
+    // swiftlint:enable cyclomatic_complexity
 
     var name: String { "moon" }
 

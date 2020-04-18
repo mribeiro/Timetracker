@@ -114,7 +114,6 @@ class CoreDataTaskProvider: TaskProvider {
             return false
         }
 
-
         client.name = name
         client.headOfDevelopment = hod
 

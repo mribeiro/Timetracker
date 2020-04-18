@@ -62,9 +62,10 @@ class PreferenceBuilderViewController: NSViewController, PreferencePane {
 
     @IBAction func setBuilder(_ sender: NSButton) {
 
-        let id = sender.identifier?.rawValue ?? ""
-        L.i("Saving new builder as \(id)")
-        _ = BuilderManager.saveBuilder(id)
+        if let identifier = sender.identifier?.rawValue {
+            L.i("Saving new builder as \(identifier)")
+            _ = BuilderManager.saveBuilder(identifier)
+        }
     }
 
 }

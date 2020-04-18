@@ -55,7 +55,9 @@ class TabSeparatedValuesExporter {
 
     fileprivate func addStuff(_ line: Line, startingOn startDate: Date, endingOn endDate: Date) {
 
-        let startComponents = (TabSeparatedValuesExporter.calendar as NSCalendar).components([.year, .month, .day, .hour, .minute, .weekday], from: startDate)
+        let calendar = TabSeparatedValuesExporter.calendar as NSCalendar
+        let components: NSCalendar.Unit = [.year, .month, .day, .hour, .minute, .weekday]
+        let startComponents = calendar.components(components, from: startDate)
         let startAsString = String(format: "%02d:%02d", startComponents.hour!, startComponents.minute!)
 
         var newLine = line
@@ -63,7 +65,7 @@ class TabSeparatedValuesExporter {
 
         if TabSeparatedValuesExporter.calendar.isDate(startDate, inSameDayAs: endDate) {
 
-            let endComponents = (TabSeparatedValuesExporter.calendar as NSCalendar).components([.year, .month, .day, .hour, .minute], from: endDate)
+            let endComponents = calendar.components(components, from: endDate)
 
             let endAsString = String(format: "%02d:%02d", endComponents.hour!, endComponents.minute!)
 
@@ -98,7 +100,7 @@ class TabSeparatedValuesExporter {
 
         let date = String(format: "%4d/%02d/%02d", dateComponents.year!, dateComponents.month!, dateComponents.day!)
 
-        let weekday = TabSeparatedValuesExporter.calendar.weekdaySymbols[dateComponents.weekday!]
+        let weekday = TabSeparatedValuesExporter.calendar.weekdaySymbols[dateComponents.weekday!-1]
 
         if tasksPerDate[date] == nil {
             tasksPerDate[date] = [Line]()

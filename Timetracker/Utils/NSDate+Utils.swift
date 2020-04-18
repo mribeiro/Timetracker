@@ -17,6 +17,7 @@ extension Date {
         var components = DateComponents()
         components.day = 1
         components.second = -1
-        return (Calendar.current as NSCalendar).date(byAdding: components, to: startOfDay, options: NSCalendar.Options())
+        let calendarOptions = NSCalendar.Options()
+        return (Calendar.current as NSCalendar).date(byAdding: components, to: startOfDay, options: calendarOptions)
     }
 }

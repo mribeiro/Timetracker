@@ -28,6 +28,7 @@ protocol DataChanged: AnyObject {
 
 }
 
+// swiftlint:disable line_length
 protocol TaskProvider {
 
     var isTaskRunning: Bool { get }
@@ -71,3 +72,4 @@ protocol TaskProvider {
     func countProjects() -> Int
 
 }
+// swiftlint:enable line_length

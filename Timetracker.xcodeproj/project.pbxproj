@@ -148,6 +148,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E63FC793244B3B7800B3202D /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
 		E65EF086224E85CE0023A7B5 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +194,7 @@
 		E6910F3C1CCE5CFF003CBA90 /* Timetracker */ = {
 			isa = PBXGroup;
 			children = (
+				E63FC793244B3B7800B3202D /* Structs */,
 				E6E9E5BB24483B65000D7D65 /* Builders */,
 				E65EF086224E85CE0023A7B5 /* Logging */,
 				E6FE838E1CDB34B600794723 /* WindowControllers */,

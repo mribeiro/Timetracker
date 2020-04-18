@@ -57,14 +57,10 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
             timeAccumulated += Date().timeIntervalSince(runningTastStartTime)
         }
 
-        let components = self.secondsToHoursMinutesSeconds(seconds: Int(timeAccumulated))
+        let components = TimeInterval(timeAccumulated).decomposeTimeInterval()
 
-        accumulatedTime.stringValue = "Accumulated time: \(String(format: "%02d", components.hours))h\(String(format: "%02d", components.minutes))m"
+        accumulatedTime.stringValue = "Accumulated time: \(String(format: "%02d", components.hour!))h\(String(format: "%02d", components.minute!))m"
 
-    }
-
-    func secondsToHoursMinutesSeconds (seconds: Int) -> (hours: Int, minutes: Int, seconds: Int) {
-        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 
     override func viewWillDisappear() {
@@ -240,7 +236,6 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
             calculateTime()
 
-            break
         case 1: // new task
             let countProjects = TaskProviderManager.instance.countProjects()
             if countProjects > 0 {
@@ -251,7 +246,6 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
                 showError("You need to have at least one project")
             }
 
-            break
         default:
             L.d("Segment not recognized")
         }

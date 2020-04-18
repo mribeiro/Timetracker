@@ -134,14 +134,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, TaskPingReceiver, NSUserNoti
         case .alertFirstButtonReturn: // stop at idle time
             L.d("Task stopping at idle time")
             _ = taskProvider.stopRunningTask(atDate: idleDate)
-            break
         case .alertSecondButtonReturn: // stop now
             L.d("Task stopping now")
             _ = taskProvider.stopRunningTask()
-            break
         default: // continue
             L.d("nothing to do, let's continue counting time")
-            break
         }
 
     }
