@@ -19,7 +19,7 @@ class TabSeparatedValuesExporter {
     }
     
     func export(_ tasks: [Task]) -> String {
-    
+
         tasks.forEach {
             
             var line = Line()
@@ -103,7 +103,8 @@ class TabSeparatedValuesExporter {
         
         let date = String(format: "%4d/%02d/%02d", dateComponents.year!, dateComponents.month!, dateComponents.day!)
         
-        let weekday = TabSeparatedValuesExporter.calendar.weekdaySymbols[dateComponents.weekday!]
+        //dateComponents.weekday is 1-base index while weekdaySymobols is 0-base index, hence the -1
+        let weekday = TabSeparatedValuesExporter.calendar.weekdaySymbols[dateComponents.weekday!-1]
         
         if tasksPerDate[date] == nil {
             tasksPerDate[date] = [Line]()
