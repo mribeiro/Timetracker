@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+
+    
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Timetracker</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Timetracker" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Timetracker" />
+<script type="application/ld+json">
+{"headline":"Timetracker","url":"http://localhost:4000/","name":"Timetracker","@type":"WebSite","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=723492c37760ad76cca3a734c973dd9f4168f746">
+  </head>
+  <body>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">Timetracker</h1>
+      <h2 class="project-tagline"></h2>
+      
+        <a href="https://github.com/mribeiro/Timetracker" class="btn">View on GitHub</a>
+      
+      
+        <a href="https://github.com/mribeiro/Timetracker/releases/latest" class="btn">Download .zip</a>
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <p><a href="https://travis-ci.org/mribeiro/Timetracker"><img src="https://travis-ci.org/mribeiro/Timetracker.svg?branch=master" alt="Build Status" /></a></p>
+
+<h1 id="timetracker">Timetracker</h1>
+
+<p>Timetracker is an open source time tracker for macOS, released under the MIT license. The author stole the name from any of the 239487 apps that do something similar.</p>
+
+<h2 id="install">Install</h2>
+
+<p>Download the latest version, unzip, move to the Applications folder and open. You will probably have to go to the System Preferences &gt; Security &amp; Privacy to allow the app to run.</p>
+
+<h2 id="screenshot">Screenshot</h2>
+
+<p>Timetracker takes uses the multi-window system macOS offers the apps out of the box. So in total you have 4 screenhots. The first three are accessible from the Window menu; the last from the Timetracker menu.</p>
+
+<h3 id="cost-centres">Cost centres</h3>
+<p><img src="/assets/screenshots/costcentres.png" alt="" /></p>
+
+<h3 id="task-runner">Task runner</h3>
+<p><img src="/assets/screenshots/taskrunner.png" alt="" /></p>
+
+<h3 id="task-list">Task list</h3>
+<p><img src="/assets/screenshots/tasklist.png" alt="" /></p>
+
+<h3 id="preferences">Preferences</h3>
+<p><img src="/assets/screenshots/preferences.png" alt="" /></p>
+
+<h2 id="how-to-use">How to use</h2>
+
+<p>The idea behind Timetracker is that you have a Cost centre composed by a Head of Development (HoD). An HoD has several Clients which in its turn has several Projects. You can create these relationships in the Cost centre window.</p>
+
+<p>After creating the Projects it’s time to start tracking the time! Go to the Task runner window, select the HoD, Client and Project, set a name for you task and click on the big blue play icon! You will see the icon in the menu bar changing every second.</p>
+
+<p>Once you’re done with your task click on stop. Accessing the Task list window shows all the tasks you created. You can create, delete and edit tasks there as well.</p>
+
+<h2 id="development">Development</h2>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>If you wish to build Timetracker yourself, you will need the following components/tools:</p>
+
+<ul>
+  <li>OS X SDK (10.15 or later)</li>
+  <li>Git</li>
+</ul>
+
+<h3 id="environment-setup">Environment setup</h3>
+
+<p>Open the project with XCode. Really. Nothing else is expected.</p>
+
+<h2 id="faq">FAQ</h2>
+
+<h3 id="usage">Usage</h3>
+
+<h4 id="the-logic-behind-the-app-does-not-make-sense">The logic behind the app does not make sense…</h4>
+<blockquote>
+  <p>There is a big reason why there are HoD, Clients and Projects; and then tasks. The export is also the way it is for a reason.</p>
+</blockquote>
+
+<h4 id="the-ui-is-crap">The UI is crap!</h4>
+<blockquote>
+  <p>I know, and I appreciate help on that field :-)</p>
+</blockquote>
+
+<h4 id="can-i-request-a-featureimprovement">Can I request a feature/improvement?</h4>
+<blockquote>
+  <p>Absolutely! Go to the issues and create a ticket for each. Please be short and precise on the request.</p>
+</blockquote>
+
+<h3 id="development-1">Development</h3>
+
+<h4 id="why-is-the-code-so-badlooks-dated">Why is the code so bad/looks dated?</h4>
+<blockquote>
+  <p>I started this project to learn Swift in 2016. Some code is still compliant with old versions of Swift.
+I’m also not an every day developer so my programming skills might be rusty.</p>
+</blockquote>
+
+<h4 id="why-are-there-remains-of-carthagecocoapods-if-the-project-is-using-swift-package-manager">Why are there remains of Carthage/Cocoapods if the project is using Swift Package Manager?</h4>
+<blockquote>
+  <p>I started off with Cocoapods. Then later I tried integrating a library requiring Carthage but Gatekeeper was complaining the app was damaged when I exported it.
+Finally I decided to remove the big bloat that Cocoapods is and stick to a smaller dependency manager.</p>
+</blockquote>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/mribeiro/Timetracker">Timetracker</a> is maintained by <a href="https://github.com/mribeiro">mribeiro</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
