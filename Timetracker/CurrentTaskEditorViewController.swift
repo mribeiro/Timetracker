@@ -9,43 +9,41 @@
 import Foundation
 import Cocoa
 
-protocol CurrentTaskEditorViewDelegate {
+protocol CurrentTaskEditorViewDelegate: class {
     func currentTaskEditorViewDidDismiss()
 }
 
 class CurrentTaskEditorViewController: NSViewController, TaskPingReceiver {
-    
+
     func ping(_ interval: TimeInterval) {
     }
-    
+
     func taskStarted() {
     }
-    
+
     func taskStopped() {
         self.dismiss(self)
     }
-    
-    
+
     @IBOutlet weak var newStartDatePicker: NSDatePicker!
-    
-    var delegate: CurrentTaskEditorViewDelegate?
-    
+
+    weak var delegate: CurrentTaskEditorViewDelegate?
+
     override func viewDidLoad() {
         TaskProviderManager.instance.addPingReceiver(self)
         self.newStartDatePicker.maxDate = Date()
         self.newStartDatePicker.dateValue = TaskProviderManager.instance.runningTask!.startTime!
     }
-    
+
     @IBAction func save(_ sender: Any) {
         TaskProviderManager.instance.runningTask!.startTime = newStartDatePicker.dateValue
         dismiss(self)
     }
-    
+
     override func viewWillDisappear() {
         delegate?.currentTaskEditorViewDidDismiss()
         TaskProviderManager.instance.removePingReceiver(self)
-        
+
     }
-    
-    
+
 }

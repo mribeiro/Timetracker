@@ -10,9 +10,9 @@ import Foundation
 import Cocoa
 
 class HodPopupButton: NSPopUpButton {
-    
+
     func getSelectedHod() -> HeadOfDevelopment? {
-        
+
     }
-    
+
 }

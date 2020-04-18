@@ -9,11 +9,11 @@
 import Foundation
 
 protocol TaskPingReceiver {
-    
+
     func ping(_ interval: TimeInterval)
-    
+
     func taskStarted()
-    
+
     func taskStopped()
-    
+
 }

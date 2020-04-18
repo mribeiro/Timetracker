@@ -9,33 +9,32 @@
 import Foundation
 import CoreData
 
-
 class Project: NSManagedObject {
-    
+
     static let entityName = "Project"
-    
+
     @NSManaged var name: String?
     @NSManaged var client: Client?
     @NSManaged var tasks: Set<Task>?
 
     @objc var isLeaf: Bool = true
-    
+
     @objc var children = [] as NSArray
-    
+
     var distinctTasksNames: [String] {
-        
+
         guard let allTasks = self.tasks else {
             return []
         }
-        
-        return allTasks.map { (t) -> String in
-            return t.title!
+
+        return allTasks.map { (task) -> String in
+            return task.title!
         }.unique.sorted()
     }
-    
+
 }
 
-extension Array where Element : Hashable {
+extension Array where Element: Hashable {
     var unique: [Element] {
         return Array(Set(self))
     }

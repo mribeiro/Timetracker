@@ -12,27 +12,27 @@ import Preferences
 
 class PreferenceMiscViewController: NSViewController, PreferencePane {
     var preferencePaneIdentifier: Identifier = PreferencePaneIdentifier.Identifier.misc
-    
+
     var preferencePaneTitle: String = "Misc"
-    
+
     @IBOutlet weak var checkboxHideDockIcon: NSButton!
-    
+
     var toolbarItemTitle: String = "Misc"
-    
+
     var toolbarItemIcon: NSImage = NSImage(named: "icon-switch")!
-    
+
     override var nibName: NSNib.Name? {
         "PreferenceMiscView"
     }
-    
+
     override func viewDidLoad() {
         preferredContentSize = NSSize(width: 600, height: 200)
     }
-    
+
     override func viewWillAppear() {
         self.checkboxHideDockIcon.state = DockIconManager.shouldHideIcon() ? .on : .off
     }
-    
+
     @IBAction func hideDockIconChanged(_ sender: NSButtonCell) {
         DockIconManager.set(hideIcon: sender.state == .on)
     }

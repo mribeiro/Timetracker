@@ -9,7 +9,7 @@
 import Foundation
 
 enum MoonPhases: Builder {
-    
+
     case one
     case two
     case three
@@ -18,19 +18,19 @@ enum MoonPhases: Builder {
     case six
     case seven
     case eight
-    
+
     var name: String {
         return "moon"
     }
-    
+
     var idle: String {
         return "🌚"
     }
-    
+
     var start: String {
         return "🌝"
     }
-    
+
     mutating func string() -> String {
         switch self {
         case .one:
@@ -59,5 +59,5 @@ enum MoonPhases: Builder {
             return "🌔"
         }
     }
-    
+
 }

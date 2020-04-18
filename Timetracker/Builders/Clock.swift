@@ -9,8 +9,7 @@
 import Foundation
 
 enum Clock: Builder {
-    
-    
+
     case one
     case two
     case three
@@ -23,7 +22,7 @@ enum Clock: Builder {
     case ten
     case eleven
     case twelve
-    
+
     mutating func string() -> String {
         switch self {
         case .one:
@@ -63,15 +62,13 @@ enum Clock: Builder {
             self = .one
             return "🕛"
         }
-        
+
     }
-    
+
     var name: String { "moon" }
-    
+
     var idle: String { "⏸" }
-    
+
     var start: String { "🕛" }
-    
-    
-    
+
 }

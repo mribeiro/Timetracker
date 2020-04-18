@@ -9,22 +9,21 @@
 import Foundation
 
 enum TimeCounter: Builder {
-    
+
     case one
-    
+
     mutating func string() -> String {
         if let runningTimeStart = TaskProviderManager.instance.runningTask?.startTime {
             return Date().timeIntervalSince(runningTimeStart).toProperString()
         }
-        
+
         return "???"
     }
-    
+
     var name: String { "time_counter" }
-    
+
     var idle: String { "Stopped" }
-    
+
     var start: String { "00:00:00" }
-    
-    
+
 }

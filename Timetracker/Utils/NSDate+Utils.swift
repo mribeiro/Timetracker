@@ -12,7 +12,7 @@ extension Date {
     var startOfDay: Date {
         return Calendar.current.startOfDay(for: self)
     }
-    
+
     var endOfDay: Date? {
         var components = DateComponents()
         components.day = 1
