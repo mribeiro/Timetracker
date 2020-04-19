@@ -8,23 +8,23 @@
 
 import Foundation
 enum JackTheMonkey: Builder {
-    
+
     case one
     case two
     case three
-    
+
     var name: String {
         return "monkey"
     }
-    
+
     var idle: String {
         return "🐒"
     }
-    
+
     var start: String {
         return "🐵"
     }
-    
+
     mutating func string() -> String {
         switch self {
         case .one:
@@ -38,5 +38,5 @@ enum JackTheMonkey: Builder {
             return "🙉"
         }
     }
-    
+
 }

@@ -9,18 +9,17 @@
 import Foundation
 
 enum TrafficLights: Builder {
-    
+
     case one
-    
+
     mutating func string() -> String {
         return "🟢"
     }
-    
+
     var name: String { "traffic_lights" }
-    
+
     var idle: String { "🔴" }
-    
+
     var start: String { "🟡" }
-    
-    
+
 }

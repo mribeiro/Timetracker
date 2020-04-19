@@ -9,9 +9,9 @@
 import Foundation
 
 extension Timer {
-    
+
     class func inOneSecond(_ block: @escaping (Timer) -> Void) -> Timer {
-        return Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: block);
+        return Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: block)
     }
-    
+
 }
