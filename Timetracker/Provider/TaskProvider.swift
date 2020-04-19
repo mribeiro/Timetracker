@@ -28,7 +28,6 @@ protocol DataChanged: AnyObject {
 
 }
 
-// swiftlint:disable line_length
 protocol TaskProvider {
 
     var isTaskRunning: Bool { get }
@@ -59,7 +58,10 @@ protocol TaskProvider {
 
     func deleteTasks(_ tasks: [Task]) -> Bool
 
-    func saveTaskInProject(_ project: Project, withTitle title: String, startingAt startDate: Date, finishingAt finishDate: Date) -> Bool
+    func saveTaskInProject(_ project: Project,
+                           withTitle title: String,
+                           startingAt startDate: Date,
+                           finishingAt finishDate: Date) -> Bool
 
     func getTasksBetween(_ startDate: Date, and endDate: Date) -> [Task]
 
@@ -72,4 +74,3 @@ protocol TaskProvider {
     func countProjects() -> Int
 
 }
-// swiftlint:enable line_length

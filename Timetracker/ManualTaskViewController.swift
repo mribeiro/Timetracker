@@ -9,10 +9,6 @@
 import Foundation
 import Cocoa
 
-protocol ManualTaskViewDelegate: class {
-    func manualTaskViewDidDismiss()
-}
-
 class ManualTaskViewController: NSViewController {
 
     @IBOutlet var hodsPopup: NSPopUpButton!
@@ -22,8 +18,8 @@ class ManualTaskViewController: NSViewController {
     @IBOutlet var taskStart: NSDatePicker!
     @IBOutlet var taskName: NSTextField!
 
-    weak var delegate: ManualTaskViewDelegate?
     weak var editingTask: Task?
+    var onDismiss: (() -> Void)?
 
     fileprivate var selectedHod: HeadOfDevelopment? {
         return hods?[safe: hodsPopup.indexOfSelectedItem]
@@ -102,7 +98,7 @@ class ManualTaskViewController: NSViewController {
 
     override func viewWillDisappear() {
         self.editingTask = nil
-        delegate?.manualTaskViewDidDismiss()
+        self.onDismiss?()
     }
 
     @IBAction func hodChanged(_ sender: AnyObject?) {

@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, ManualTaskViewDelegate, TaskPingReceiver, CurrentTaskEditorViewDelegate {
+class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, TaskPingReceiver {
 
     enum TableColumns: Int {
         case headOfDevelopment = 0
@@ -117,18 +117,6 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
         return tasks?[safe: row] ?? TaskProviderManager.instance.runningTask
-    }
-
-    // MARK: - ExportViewControllerDelegate
-    func manualTaskViewDidDismiss() {
-        filterClicked(nil)
-    }
-
-    // MARK: - CurrentTaskEditorViewDelegate
-    func currentTaskEditorViewDidDismiss() {
-        calculateTime()
-        self.tableView.reloadData(forRowIndexes: [self.tasks?.count ?? 1],
-                                  columnIndexes: [TableColumns.startTime.rawValue])
     }
 
     // MARK: - TableViewDelegate callbacks
@@ -291,17 +279,21 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         }
 
         if let destination = segue.destinationController as? ManualTaskViewController {
-            destination.delegate = self
+            destination.onDismiss = {
+                self.filterClicked(nil)
+            }
             destination.editingTask = self.editingTask
             return
         }
 
         if let destination = segue.destinationController as? CurrentTaskEditorViewController {
-            destination.delegate = self
+            destination.onDismiss = {
+                self.calculateTime()
+                self.tableView.reloadData(forRowIndexes: [self.tasks?.count ?? 1],
+                                          columnIndexes: [TableColumns.startTime.rawValue])
+            }
         }
-
     }
-
 }
 
 // Helper function inserted by Swift 4.2 migrator.

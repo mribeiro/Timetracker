@@ -9,10 +9,6 @@
 import Foundation
 import Cocoa
 
-protocol CurrentTaskEditorViewDelegate: class {
-    func currentTaskEditorViewDidDismiss()
-}
-
 class CurrentTaskEditorViewController: NSViewController, TaskPingReceiver {
 
     func ping(_ interval: TimeInterval) {
@@ -27,7 +23,7 @@ class CurrentTaskEditorViewController: NSViewController, TaskPingReceiver {
 
     @IBOutlet weak var newStartDatePicker: NSDatePicker!
 
-    weak var delegate: CurrentTaskEditorViewDelegate?
+    var onDismiss: (() -> Void)?
 
     override func viewDidLoad() {
         TaskProviderManager.instance.addPingReceiver(self)
@@ -41,7 +37,7 @@ class CurrentTaskEditorViewController: NSViewController, TaskPingReceiver {
     }
 
     override func viewWillDisappear() {
-        delegate?.currentTaskEditorViewDidDismiss()
+        onDismiss?()
         TaskProviderManager.instance.removePingReceiver(self)
 
     }

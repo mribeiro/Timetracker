@@ -14,6 +14,7 @@
 		E6281D2B24421C1D00CD467C /* PreferenceMiscView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */; };
 		E6281D2D24422BD200CD467C /* DockIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2C24422BD200CD467C /* DockIconManager.swift */; };
 		E63FC791244A157C00B3202D /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = E63FC790244A157C00B3202D /* .travis.yml */; };
+		E63FC795244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */; };
 		E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */; };
 		E65EF088224E85F50023A7B5 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EF087224E85F50023A7B5 /* LogManager.swift */; };
 		E662723B1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662723A1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift */; };
@@ -79,6 +80,7 @@
 		E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceMiscView.xib; sourceTree = "<group>"; };
 		E6281D2C24422BD200CD467C /* DockIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockIconManager.swift; sourceTree = "<group>"; };
 		E63FC790244A157C00B3202D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
+		E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+TaskPingReceiver.swift"; sourceTree = "<group>"; };
 		E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBuilderViewController.swift; sourceTree = "<group>"; };
 		E65EF087224E85F50023A7B5 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		E662723A1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabSeparatedValuesExporter.swift; path = Exporters/TabSeparatedValuesExporter.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			children = (
 				E6910F3D1CCE5CFF003CBA90 /* AppDelegate.swift */,
 				E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */,
+				E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				E6F788D722579BBB00AE3DF3 /* PreferenceLogViewController.swift in Sources */,
 				E6FE83901CDB34C900794723 /* TaskRunnerWindowController.swift in Sources */,
 				E6910F681CCE6F1E003CBA90 /* Client.swift in Sources */,
+				E63FC795244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift in Sources */,
 				E6E9E5C1244840B8000D7D65 /* TimeCounter.swift in Sources */,
 				E612F3411CD2293800FC1D85 /* TaskPingReceiver.swift in Sources */,
 				E6910F6C1CCE6F1E003CBA90 /* Project.swift in Sources */,
