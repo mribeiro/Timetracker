@@ -63,7 +63,7 @@ class ManualTaskViewController: NSViewController {
 
         taskEnd.minDate = taskStart.dateValue
         taskStart.maxDate = Date()
-        taskEnd.maxDate = Date()        
+        taskEnd.maxDate = Date()
     }
 
     fileprivate func populateClients(_ defaultSelected: String?, withDefaultProject defaultProject: String?) {
