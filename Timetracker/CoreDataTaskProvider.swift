@@ -266,6 +266,7 @@ class CoreDataTaskProvider: TaskProvider {
 
         let fetchRequest = NSFetchRequest<Task>(entityName: Task.entityName)
         fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "startTime", ascending: true)]
 
         do {
 
