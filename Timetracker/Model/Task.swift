@@ -9,16 +9,14 @@
 import Foundation
 import CoreData
 
-
 class Task: NSManagedObject {
 
     static let entityName = "Task"
-    
+
     @NSManaged var title: String?
     @NSManaged var comment: String?
     @NSManaged var startTime: Date?
     @NSManaged var endTime: Date?
     @NSManaged var project: Project?
 
-    
 }

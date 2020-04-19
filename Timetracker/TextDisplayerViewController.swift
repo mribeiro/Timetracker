@@ -10,17 +10,17 @@ import Foundation
 import Cocoa
 
 class TextDisplayerViewController: NSViewController {
-    
+
     @IBOutlet var textView: NSTextView!
     override var nibName: NSNib.Name? { "TextDisplayerView" }
-    
+
     var text: String?
-    
+
     override func viewDidLoad() {
         self.textView.isEditable = false
         self.textView.string = text ?? ""
     }
-    
+
     @IBAction func closeClicked(_ sender: Any) {
         self.dismiss(self)
     }

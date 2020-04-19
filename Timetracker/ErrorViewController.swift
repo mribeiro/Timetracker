@@ -10,22 +10,22 @@ import Foundation
 import Cocoa
 
 class ErrorViewController: NSViewController {
-    
+
     var errorString: String?
-    
+
     @IBOutlet var errorLabel: NSTextField!
-    
+
     override func viewDidLoad() {
         errorLabel.stringValue = errorString ?? ""
     }
 }
 
 extension NSViewController {
-    
+
     func showError(_ error: String) {
         let errorViewController = ErrorViewController(nibName: "ErrorView", bundle: nil)
         errorViewController.errorString = error
         presentAsSheet(errorViewController)
     }
-    
+
 }

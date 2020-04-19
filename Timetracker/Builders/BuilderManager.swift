@@ -10,24 +10,24 @@ import Foundation
 import Cocoa
 
 class BuilderManager {
-    
+
     class func getFromConfiguration() -> Builder {
         let builder = UserDefaults().string(forKey: "builder") ?? ""
         return getFromName(builder)
     }
-    
+
     class func saveBuilder(_ name: String) -> Builder {
         UserDefaults().set(name, forKey: "builder")
         let builder = getFromName(name)
         // This looks so bad it hurts
-        let appDelegate = NSApp.delegate as! AppDelegate
-        appDelegate.builderChanged(builder)
-        
+        if let appDelegate = NSApp.delegate as? AppDelegate {
+            appDelegate.builderChanged(builder)
+        }
         return builder
     }
-    
+
     class func getFromName(_ name: String) -> Builder {
-        
+
         switch name {
         case "moon":
             return MoonPhases.one
@@ -40,7 +40,7 @@ class BuilderManager {
         default: // monkey is the default
             return JackTheMonkey.one
         }
-        
+
     }
-    
+
 }
