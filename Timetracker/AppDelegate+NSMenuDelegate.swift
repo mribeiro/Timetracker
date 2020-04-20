@@ -18,22 +18,13 @@ extension AppDelegate: NSMenuDelegate {
         menu.removeAllItems()
 
         loadBasicMenuItems(menu)
+        loadLastTask(menu)
         loadTree(menu)
         loadCurrentTask(menu)
 
         menu.addItem(NSMenuItem.separator())
         menu.addItem(withTitle: "Exit", action: #selector(NSApp.terminate), keyEquivalent: "")
 
-    }
-
-    func openScreen(withStoryboardId storyboardId: String) {
-        if let controller = NSStoryboard(name: "Main", bundle: nil)
-            .instantiateController(withIdentifier: storyboardId) as? NSWindowController {
-
-            NSApp.activate(ignoringOtherApps: true)
-            controller.showWindow(self)
-
-        }
     }
 
     func loadTree(_ sender: NSMenu) {
@@ -112,13 +103,6 @@ extension AppDelegate: NSMenuDelegate {
 
     @objc func stopTaskClicked(_ sender: NSMenuItem) {
         _ = taskProvider.stopRunningTask()
-    }
-
-    func executeSegue(ofMenuItem menuItem: NSMenuItem) {
-        if let action = menuItem.action, let target = menuItem.target {
-            NSApplication.shared.activate(ignoringOtherApps: true)
-            NSApplication.shared.sendAction(action, to: target, from: menuItem)
-        }
     }
 
     @objc func openTaskRunner(_ sender: NSMenuItem) {
@@ -201,5 +185,38 @@ extension AppDelegate: NSMenuDelegate {
             menu.addItem(taskItem)
 
         }
+    }
+
+    func loadLastTask(_ menu: NSMenu) {
+
+        let taskProviderInstance = TaskProviderManager.instance!
+
+        // guarantee there's a last task
+        guard !(taskProviderInstance.isTaskRunning), taskProviderInstance.lastTask != nil else {
+            return
+        }
+
+        let restart = NSMenuItem(title: "Restart last task",
+                                 action: #selector(restartLastTaskClicked),
+                                 keyEquivalent: "")
+        restart.isEnabled = true
+        menu.addItem(restart)
+
+    }
+
+    @objc func restartLastTaskClicked(_ sender: NSMenuItem) {
+
+        let taskProviderInstance = TaskProviderManager.instance!
+
+        // guarantee there's a last task and everything is OK
+        guard !(taskProviderInstance.isTaskRunning),
+            let lastTask = taskProviderInstance.lastTask,
+            let lastTaskTitle = lastTask.title,
+            let lastTaskProject = lastTask.project else {
+
+            return
+        }
+
+        taskProviderInstance.startTask(lastTaskTitle, inProject: lastTaskProject)
     }
 }

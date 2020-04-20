@@ -38,6 +38,8 @@ protocol TaskProvider {
 
     var allTasks: [Task]? { get }
 
+    var lastTask: Task? { get }
+
     func getHeadOfDevelopments() -> [HeadOfDevelopment]
 
     func saveHeadOfDevelopments(_ name: String) -> Bool
