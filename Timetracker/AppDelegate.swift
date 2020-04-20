@@ -53,6 +53,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         self.scheduleNotification(appJustOpened: true)
         DockIconManager.setIconPerConfiguration()
 
+        let defaultCenter = DistributedNotificationCenter.default()
+
+        defaultCenter.addObserver(self,
+                                  selector: #selector(screenLocked),
+                                  name: NSNotification.Name(rawValue: "com.apple.screenIsLocked"),
+                                  object: nil)
+
+    }
+
+    @objc func screenLocked() {
+        L.v("Screen was locked")
+        if TaskProviderManager.instance.isTaskRunning {
+            L.v("Showing idle dialog as there was a task running")
+            showIdleDialogWithIdleDate(Date())
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -111,7 +126,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         preferencesWindowController.show(preferencePane: prefId)
     }
 
-    func showIdleDialogWithIdleDate(_ idleDate: Date) -> NSApplication.ModalResponse {
+    func showIdleDialogWithIdleDate(_ idleDate: Date) {
+
+        // If idle dialog is already showing do not show again
+        guard !showingIdleDialog else {
+            return
+        }
+
         self.showingIdleDialog = true
         let alert = NSAlert()
 
@@ -126,7 +147,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         alert.addButton(withTitle: "Stop at idle time")
         alert.addButton(withTitle: "Stop now")
         alert.addButton(withTitle: "Continue")
-        return alert.runModal()
+        let response = alert.runModal()
+
+        handleIdleDialog(withResponse: response, andIdleStart: idleDate)
+        showingIdleDialog = false
+
     }
 
     func handleIdleDialog(withResponse response: NSApplication.ModalResponse, andIdleStart idleDate: Date) {
