@@ -165,7 +165,13 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         default: // continue
             L.d("nothing to do, let's continue counting time")
         }
+    }
 
+    func executeSegue(ofMenuItem menuItem: NSMenuItem) {
+        if let action = menuItem.action, let target = menuItem.target {
+            NSApplication.shared.activate(ignoringOtherApps: true)
+            NSApplication.shared.sendAction(action, to: target, from: menuItem)
+        }
     }
 
     // MARK: - Core Data stack

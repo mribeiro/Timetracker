@@ -35,6 +35,15 @@ class CoreDataTaskProvider: TaskProvider {
         return try? coreDataCtx.fetch(fetchRequest)
     }
 
+    var lastTask: Task? {
+        let fetchRequest = NSFetchRequest<Task>(entityName: Task.entityName)
+        fetchRequest.fetchLimit = 1
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "endTime", ascending: false)]
+
+        let tasks = try? coreDataCtx.fetch(fetchRequest)
+        return tasks?.first
+    }
+
     init(coreDataContext: NSManagedObjectContext) {
         coreDataCtx = coreDataContext
         subscribeCoreDataNotifications()
