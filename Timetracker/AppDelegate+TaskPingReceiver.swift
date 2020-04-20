@@ -20,17 +20,9 @@ extension AppDelegate: TaskPingReceiver {
                                                                 eventType: CGEventType(rawValue: ~0)!)
 
             if Int(lastEvent) > maxIdleSeconds {
-                if !showingIdleDialog {
-                    let now = Date()
-                    let idleDate = now - TimeInterval(maxIdleSeconds)
-                    L.d("""
-                        Showing idle dialog. \
-                        Now is \(now) and the user was idle for \(maxIdleSeconds). Started idling at \(idleDate)
-                        """)
-                    handleIdleDialog(withResponse: showIdleDialogWithIdleDate(idleDate), andIdleStart: idleDate)
-                    showingIdleDialog = false
-
-                }
+                let now = Date()
+                let idleDate = now - TimeInterval(maxIdleSeconds)
+                showIdleDialogWithIdleDate(idleDate)
             }
 
             button.title = builder.string()
@@ -38,7 +30,6 @@ extension AppDelegate: TaskPingReceiver {
             if let menuTimer = self.menu.item(withTag: 1) {
                 menuTimer.title = string
             }
-
         }
     }
 
