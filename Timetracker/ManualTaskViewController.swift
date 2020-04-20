@@ -9,16 +9,19 @@
 import Foundation
 import Cocoa
 
-class ManualTaskViewController: NSViewController {
+class ManualTaskViewController: NSViewController, NSComboBoxDataSource {
 
     @IBOutlet var hodsPopup: NSPopUpButton!
     @IBOutlet var projectsPopup: NSPopUpButton!
     @IBOutlet var clientsPopup: NSPopUpButton!
     @IBOutlet var taskEnd: NSDatePicker!
     @IBOutlet var taskStart: NSDatePicker!
-    @IBOutlet var taskName: NSTextField!
+    @IBOutlet weak var taskComboBox: NSComboBox!
+
+    var selectedProjectsTaskNames: [String]?
 
     weak var editingTask: Task?
+
     var onDismiss: (() -> Void)?
 
     fileprivate var selectedHod: HeadOfDevelopment? {
@@ -46,7 +49,7 @@ class ManualTaskViewController: NSViewController {
 
             taskStart.dateValue = task.startTime! as Date
             taskEnd.dateValue = task.endTime! as Date
-            taskName.stringValue = task.title!
+            taskComboBox.stringValue = task.title!
 
             let taskProject = task.project!
             let taskClient = taskProject.client!
@@ -64,6 +67,13 @@ class ManualTaskViewController: NSViewController {
         taskEnd.minDate = taskStart.dateValue
         taskStart.maxDate = Date()
         taskEnd.maxDate = Date()
+
+        self.taskComboBox.usesDataSource = true
+        self.taskComboBox.completes = true
+        self.taskComboBox.dataSource = self
+
+        populateTasks()
+
     }
 
     fileprivate func populateClients(_ defaultSelected: String?, withDefaultProject defaultProject: String?) {
@@ -110,16 +120,20 @@ class ManualTaskViewController: NSViewController {
         populateProjects(nil)
     }
 
+    @IBAction func projectChanged(_ sender: Any) {
+        populateTasks()
+    }
+
     @IBAction func cancelClicked(_ sender: NSButton) {
         self.dismiss(self)
     }
 
     @IBAction func saveClicked(_ sender: NSButton) {
-        if let selectedProject = self.selectedProject, taskName.stringValue.count > 0 {
+        if let selectedProject = self.selectedProject, taskComboBox.stringValue.count > 0 {
 
             if let task = editingTask {
 
-                task.title = taskName.stringValue
+                task.title = taskComboBox.stringValue
                 task.startTime = taskStart.dateValue
                 task.endTime = taskEnd.dateValue
                 task.project = selectedProject
@@ -135,7 +149,7 @@ class ManualTaskViewController: NSViewController {
             } else {
 
                 if TaskProviderManager.instance.saveTaskInProject(selectedProject,
-                                                                  withTitle: taskName.stringValue,
+                                                                  withTitle: taskComboBox.stringValue,
                                                                   startingAt: taskStart.dateValue,
                                                                   finishingAt: taskEnd.dateValue) {
                     dismiss(self)
@@ -156,5 +170,35 @@ class ManualTaskViewController: NSViewController {
 
     @IBAction func endDateChanged(_ sender: NSDatePicker) {
         self.taskStart.maxDate = sender.dateValue
+    }
+
+    fileprivate func populateTasks() {
+
+        self.selectedProjectsTaskNames = selectedProject?.distinctTasksNames
+
+        taskComboBox.reloadData()
+
+        if taskComboBox.numberOfItems > 0 {
+            taskComboBox.selectItem(at: 0)
+        }
+
+    }
+
+    func numberOfItems(in comboBox: NSComboBox) -> Int {
+        return self.selectedProjectsTaskNames?.count ?? 0
+    }
+
+    func comboBox(_ comboBox: NSComboBox, objectValueForItemAt index: Int) -> Any? {
+        return self.selectedProjectsTaskNames![index]
+    }
+
+    func comboBox(_ comboBox: NSComboBox, completedString string: String) -> String? {
+        return self.selectedProjectsTaskNames?.filter({ (taskTitle) -> Bool in
+            return taskTitle.starts(with: string)
+        }).first
+    }
+
+    func comboBox(_ comboBox: NSComboBox, indexOfItemWithStringValue string: String) -> Int {
+        return self.selectedProjectsTaskNames?.firstIndex(of: string) ?? NSNotFound
     }
 }
