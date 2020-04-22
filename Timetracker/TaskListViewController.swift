@@ -121,7 +121,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     // MARK: - TableViewDelegate callbacks
 
-    func buildContent(forTask task: Task, inProject project: Project,
+    func buildContent(forTask task: Task, inProject project: Project?,
                       tableColumn: NSTableColumn, inTable tableView: NSTableView) -> String {
 
         let formatter = DateFormatter()
@@ -130,13 +130,13 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         var text: String?
 
         if tableColumn == tableView.tableColumns[TableColumns.headOfDevelopment.rawValue] { // HoD column
-            text = project.client?.headOfDevelopment?.name
+            text = project?.client?.headOfDevelopment?.name ?? ""
 
         } else if tableColumn == tableView.tableColumns[TableColumns.client.rawValue] { // Client column
-            text = project.client?.name
+            text = project?.client?.name ?? ""
 
         } else if tableColumn == tableView.tableColumns[TableColumns.project.rawValue] { // Project column
-            text = project.name
+            text = project?.name ?? ""
 
         } else if tableColumn == tableView.tableColumns[TableColumns.task.rawValue] { // Task name column
             text = task.title
@@ -174,12 +174,12 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         var task = tasks?[safe: row]
         var project = task?.project
 
-        if task == nil {
+        if task == nil && TaskProviderManager.instance.isTaskRunning {
             task = TaskProviderManager.instance.runningTask
             project = TaskProviderManager.instance.projectOfRunningTask
         }
 
-        let text = buildContent(forTask: task!, inProject: project!, tableColumn: tableColumn!, inTable: tableView)
+        let text = buildContent(forTask: task!, inProject: project, tableColumn: tableColumn!, inTable: tableView)
 
         let identifier: String = "hod_cell"
 
