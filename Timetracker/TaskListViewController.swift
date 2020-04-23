@@ -121,6 +121,15 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     // MARK: - TableViewDelegate callbacks
 
+    func handlePossibleCorruptContent(_ text: String?) -> String {
+        if let sureText = text {
+            return sureText
+        } else {
+            self.contentCorrupted = true
+            return "⚠️"
+        }
+    }
+
     func buildContent(forTask task: Task, inProject project: Project?,
                       tableColumn: NSTableColumn, inTable tableView: NSTableView) -> String {
 
@@ -130,13 +139,13 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         var text: String?
 
         if tableColumn == tableView.tableColumns[TableColumns.headOfDevelopment.rawValue] { // HoD column
-            text = project?.client?.headOfDevelopment?.name ?? ""
+            text = handlePossibleCorruptContent(project?.client?.headOfDevelopment?.name)
 
         } else if tableColumn == tableView.tableColumns[TableColumns.client.rawValue] { // Client column
-            text = project?.client?.name ?? ""
+            text = handlePossibleCorruptContent(project?.client?.headOfDevelopment?.name)
 
         } else if tableColumn == tableView.tableColumns[TableColumns.project.rawValue] { // Project column
-            text = project?.name ?? ""
+            text = handlePossibleCorruptContent(project?.name)
 
         } else if tableColumn == tableView.tableColumns[TableColumns.task.rawValue] { // Task name column
             text = task.title
@@ -249,6 +258,11 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     @IBAction func exportClicked(_ sender: AnyObject) {
 
+        guard !self.contentCorrupted else {
+            showError("There are tasks that do not seem to be properly configured. Please check and fix them.")
+            return
+        }
+
         if let tasks = self.tasks {
             let export = TabSeparatedValuesExporter()
             exported = export.export(tasks)
@@ -259,13 +273,14 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     }
 
+    var contentCorrupted = false
     @IBAction func filterClicked(_ sender: AnyObject?) {
 
         guard let end = endDate.dateValue.endOfDay else {
             L.e("Couldn't get end date")
             return
         }
-
+        self.contentCorrupted = false
         self.tasks = TaskProviderManager.instance.getTasksBetween(startDate.dateValue.startOfDay, and: end)
         self.tableView.reloadData()
         self.calculateTime()

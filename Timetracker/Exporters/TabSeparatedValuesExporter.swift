@@ -22,13 +22,15 @@ class TabSeparatedValuesExporter {
 
         tasks.forEach {
 
-            var line = Line()
-            line.title = $0.title!
-            line.project = $0.project!.name!
-            line.client = $0.project!.client!.name!
-            line.hod = $0.project!.client!.headOfDevelopment!.name!
+            if let title = $0.title, let project = $0.project?.name, let client = $0.project?.client?.name, let hod = $0.project?.client?.headOfDevelopment?.name {
+                var line = Line()
+                line.title = title
+                line.project = project
+                line.client = client
+                line.hod = hod
 
-            addStuff(line, startingOn: $0.startTime! as Date, endingOn: $0.endTime! as Date)
+                addStuff(line, startingOn: $0.startTime! as Date, endingOn: $0.endTime! as Date)
+            }
 
         }
 
