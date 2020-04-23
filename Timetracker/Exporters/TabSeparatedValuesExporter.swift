@@ -22,7 +22,11 @@ class TabSeparatedValuesExporter {
 
         tasks.forEach {
 
-            if let title = $0.title, let project = $0.project?.name, let client = $0.project?.client?.name, let hod = $0.project?.client?.headOfDevelopment?.name {
+            if let title = $0.title,
+                let project = $0.project?.name,
+                let client = $0.project?.client?.name,
+                let hod = $0.project?.client?.headOfDevelopment?.name {
+
                 var line = Line()
                 line.title = title
                 line.project = project
