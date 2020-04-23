@@ -142,7 +142,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
             text = handlePossibleCorruptContent(project?.client?.headOfDevelopment?.name)
 
         } else if tableColumn == tableView.tableColumns[TableColumns.client.rawValue] { // Client column
-            text = handlePossibleCorruptContent(project?.client?.headOfDevelopment?.name)
+            text = handlePossibleCorruptContent(project?.client?.name)
 
         } else if tableColumn == tableView.tableColumns[TableColumns.project.rawValue] { // Project column
             text = handlePossibleCorruptContent(project?.name)
