@@ -39,7 +39,7 @@ class TabSeparatedValuesExporter {
 
         var string: String = ""
 
-        self.tasksPerDate.keys.forEach { key in
+        Array(self.tasksPerDate.keys).sorted(by: <).forEach { key in
 
             string.append("\(weekdays[key]!) (\(key))\r\n")
 
