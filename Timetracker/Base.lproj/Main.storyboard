@@ -350,7 +350,7 @@
         <scene sceneID="gth-19-4jJ">
             <objects>
                 <windowController storyboardIdentifier="cost_centres_window" showSeguePresentationStyle="single" id="bZq-R1-f3W" sceneMemberID="viewController">
-                    <window key="window" title="Cost centres" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="c3C-e8-KX3">
+                    <window key="window" title="Cost centres" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="c3C-e8-KX3">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -370,7 +370,7 @@
         <scene sceneID="z6N-M0-fNc">
             <objects>
                 <windowController storyboardIdentifier="task_list_window" showSeguePresentationStyle="single" id="FFU-xA-Poe" sceneMemberID="viewController">
-                    <window key="window" title="Task list" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="qye-gB-tlZ">
+                    <window key="window" title="Task list" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="qye-gB-tlZ">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
@@ -1178,7 +1178,7 @@ Gw
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="task_runner_window" showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="TaskRunnerWindowController" customModule="Timetracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Task runner" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Task runner" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="279" height="539"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
