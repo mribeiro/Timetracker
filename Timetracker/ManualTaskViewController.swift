@@ -51,12 +51,15 @@ class ManualTaskViewController: NSViewController, NSComboBoxDataSource {
             taskEnd.dateValue = task.endTime! as Date
             taskComboBox.stringValue = task.title!
 
-            let taskProject = task.project!
-            let taskClient = taskProject.client!
-            let taskHod = taskClient.headOfDevelopment!
+            if let taskProject = task.project,
+                let taskClient = taskProject.client,
+                let taskHod = taskClient.headOfDevelopment {
 
-            hodsPopup.selectItem(withTitle: taskHod.name!)
-            populateClients(taskClient.name!, withDefaultProject: taskProject.name!)
+                hodsPopup.selectItem(withTitle: taskHod.name!)
+                populateClients(taskClient.name!, withDefaultProject: taskProject.name!)
+            } else {
+                populateClients(nil, withDefaultProject: nil)
+            }
 
         } else {
             populateClients(nil, withDefaultProject: nil)

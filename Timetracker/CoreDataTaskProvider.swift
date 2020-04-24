@@ -206,7 +206,7 @@ class CoreDataTaskProvider: TaskProvider {
             task.endTime = endDate ?? Date()
             coreDataCtx.insert(task)
             task.project = CoreDataTaskProvider.runningProject
-            //CoreDataTaskProvider.runningProject?.tasks?.insert(task)
+
             do {
                 try coreDataCtx.save()
                 CoreDataTaskProvider.runningProject = nil
@@ -291,7 +291,6 @@ class CoreDataTaskProvider: TaskProvider {
     func updateTask(_ task: Task) -> Bool {
 
         do {
-            _ = CoreDataTaskProvider.runningProject?.tasks?.remove(task)
             try coreDataCtx.save()
             return true
         } catch {
