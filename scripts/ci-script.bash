@@ -75,5 +75,5 @@ xcodebuild -exportArchive -archivePath xcbuild/timetracker.xcarchive -exportPath
 
 echo 'zipping app'
 pushd xcbuild/output
-zip -r Timetracker.$TRAVIS_TAG.zip Timetracker.app
+zip -r Timetracker.zip Timetracker.app
 popd
