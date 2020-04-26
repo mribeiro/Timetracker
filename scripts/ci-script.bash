@@ -52,7 +52,7 @@ if [ -n "$TRAVIS_TAG" ]; then
     
     shortSha=${TRAVIS_COMMIT: -7}
     version=${TRAVIS_TAG//.}
-    mktversion="$TRAVIS_TAG ($shortSha)"
+    mktversion="$TRAVIS_TAG"
 
     echo "TAG        =[$TRAVIS_TAG]"
     echo "VERSION    =[$version]"
@@ -61,6 +61,7 @@ if [ -n "$TRAVIS_TAG" ]; then
     
     agvtool new-version $version
     agvtool new-marketing-version "$mktversion"
+    /usr/libexec/PlistBuddy -c "Set CFBundleVersion $mktversion" Timetracker/Info.plist
 
 else
     echo "This is not a TAG, no need for setting version"

@@ -40,10 +40,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     @IBOutlet weak var taskListMenuItem: NSMenuItem!
 
     @IBAction func checkForUpdatesClicked(_ sender: Any) {
-        if let bundleVersion = Bundle.main.infoDictionary!["CFBundleVersion"] {
-            L.i("Current bundle version is \(bundleVersion)")
-        }
-
         self.updater.checkForUpdates(sender)
     }
 
