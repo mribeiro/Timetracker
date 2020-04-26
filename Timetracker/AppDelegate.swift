@@ -10,9 +10,10 @@ import Cocoa
 import IOKit
 import AppKit
 import Preferences
+import Sparkle
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, SUUpdaterDelegate {
 
     let menu = NSMenu()
     let databaseName = Bundle.main.object(forInfoDictionaryKey: "DB_NAME") as? String ?? "default_db_name_"
@@ -33,11 +34,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         ], style: .toolbarItems
     )
 
+    @IBOutlet weak var updater: SUUpdater!
     @IBOutlet weak var taskRunnerMenuItem: NSMenuItem!
     @IBOutlet weak var costCentresMenuItem: NSMenuItem!
     @IBOutlet weak var taskListMenuItem: NSMenuItem!
 
+    @IBAction func checkForUpdatesClicked(_ sender: Any) {
+        if let bundleVersion = Bundle.main.infoDictionary!["CFBundleVersion"] {
+            L.i("Current bundle version is \(bundleVersion)")
+        }
+
+        self.updater.checkForUpdates(sender)
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+
+        self.updater.delegate = self
 
         taskProvider = TaskProviderManager.setup(managedObjectContext)
         taskProvider.addPingReceiver(self)

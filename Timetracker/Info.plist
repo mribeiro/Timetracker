@@ -23,7 +23,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<string>1.0.0</string>
 	<key>DB_NAME</key>
 	<string>${DB_NAME}</string>
 	<key>IDLE_SECONDS</key>
@@ -38,5 +38,7 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://github.com/mribeiro/Timetracker/releases.atom</string>
 </dict>
 </plist>
