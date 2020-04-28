@@ -74,7 +74,7 @@ xcodebuild archive -project Timetracker.xcodeproj -configuration Release -archiv
 echo 'exporting archive'
 xcodebuild -exportArchive -archivePath xcbuild/timetracker.xcarchive -exportPath xcbuild/output -project Timetracker.xcodeproj -configuration Release -exportOptionsPlist exportOptions.plist 
 
-echo 'zipping app'
+echo 'tarballing app'
 pushd xcbuild/output
-zip -r Timetracker.zip Timetracker.app
+tar -czvf Timetracker.tar.gz Timetracker.app
 popd
