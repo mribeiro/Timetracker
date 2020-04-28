@@ -28,10 +28,10 @@ class PreferenceAboutViewController: NSViewController, PreferencePane {
             Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "CFBundleShortVersionString missing"
         let copyright =
             Bundle.main.infoDictionary!["NSHumanReadableCopyright"] as? String ?? "NSHumanReadableCopyright missing"
-        let build = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "CFBundleVersion missing"
+
         let buildType = Bundle.main.infoDictionary!["BUILD_TYPE"] as? String ?? "BUILD_TYPE missing"
 
-        labelVersion.stringValue = "Version \(shortVersion) (\(build)) \(buildType)"
+        labelVersion.stringValue = "Version \(shortVersion) \(buildType)"
 
         labelCopyright.stringValue = copyright
     }
