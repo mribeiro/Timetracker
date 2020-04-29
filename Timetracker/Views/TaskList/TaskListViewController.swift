@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 import SwiftDate
 
-class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, TaskPingReceiver {
+class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     enum TableColumns: Int {
         case headOfDevelopment = 0
@@ -34,7 +34,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     @IBOutlet weak var recordsLabel: NSTextField!
 
     // MARK: - Vars and Lets
-    fileprivate var tasks: [Task]?
+    var tasks: [Task]?
     var contentCorrupted = false
     var exported: String?
 
@@ -72,7 +72,6 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         accumulatedTime.stringValue = """
         Accumulated time: \(String(format: "%02d", components.hour!))h\(String(format: "%02d", components.minute!))m
         """
-
     }
 
     @IBAction func timeSpanSelectorClicked(_ sender: Any) {
@@ -85,21 +84,6 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     override func viewWillDisappear() {
         TaskProviderManager.instance.removePingReceiver(self)
-    }
-
-    func taskStarted() {
-        filterTasks()
-    }
-
-    func ping(_ interval: TimeInterval) {
-        L.v("Ping in TaskListViewController")
-        let lastRow = tasks?.count
-        calculateTime()
-        tableView.reloadData(forRowIndexes: [lastRow!], columnIndexes: [TableColumns.accumulated.rawValue])
-    }
-
-    func taskStopped() {
-        filterTasks()
     }
 
     // MARK: - TableViewDataSource callbacks
@@ -299,10 +283,13 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
         switch timespan {
         case .day:
-            text = "Showing records in \(startAndEndTime.startDate)"
+            let dateFormatted = startAndEndTime.startDate.toFormat("dd/MM/yyyy")
+            text = "Showing records on \(dateFormatted)"
 
         case .week:
-            text = "Showing records between \(startAndEndTime.startDate) and \(startAndEndTime.endDate)"
+            let startDateFormatted = startAndEndTime.startDate.toFormat("dd/MM/yyyy")
+            let endDateFormatted = startAndEndTime.endDate.toFormat("dd/MM/yyyy")
+            text = "Showing records between \(startDateFormatted) and \(endDateFormatted)"
 
         case .month:
             text = "Showing records in \(startAndEndTime.startDate.monthName(.default))"

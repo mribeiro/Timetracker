@@ -52,12 +52,12 @@
 		E6E9E5C724486009000D7D65 /* TextDisplayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */; };
 		E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */; };
 		E6F5736E2458CA43005A00F1 /* TaskListWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5736D2458CA43005A00F1 /* TaskListWindowController.swift */; };
+		E6F5737024599EC2005A00F1 /* TaskListViewController+TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5736F24599EC2005A00F1 /* TaskListViewController+TaskPingReceiver.swift */; };
 		E6F62FA524439EA900A9C8C9 /* PreferenceAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */; };
 		E6F62FA724439EE700A9C8C9 /* PreferenceAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */; };
 		E6F788D522579BA000AE3DF3 /* PreferenceLogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */; };
 		E6F788D722579BBB00AE3DF3 /* PreferenceLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F788D622579BBB00AE3DF3 /* PreferenceLogViewController.swift */; };
 		E6FE838C1CDA5F9300794723 /* ExportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE838B1CDA5F9300794723 /* ExportViewController.swift */; };
-		E6FE83901CDB34C900794723 /* TaskRunnerWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE838F1CDB34C900794723 /* TaskRunnerWindowController.swift */; };
 		E6FE83921CDB5D4100794723 /* NSTextView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE83911CDB5D4100794723 /* NSTextView+Utils.swift */; };
 		E6FE83941CDB5D5F00794723 /* NSDate+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE83931CDB5D5F00794723 /* NSDate+Utils.swift */; };
 		E6FE83961CDB6AF300794723 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE83951CDB6AF300794723 /* ErrorViewController.swift */; };
@@ -105,7 +105,7 @@
 		E6910F661CCE6F1E003CBA90 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Task.swift; path = Timetracker/Model/Task.swift; sourceTree = "<group>"; };
 		E6910F8D1CCF78C0003CBA90 /* CostCentreListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CostCentreListController.swift; sourceTree = "<group>"; };
 		E6D680571CD4F5F000C45179 /* NSTimeInterval+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSTimeInterval+Utils.swift"; path = "Utils/NSTimeInterval+Utils.swift"; sourceTree = "<group>"; };
-		E6D6805B1CD4F76B00C45179 /* TaskProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskProvider.swift; path = Provider/TaskProvider.swift; sourceTree = "<group>"; };
+		E6D6805B1CD4F76B00C45179 /* TaskProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskProvider.swift; sourceTree = "<group>"; };
 		E6D680641CD5018F00C45179 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		E6D680661CD88CE300C45179 /* ManualTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualTaskViewController.swift; sourceTree = "<group>"; };
 		E6D964CD223DB4AC00B1C534 /* PreferenceBuilderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceBuilderView.xib; sourceTree = "<group>"; };
@@ -121,12 +121,12 @@
 		E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplayerViewController.swift; sourceTree = "<group>"; };
 		E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Timer+Utils.swift"; path = "Utils/Timer+Utils.swift"; sourceTree = "<group>"; };
 		E6F5736D2458CA43005A00F1 /* TaskListWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListWindowController.swift; sourceTree = "<group>"; };
+		E6F5736F24599EC2005A00F1 /* TaskListViewController+TaskPingReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskListViewController+TaskPingReceiver.swift"; sourceTree = "<group>"; };
 		E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceAboutView.xib; sourceTree = "<group>"; };
 		E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceAboutViewController.swift; sourceTree = "<group>"; };
 		E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceLogView.xib; sourceTree = "<group>"; };
 		E6F788D622579BBB00AE3DF3 /* PreferenceLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceLogViewController.swift; sourceTree = "<group>"; };
 		E6FE838B1CDA5F9300794723 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
-		E6FE838F1CDB34C900794723 /* TaskRunnerWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskRunnerWindowController.swift; sourceTree = "<group>"; };
 		E6FE83911CDB5D4100794723 /* NSTextView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSTextView+Utils.swift"; path = "Utils/NSTextView+Utils.swift"; sourceTree = "<group>"; };
 		E6FE83931CDB5D5F00794723 /* NSDate+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSDate+Utils.swift"; path = "Utils/NSDate+Utils.swift"; sourceTree = "<group>"; };
 		E6FE83951CDB6AF300794723 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
@@ -154,13 +154,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E63FC793244B3B7800B3202D /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Structs;
-			sourceTree = "<group>";
-		};
 		E65EF086224E85CE0023A7B5 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,27 +193,17 @@
 		E6910F3C1CCE5CFF003CBA90 /* Timetracker */ = {
 			isa = PBXGroup;
 			children = (
-				E63FC793244B3B7800B3202D /* Structs */,
+				E6F573762459A2D4005A00F1 /* Managers */,
+				E6F573732459A18E005A00F1 /* Views */,
+				E6F573722459A17C005A00F1 /* Providers */,
+				E6F573712459A13A005A00F1 /* Delegates */,
 				E6E9E5BB24483B65000D7D65 /* Builders */,
 				E65EF086224E85CE0023A7B5 /* Logging */,
-				E6FE838E1CDB34B600794723 /* WindowControllers */,
 				E66272391CD8E82600B50E38 /* Exporters */,
-				E6D6805F1CD4F85D00C45179 /* Delegates */,
-				E6D6805A1CD4F75B00C45179 /* Provider */,
-				E6D680591CD4F73D00C45179 /* ViewControllers */,
 				E6D680561CD4F5D500C45179 /* Utils */,
 				E6910F6F1CCE6F25003CBA90 /* Model */,
 				E6910F441CCE5CFF003CBA90 /* Assets.xcassets */,
-				E6910F461CCE5CFF003CBA90 /* Main.storyboard */,
-				E6D964CD223DB4AC00B1C534 /* PreferenceBuilderView.xib */,
-				E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */,
-				E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */,
 				E6910F491CCE5CFF003CBA90 /* Info.plist */,
-				E6910F411CCE5CFF003CBA90 /* Timetracker.xcdatamodeld */,
-				E6FE83971CDB6D8300794723 /* ErrorView.xib */,
-				E6281D2C24422BD200CD467C /* DockIconManager.swift */,
-				E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */,
-				E6E9E5C424485F3B000D7D65 /* TextDisplayerView.xib */,
 				E603199424487E57000FB79C /* copyright.txt */,
 			);
 			path = Timetracker;
@@ -259,46 +242,6 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		E6D680591CD4F73D00C45179 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				E6910F3F1CCE5CFF003CBA90 /* TaskRunnerViewController.swift */,
-				E6910F8D1CCF78C0003CBA90 /* CostCentreListController.swift */,
-				E6D680641CD5018F00C45179 /* TaskListViewController.swift */,
-				E6D680661CD88CE300C45179 /* ManualTaskViewController.swift */,
-				E6FE838B1CDA5F9300794723 /* ExportViewController.swift */,
-				E6FE83951CDB6AF300794723 /* ErrorViewController.swift */,
-				E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */,
-				E6F788D622579BBB00AE3DF3 /* PreferenceLogViewController.swift */,
-				E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */,
-				E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */,
-				E6E9E5B82447BCA0000D7D65 /* CurrentTaskEditorViewController.swift */,
-				E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */,
-				E6F5736D2458CA43005A00F1 /* TaskListWindowController.swift */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		E6D6805A1CD4F75B00C45179 /* Provider */ = {
-			isa = PBXGroup;
-			children = (
-				E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */,
-				E6D6805B1CD4F76B00C45179 /* TaskProvider.swift */,
-				E6910F5D1CCE65B5003CBA90 /* CoreDataTaskProvider.swift */,
-			);
-			name = Provider;
-			sourceTree = "<group>";
-		};
-		E6D6805F1CD4F85D00C45179 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				E6910F3D1CCE5CFF003CBA90 /* AppDelegate.swift */,
-				E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */,
-				E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */,
-			);
-			name = Delegates;
-			sourceTree = "<group>";
-		};
 		E6E9E5BB24483B65000D7D65 /* Builders */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,12 +256,77 @@
 			path = Builders;
 			sourceTree = "<group>";
 		};
-		E6FE838E1CDB34B600794723 /* WindowControllers */ = {
+		E6F573712459A13A005A00F1 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				E6FE838F1CDB34C900794723 /* TaskRunnerWindowController.swift */,
+				E6910F3D1CCE5CFF003CBA90 /* AppDelegate.swift */,
+				E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */,
+				E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */,
 			);
-			name = WindowControllers;
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		E6F573722459A17C005A00F1 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */,
+				E6D6805B1CD4F76B00C45179 /* TaskProvider.swift */,
+				E6910F5D1CCE65B5003CBA90 /* CoreDataTaskProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		E6F573732459A18E005A00F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6910F461CCE5CFF003CBA90 /* Main.storyboard */,
+				E6910F411CCE5CFF003CBA90 /* Timetracker.xcdatamodeld */,
+				E6FE83971CDB6D8300794723 /* ErrorView.xib */,
+				E6E9E5C424485F3B000D7D65 /* TextDisplayerView.xib */,
+				E6910F3F1CCE5CFF003CBA90 /* TaskRunnerViewController.swift */,
+				E6910F8D1CCF78C0003CBA90 /* CostCentreListController.swift */,
+				E6D680661CD88CE300C45179 /* ManualTaskViewController.swift */,
+				E6FE838B1CDA5F9300794723 /* ExportViewController.swift */,
+				E6FE83951CDB6AF300794723 /* ErrorViewController.swift */,
+				E6E9E5B82447BCA0000D7D65 /* CurrentTaskEditorViewController.swift */,
+				E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */,
+				E6F573752459A1DF005A00F1 /* TaskList */,
+				E6F573742459A1AD005A00F1 /* Preferences */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E6F573742459A1AD005A00F1 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */,
+				E6F788D622579BBB00AE3DF3 /* PreferenceLogViewController.swift */,
+				E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */,
+				E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */,
+				E6D964CD223DB4AC00B1C534 /* PreferenceBuilderView.xib */,
+				E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */,
+				E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */,
+				E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		E6F573752459A1DF005A00F1 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				E6D680641CD5018F00C45179 /* TaskListViewController.swift */,
+				E6F5736F24599EC2005A00F1 /* TaskListViewController+TaskPingReceiver.swift */,
+				E6F5736D2458CA43005A00F1 /* TaskListWindowController.swift */,
+			);
+			path = TaskList;
+			sourceTree = "<group>";
+		};
+		E6F573762459A2D4005A00F1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E6281D2C24422BD200CD467C /* DockIconManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,8 +486,8 @@
 				E6F5736E2458CA43005A00F1 /* TaskListWindowController.swift in Sources */,
 				E6281D2D24422BD200CD467C /* DockIconManager.swift in Sources */,
 				E6F788D722579BBB00AE3DF3 /* PreferenceLogViewController.swift in Sources */,
-				E6FE83901CDB34C900794723 /* TaskRunnerWindowController.swift in Sources */,
 				E6910F681CCE6F1E003CBA90 /* Client.swift in Sources */,
+				E6F5737024599EC2005A00F1 /* TaskListViewController+TaskPingReceiver.swift in Sources */,
 				E63FC795244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift in Sources */,
 				E6E9E5C1244840B8000D7D65 /* TimeCounter.swift in Sources */,
 				E612F3411CD2293800FC1D85 /* TaskPingReceiver.swift in Sources */,
