@@ -19,6 +19,7 @@
 		E65EF088224E85F50023A7B5 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65EF087224E85F50023A7B5 /* LogManager.swift */; };
 		E662723B1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662723A1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift */; };
 		E67203D92446174300AFCF31 /* Collection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67203D82446174300AFCF31 /* Collection+Utils.swift */; };
+		E677696D2458816B00E1F3EB /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = E677696C2458816B00E1F3EB /* SwiftDate */; };
 		E677EC1C2449E0730038CD52 /* exportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = E677EC1B2449E0730038CD52 /* exportOptions.plist */; };
 		E6910F3E1CCE5CFF003CBA90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6910F3D1CCE5CFF003CBA90 /* AppDelegate.swift */; };
 		E6910F401CCE5CFF003CBA90 /* TaskRunnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6910F3F1CCE5CFF003CBA90 /* TaskRunnerViewController.swift */; };
@@ -50,6 +51,7 @@
 		E6E9E5C524485F3B000D7D65 /* TextDisplayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6E9E5C424485F3B000D7D65 /* TextDisplayerView.xib */; };
 		E6E9E5C724486009000D7D65 /* TextDisplayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */; };
 		E6ECC1D4223D9B3000BBCD91 /* Timer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */; };
+		E6F5736E2458CA43005A00F1 /* TaskListWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F5736D2458CA43005A00F1 /* TaskListWindowController.swift */; };
 		E6F62FA524439EA900A9C8C9 /* PreferenceAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */; };
 		E6F62FA724439EE700A9C8C9 /* PreferenceAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */; };
 		E6F788D522579BA000AE3DF3 /* PreferenceLogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */; };
@@ -118,6 +120,7 @@
 		E6E9E5C424485F3B000D7D65 /* TextDisplayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextDisplayerView.xib; sourceTree = "<group>"; };
 		E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDisplayerViewController.swift; sourceTree = "<group>"; };
 		E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Timer+Utils.swift"; path = "Utils/Timer+Utils.swift"; sourceTree = "<group>"; };
+		E6F5736D2458CA43005A00F1 /* TaskListWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListWindowController.swift; sourceTree = "<group>"; };
 		E6F62FA424439EA900A9C8C9 /* PreferenceAboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceAboutView.xib; sourceTree = "<group>"; };
 		E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceAboutViewController.swift; sourceTree = "<group>"; };
 		E6F788D422579BA000AE3DF3 /* PreferenceLogView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceLogView.xib; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 			files = (
 				E6E9E5B424472D6C000D7D65 /* Preferences in Frameworks */,
 				E6E9E5B724473C42000D7D65 /* SwiftyBeaver in Frameworks */,
+				E677696D2458816B00E1F3EB /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +274,7 @@
 				E6F62FA624439EE700A9C8C9 /* PreferenceAboutViewController.swift */,
 				E6E9E5B82447BCA0000D7D65 /* CurrentTaskEditorViewController.swift */,
 				E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */,
+				E6F5736D2458CA43005A00F1 /* TaskListWindowController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 			packageProductDependencies = (
 				E6E9E5B324472D6C000D7D65 /* Preferences */,
 				E6E9E5B624473C42000D7D65 /* SwiftyBeaver */,
+				E677696C2458816B00E1F3EB /* SwiftDate */,
 			);
 			productName = Timetracker;
 			productReference = E6910F3A1CCE5CFF003CBA90 /* Timetracker.app */;
@@ -392,6 +398,7 @@
 			packageReferences = (
 				E6E9E5B224472D6C000D7D65 /* XCRemoteSwiftPackageReference "Preferences" */,
 				E6E9E5B524473C42000D7D65 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
+				E677696B2458816B00E1F3EB /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = E6910F3B1CCE5CFF003CBA90 /* Products */;
 			projectDirPath = "";
@@ -468,6 +475,7 @@
 				E6D964D0223E795200B1C534 /* BuilderManager.swift in Sources */,
 				E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */,
 				E6FE83941CDB5D5F00794723 /* NSDate+Utils.swift in Sources */,
+				E6F5736E2458CA43005A00F1 /* TaskListWindowController.swift in Sources */,
 				E6281D2D24422BD200CD467C /* DockIconManager.swift in Sources */,
 				E6F788D722579BBB00AE3DF3 /* PreferenceLogViewController.swift in Sources */,
 				E6FE83901CDB34C900794723 /* TaskRunnerWindowController.swift in Sources */,
@@ -865,6 +873,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E677696B2458816B00E1F3EB /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
 		E6E9E5B224472D6C000D7D65 /* XCRemoteSwiftPackageReference "Preferences" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Preferences";
@@ -884,6 +900,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E677696C2458816B00E1F3EB /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E677696B2458816B00E1F3EB /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
 		E6E9E5B324472D6C000D7D65 /* Preferences */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E6E9E5B224472D6C000D7D65 /* XCRemoteSwiftPackageReference "Preferences" */;
