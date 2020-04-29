@@ -52,7 +52,7 @@ if [ -n "$TRAVIS_TAG" ]; then
     
     shortSha=${TRAVIS_COMMIT: -7}
     version=${TRAVIS_TAG//.}
-    mktversion="$TRAVIS_TAG ($shortSha)"
+    mktversion="$TRAVIS_TAG"
 
     echo "TAG        =[$TRAVIS_TAG]"
     echo "VERSION    =[$version]"
@@ -61,6 +61,7 @@ if [ -n "$TRAVIS_TAG" ]; then
     
     agvtool new-version $version
     agvtool new-marketing-version "$mktversion"
+    /usr/libexec/PlistBuddy -c "Set CFBundleVersion $mktversion" Timetracker/Info.plist
 
 else
     echo "This is not a TAG, no need for setting version"
@@ -73,7 +74,7 @@ xcodebuild archive -project Timetracker.xcodeproj -configuration Release -archiv
 echo 'exporting archive'
 xcodebuild -exportArchive -archivePath xcbuild/timetracker.xcarchive -exportPath xcbuild/output -project Timetracker.xcodeproj -configuration Release -exportOptionsPlist exportOptions.plist 
 
-echo 'zipping app'
+echo 'tarballing app'
 pushd xcbuild/output
-zip -r Timetracker.zip Timetracker.app
+tar -czvf Timetracker.tar.gz Timetracker.app
 popd

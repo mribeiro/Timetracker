@@ -22,6 +22,12 @@
                                                 <action selector="openPreferences:" target="Voe-Tx-rLC" id="Yl5-Dp-yMn"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Check for updates" id="y5C-x3-E1u">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="checkForUpdatesClicked:" target="Voe-Tx-rLC" id="65z-7p-D5M"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                                         <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                             <connections>
@@ -340,8 +346,10 @@
                         <outlet property="costCentresMenuItem" destination="7VX-H3-HqH" id="Q4R-7L-gxv"/>
                         <outlet property="taskListMenuItem" destination="oDk-Ke-ZIj" id="ukf-fc-1WY"/>
                         <outlet property="taskRunnerMenuItem" destination="9kx-o6-CDK" id="8j6-8x-eYI"/>
+                        <outlet property="updater" destination="bMp-8A-ggn" id="hc1-7R-Cpi"/>
                     </connections>
                 </customObject>
+                <customObject id="bMp-8A-ggn" customClass="SUUpdater"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="334" y="-153"/>
