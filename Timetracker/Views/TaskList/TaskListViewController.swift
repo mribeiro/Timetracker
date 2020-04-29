@@ -8,8 +8,9 @@
 
 import Foundation
 import Cocoa
+import SwiftDate
 
-class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate, TaskPingReceiver {
+class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     enum TableColumns: Int {
         case headOfDevelopment = 0
@@ -21,30 +22,39 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         case accumulated = 6
     }
 
+    enum TimeSpan: Int {
+        case day = 0
+        case week = 1
+        case month = 2
+    }
+
     // MARK: - Outlets
     @IBOutlet var tableView: NSTableView!
-    @IBOutlet var startDate: NSDatePicker!
-    @IBOutlet var endDate: NSDatePicker!
     @IBOutlet var accumulatedTime: NSTextField!
+    @IBOutlet weak var recordsLabel: NSTextField!
 
     // MARK: - Vars and Lets
-    fileprivate var tasks: [Task]?
+    var tasks: [Task]?
+    var contentCorrupted = false
+    var exported: String?
+
+    var windowController: TaskListWindowController? {
+        return self.view.window?.windowController as? TaskListWindowController
+    }
 
     // MARK: - ViewController callbacks
     override func viewWillAppear() {
         super.viewWillAppear()
         //tasks = TaskProviderManager.instance.allTasks
-        startDate.dateValue = Date()
-        endDate.dateValue = startDate.dateValue
+        windowController?.startDatePicker.dateValue = Date()
 
         tableView.dataSource = self
         tableView.delegate = self
         tableView.doubleAction = #selector(tableViewDoubleClick)
 
-        filterClicked(nil)
+        filterTasks()
 
         TaskProviderManager.instance.addPingReceiver(self)
-
     }
 
     func calculateTime() {
@@ -62,26 +72,18 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         accumulatedTime.stringValue = """
         Accumulated time: \(String(format: "%02d", components.hour!))h\(String(format: "%02d", components.minute!))m
         """
+    }
 
+    @IBAction func timeSpanSelectorClicked(_ sender: Any) {
+        filterTasks()
+    }
+
+    @IBAction func startDateChanged(_ sender: Any) {
+        filterTasks()
     }
 
     override func viewWillDisappear() {
         TaskProviderManager.instance.removePingReceiver(self)
-    }
-
-    func taskStarted() {
-        filterClicked(self)
-    }
-
-    func ping(_ interval: TimeInterval) {
-        L.v("Ping in TaskListViewController")
-        let lastRow = tasks?.count
-        calculateTime()
-        tableView.reloadData(forRowIndexes: [lastRow!], columnIndexes: [TableColumns.accumulated.rawValue])
-    }
-
-    func taskStopped() {
-        filterClicked(self)
     }
 
     // MARK: - TableViewDataSource callbacks
@@ -254,10 +256,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     }
 
-    var exported: String?
-
     @IBAction func exportClicked(_ sender: AnyObject) {
-
         guard !self.contentCorrupted else {
             showError("There are tasks that do not seem to be properly configured. Please check and fix them.")
             return
@@ -270,18 +269,37 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
             performSegue(withIdentifier: "show_export", sender: self)
 
         }
-
     }
 
-    var contentCorrupted = false
-    @IBAction func filterClicked(_ sender: AnyObject?) {
+    func filterTasks() {
 
-        guard let end = endDate.dateValue.endOfDay else {
-            L.e("Couldn't get end date")
+        guard let timespan = self.windowController?.timeSpan, let startDate = self.windowController?.startDate else {
             return
         }
+
+        let startAndEndTime = calculateDateRangeWithStartDate(startDate, forTimeSpan: timespan)
+
+        var text: String
+
+        switch timespan {
+        case .day:
+            let dateFormatted = startAndEndTime.startDate.toFormat("dd/MM/yyyy")
+            text = "Showing records on \(dateFormatted)"
+
+        case .week:
+            let startDateFormatted = startAndEndTime.startDate.toFormat("dd/MM/yyyy")
+            let endDateFormatted = startAndEndTime.endDate.toFormat("dd/MM/yyyy")
+            text = "Showing records between \(startDateFormatted) and \(endDateFormatted)"
+
+        case .month:
+            text = "Showing records in \(startAndEndTime.startDate.monthName(.default))"
+        }
+
+        self.recordsLabel.stringValue = text
+
         self.contentCorrupted = false
-        self.tasks = TaskProviderManager.instance.getTasksBetween(startDate.dateValue.startOfDay, and: end)
+        self.tasks = TaskProviderManager.instance.getTasksBetween(startAndEndTime.startDate,
+                                                                  and: startAndEndTime.endDate)
         self.tableView.reloadData()
         self.calculateTime()
     }
@@ -295,7 +313,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
         if let destination = segue.destinationController as? ManualTaskViewController {
             destination.onDismiss = {
-                self.filterClicked(nil)
+                self.filterTasks()
             }
             destination.editingTask = self.editingTask
             return
@@ -309,6 +327,75 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
             }
         }
     }
+
+    private func calculateDateRangeWithStartDate(_ startDate: Date, forTimeSpan timeSpan: TimeSpan)
+        -> (startDate: Date, endDate: Date) {
+
+        var startOfFilter: Date
+        var endOfFilter: Date
+
+        switch timeSpan {
+        case .day:
+            startOfFilter = startDate.dateAt(.startOfDay)
+            endOfFilter = startDate.dateAt(.endOfDay)
+
+        case .week:
+            startOfFilter = startDate.dateAt(.startOfWeek)
+            endOfFilter = startDate.dateAt(.endOfWeek)
+
+        case .month:
+            startOfFilter = startDate.dateAt(.startOfMonth)
+            endOfFilter = startDate.dateAt(.endOfMonth)
+        }
+
+        return (startOfFilter, endOfFilter)
+    }
+    //swiftlint:disable shorthand_operator
+    @IBAction private func jumpToNext(_ sender: Any?) {
+
+        guard var date = self.windowController?.startDate, let span = self.windowController?.timeSpan else {
+            return
+        }
+
+        switch span {
+        case .day:
+            date = date + 1.days
+
+        case .week:
+            date = date + 1.weeks
+
+        case .month:
+            date = date + 1.months
+        }
+
+        self.windowController?.startDatePicker.dateValue = date
+        filterTasks()
+
+    }
+
+    @IBAction private func jumpToPrevious(_ sender: Any?) {
+
+        guard var date = self.windowController?.startDate, let span = self.windowController?.timeSpan else {
+            return
+        }
+
+        switch span {
+        case .day:
+            date = date - 1.days
+
+        case .week:
+            date = date - 1.weeks
+
+        case .month:
+            date = date - 1.months
+        }
+
+        self.windowController?.startDatePicker.dateValue = date
+        filterTasks()
+
+    }
+    //swiftlint:enable shorthand_operator
+
 }
 
 // Helper function inserted by Swift 4.2 migrator.

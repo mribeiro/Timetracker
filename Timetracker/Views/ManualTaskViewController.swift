@@ -68,8 +68,6 @@ class ManualTaskViewController: NSViewController, NSComboBoxDataSource {
         }
 
         taskEnd.minDate = taskStart.dateValue
-        taskStart.maxDate = Date()
-        taskEnd.maxDate = Date()
 
         self.taskComboBox.usesDataSource = true
         self.taskComboBox.completes = true
