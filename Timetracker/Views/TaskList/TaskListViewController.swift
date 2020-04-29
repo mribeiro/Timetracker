@@ -349,8 +349,53 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
         }
 
         return (startOfFilter, endOfFilter)
+    }
+    //swiftlint:disable shorthand_operator
+    @IBAction private func jumpToNext(_ sender: Any?) {
+
+        guard var date = self.windowController?.startDate, let span = self.windowController?.timeSpan else {
+            return
+        }
+
+        switch span {
+        case .day:
+            date = date + 1.days
+
+        case .week:
+            date = date + 1.weeks
+
+        case .month:
+            date = date + 1.months
+        }
+
+        self.windowController?.startDatePicker.dateValue = date
+        filterTasks()
 
     }
+
+    @IBAction private func jumpToPrevious(_ sender: Any?) {
+
+        guard var date = self.windowController?.startDate, let span = self.windowController?.timeSpan else {
+            return
+        }
+
+        switch span {
+        case .day:
+            date = date - 1.days
+
+        case .week:
+            date = date - 1.weeks
+
+        case .month:
+            date = date - 1.months
+        }
+
+        self.windowController?.startDatePicker.dateValue = date
+        filterTasks()
+
+    }
+    //swiftlint:enable shorthand_operator
+
 }
 
 // Helper function inserted by Swift 4.2 migrator.

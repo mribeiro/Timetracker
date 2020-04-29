@@ -387,12 +387,12 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="B3Z-cJ-yq1"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="jkd-bd-Wii"/>
-                                <toolbarItem implicitItemIdentifier="5929582C-A157-433C-8D7D-34616BFCD1D4" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="AFI-8s-hY9">
+                                <toolbarItem implicitItemIdentifier="5929582C-A157-433C-8D7D-34616BFCD1D4" label="Custom View" paletteLabel="Custom View" image="NSShareTemplate" sizingBehavior="auto" id="AFI-8s-hY9">
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="nee-BX-cAr">
                                         <rect key="frame" x="0.0" y="14" width="82" height="32"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="Export" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="N4u-JQ-iu4">
+                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="N4u-JQ-iu4">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -422,9 +422,9 @@
                                 <toolbarItem implicitItemIdentifier="9755FE62-71DC-4685-A9AA-966913B3DDB8" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" id="Dk9-My-Wwj">
                                     <nil key="toolTip"/>
                                     <datePicker key="view" verticalHuggingPriority="750" id="oWx-0a-l0Y">
-                                        <rect key="frame" x="0.0" y="14" width="142" height="32"/>
+                                        <rect key="frame" x="0.0" y="14" width="142" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" id="h5u-7M-7ls">
+                                        <datePickerCell key="cell" borderStyle="bezel" alignment="left" datePickerStyle="textField" id="h5u-7M-7ls">
                                             <font key="font" metaFont="system"/>
                                             <date key="date" timeIntervalSinceReferenceDate="-595929600">
                                                 <!--1982-02-12 16:00:00 +0000-->
@@ -445,8 +445,8 @@
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="ENY-oH-Upg">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment label="-" width="32"/>
-                                                <segment label="+" width="32" tag="1"/>
+                                                <segment image="NSRemoveTemplate" width="32"/>
+                                                <segment image="NSAddTemplate" width="32" tag="1"/>
                                             </segments>
                                         </segmentedCell>
                                         <connections>
@@ -454,11 +454,42 @@
                                         </connections>
                                     </segmentedControl>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="4EC71D48-88E2-41DA-A734-7925E304FF85" label="Custom View" paletteLabel="Custom View" image="NSGoBackTemplate" sizingBehavior="auto" id="xVh-yY-AV6">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="ShD-9E-gJ9">
+                                        <rect key="frame" x="18" y="14" width="40" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoBackTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tba-ZV-XUW">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="jumpToPrevious:" target="tpV-8e-uoB" id="FXH-OS-NTI"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="9F450A2B-B699-4A38-996E-F1C04DE9151E" label="Custom View" paletteLabel="Custom View" image="NSGoForwardTemplate" sizingBehavior="auto" id="gOc-3N-SnD">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="9PR-1x-iBh">
+                                        <rect key="frame" x="18" y="14" width="40" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSGoForwardTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="V4W-sX-O5s">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="jumpToNext:" target="tpV-8e-uoB" id="uuT-YM-TCT"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="Jzf-n7-jt8"/>
                                 <toolbarItem reference="jkd-bd-Wii"/>
+                                <toolbarItem reference="xVh-yY-AV6"/>
                                 <toolbarItem reference="Dk9-My-Wwj"/>
+                                <toolbarItem reference="gOc-3N-SnD"/>
+                                <toolbarItem reference="B3Z-cJ-yq1"/>
                                 <toolbarItem reference="RJb-XE-2cR"/>
                                 <toolbarItem reference="jkd-bd-Wii"/>
                                 <toolbarItem reference="AFI-8s-hY9"/>
@@ -1448,6 +1479,11 @@ Gw
         </scene>
     </scenes>
     <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSGoBackTemplate" width="9" height="12"/>
+        <image name="NSGoForwardTemplate" width="9" height="12"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
+        <image name="NSShareTemplate" width="11" height="16"/>
         <image name="play" width="128" height="128"/>
         <image name="stop" width="128" height="128"/>
     </resources>
