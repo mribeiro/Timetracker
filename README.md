@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/mribeiro/Timetracker.svg?branch=master)](https://travis-ci.org/mribeiro/Timetracker)
+[![Build Status](https://travis-ci.org/mribeiro/Timetracker.svg?branch=master)](https://travis-ci.org/mribeiro/Timetracker) ![SwiftLint](https://github.com/mribeiro/Timetracker/workflows/SwiftLint/badge.svg)
 
 # Timetracker
 
