@@ -5,7 +5,7 @@ sleep 30
 echo 'starting script'
 
 echo 'updating carthage dependencies'
-carthage update
+carthage update --platform macOS
 
 # DECIPHER DEVELOPMENT CERTIFICATES
 
