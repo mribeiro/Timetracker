@@ -18,6 +18,7 @@
 		E6281D2B24421C1D00CD467C /* PreferenceMiscView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */; };
 		E6281D2D24422BD200CD467C /* DockIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2C24422BD200CD467C /* DockIconManager.swift */; };
 		E63BBB96245B81D70044D290 /* NSViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BBB95245B81D70044D290 /* NSViewController+Utils.swift */; };
+		E63BBB98245B902E0044D290 /* TaskListViewController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BBB97245B902E0044D290 /* TaskListViewController+NSTableViewDelegate.swift */; };
 		E63FC791244A157C00B3202D /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = E63FC790244A157C00B3202D /* .travis.yml */; };
 		E63FC795244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */; };
 		E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */; };
@@ -106,6 +107,7 @@
 		E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceMiscView.xib; sourceTree = "<group>"; };
 		E6281D2C24422BD200CD467C /* DockIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockIconManager.swift; sourceTree = "<group>"; };
 		E63BBB95245B81D70044D290 /* NSViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Utils.swift"; sourceTree = "<group>"; };
+		E63BBB97245B902E0044D290 /* TaskListViewController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskListViewController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
 		E63FC790244A157C00B3202D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 		E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+TaskPingReceiver.swift"; sourceTree = "<group>"; };
 		E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBuilderViewController.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			children = (
 				E6D680641CD5018F00C45179 /* TaskListViewController.swift */,
 				E6F5736F24599EC2005A00F1 /* TaskListViewController+TaskPingReceiver.swift */,
+				E63BBB97245B902E0044D290 /* TaskListViewController+NSTableViewDelegate.swift */,
 				E6F5736D2458CA43005A00F1 /* TaskListWindowController.swift */,
 			);
 			path = TaskList;
@@ -510,6 +513,7 @@
 				E65EF088224E85F50023A7B5 /* LogManager.swift in Sources */,
 				E662723B1CD8E84300B50E38 /* TabSeparatedValuesExporter.swift in Sources */,
 				E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */,
+				E63BBB98245B902E0044D290 /* TaskListViewController+NSTableViewDelegate.swift in Sources */,
 				E6E1B4551CD89CE900FE24CD /* MoonPhases.swift in Sources */,
 				E6910F5E1CCE65B5003CBA90 /* CoreDataTaskProvider.swift in Sources */,
 				E67203D92446174300AFCF31 /* Collection+Utils.swift in Sources */,
