@@ -27,7 +27,7 @@ class PreferenceLogViewController: TrackedViewController, PreferencePane {
     override var nibName: NSNib.Name? {
         "PreferenceLogView"
     }
-    
+
     override var analyticsScreenName: String? { "preferences-log" }
 
     override func viewDidLoad() {

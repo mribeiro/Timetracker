@@ -4,6 +4,9 @@ sleep 30
 
 echo 'starting script'
 
+echo 'updating carthage dependencies'
+carthage update
+
 # DECIPHER DEVELOPMENT CERTIFICATES
 
 echo 'deciphering dev certificate'

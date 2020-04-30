@@ -26,7 +26,7 @@ class PreferenceBuilderViewController: TrackedViewController, PreferencePane {
     var toolbarItemIcon: NSImage = NSImage(named: "icon-worker")!
 
     var toolbarItemTitle: String = "Builder"
-    
+
     override var analyticsScreenName: String? { "preferences-builder" }
 
     @IBOutlet weak var monkeyRadio: NSButton!

@@ -23,7 +23,7 @@ class TaskRunnerViewController: TrackedViewController, TaskPingReceiver, DataCha
     @IBOutlet weak var taskComboBox: NSComboBox!
 
     // MARK: - Vars and Lets
-    
+
     override var analyticsScreenName: String? { "task-runner" }
 
     fileprivate var selectedHod: HeadOfDevelopment? {

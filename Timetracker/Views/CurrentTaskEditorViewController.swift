@@ -12,7 +12,7 @@ import Cocoa
 class CurrentTaskEditorViewController: TrackedViewController, TaskPingReceiver {
 
     override var analyticsScreenName: String? { "current-task-editor" }
-    
+
     func ping(_ interval: TimeInterval) {
     }
 

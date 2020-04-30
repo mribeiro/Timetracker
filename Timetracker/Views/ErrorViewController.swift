@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 class ErrorViewController: NSViewController {
-    
+
     var errorString: String?
 
     @IBOutlet var errorLabel: NSTextField!

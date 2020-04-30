@@ -10,13 +10,13 @@ import Foundation
 import AppKit
 
 class TrackedViewController: NSViewController {
-    
-    private(set) var analyticsScreenName: String? = nil
-    
+
+    private(set) var analyticsScreenName: String?
+
     override func viewWillAppear() {
         super.viewWillAppear()
         let screenName = analyticsScreenName ?? self.className
         AnalyticsManager.windowOpened(screenName)
     }
-    
+
 }

@@ -12,7 +12,7 @@ import Cocoa
 class TextDisplayerViewController: TrackedViewController {
 
     @IBOutlet var textView: NSTextView!
-    
+
     override var analyticsScreenName: String? { "text-displayer" }
     override var nibName: NSNib.Name? { "TextDisplayerView" }
 

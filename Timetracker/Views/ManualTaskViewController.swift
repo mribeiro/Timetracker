@@ -25,7 +25,7 @@ class ManualTaskViewController: TrackedViewController, NSComboBoxDataSource {
     var onDismiss: (() -> Void)?
 
     override var analyticsScreenName: String? { "manual-task" }
-    
+
     fileprivate var selectedHod: HeadOfDevelopment? {
         return hods?[safe: hodsPopup.indexOfSelectedItem]
     }

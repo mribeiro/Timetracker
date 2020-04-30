@@ -39,7 +39,7 @@ class TaskListViewController: TrackedViewController, NSTableViewDataSource, NSTa
     var exported: String?
 
     override var analyticsScreenName: String? { "task-list" }
-    
+
     var windowController: TaskListWindowController? {
         return self.view.window?.windowController as? TaskListWindowController
     }

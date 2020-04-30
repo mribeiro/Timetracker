@@ -12,7 +12,7 @@ import Cocoa
 class ExportViewController: TrackedViewController {
 
     override var analyticsScreenName: String? { "export" }
-    
+
     var string: String?
 
     @IBOutlet var textView: NSTextView!

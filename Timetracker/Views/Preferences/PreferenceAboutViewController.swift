@@ -21,7 +21,7 @@ class PreferenceAboutViewController: TrackedViewController, PreferencePane {
     var toolbarItemIcon: NSImage = NSImage(named: "icon-about")!
 
     override var nibName: NSNib.Name? { "PreferenceAboutView" }
-    
+
     override var analyticsScreenName: String? { "preferences-about" }
 
     override func viewDidLoad() {

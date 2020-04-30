@@ -21,7 +21,7 @@ class CostCentreListController: TrackedViewController, NSOutlineViewDelegate {
     // MARK: - Vars and Lets
 
     weak var appDelegate = NSApplication.shared.delegate as? AppDelegate
-    
+
     override var analyticsScreenName: String? { "cost-centre" }
 
     // MARK: - ViewController callbacks
