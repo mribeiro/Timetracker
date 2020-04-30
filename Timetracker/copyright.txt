@@ -8,3 +8,4 @@ FRAMEWORKS:
 SwiftyBeaver (https://github.com/SwiftyBeaver/SwiftyBeaver)
 Preferences (https://github.com/sindresorhus/Preferences)
 SwiftDate (https://github.com/malcommac/SwiftDate)
+Sparkle (http://sparkle-project.org/)
