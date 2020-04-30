@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 import SwiftDate
 
-class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
+class TaskListViewController: TrackedViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     enum TableColumns: Int {
         case headOfDevelopment = 0
@@ -38,6 +38,8 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
     var contentCorrupted = false
     var exported: String?
 
+    override var analyticsScreenName: String? { "task-list" }
+    
     var windowController: TaskListWindowController? {
         return self.view.window?.windowController as? TaskListWindowController
     }
@@ -247,7 +249,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
                 performSegue(withIdentifier: "add_line", sender: self)
 
             } else {
-                showError("You need to have at least one project")
+                showError("You need to have at least one project", because: "manual-task-add-no-project")
             }
 
         default:
@@ -258,7 +260,7 @@ class TaskListViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     @IBAction func exportClicked(_ sender: AnyObject) {
         guard !self.contentCorrupted else {
-            showError("There are tasks that do not seem to be properly configured. Please check and fix them.")
+            showError("There are tasks that do not seem to be properly configured. Please check and fix them.", because: "task-list-corrupted-content")
             return
         }
 

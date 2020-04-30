@@ -9,9 +9,11 @@
 import Foundation
 import Cocoa
 
-class TextDisplayerViewController: NSViewController {
+class TextDisplayerViewController: TrackedViewController {
 
     @IBOutlet var textView: NSTextView!
+    
+    override var analyticsScreenName: String? { "text-displayer" }
     override var nibName: NSNib.Name? { "TextDisplayerView" }
 
     var text: String?

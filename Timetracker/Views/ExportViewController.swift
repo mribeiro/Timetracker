@@ -9,8 +9,10 @@
 import Foundation
 import Cocoa
 
-class ExportViewController: NSViewController {
+class ExportViewController: TrackedViewController {
 
+    override var analyticsScreenName: String? { "export" }
+    
     var string: String?
 
     @IBOutlet var textView: NSTextView!

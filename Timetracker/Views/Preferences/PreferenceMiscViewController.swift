@@ -10,7 +10,7 @@ import Foundation
 import AppKit
 import Preferences
 
-class PreferenceMiscViewController: NSViewController, PreferencePane {
+class PreferenceMiscViewController: TrackedViewController, PreferencePane {
     var preferencePaneIdentifier: Identifier = PreferencePaneIdentifier.Identifier.misc
 
     var preferencePaneTitle: String = "Misc"
@@ -24,6 +24,8 @@ class PreferenceMiscViewController: NSViewController, PreferencePane {
     override var nibName: NSNib.Name? {
         "PreferenceMiscView"
     }
+    
+    override var analyticsScreenName: String? { "preferences-misc" }
 
     override func viewDidLoad() {
         preferredContentSize = NSSize(width: 600, height: 200)

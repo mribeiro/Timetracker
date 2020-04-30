@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 import Preferences
 
-class PreferenceLogViewController: NSViewController, PreferencePane {
+class PreferenceLogViewController: TrackedViewController, PreferencePane {
 
     var preferencePaneIdentifier: Identifier = PreferencePaneIdentifier.Identifier.logs
 
@@ -27,6 +27,8 @@ class PreferenceLogViewController: NSViewController, PreferencePane {
     override var nibName: NSNib.Name? {
         "PreferenceLogView"
     }
+    
+    override var analyticsScreenName: String? { "preferences-log" }
 
     override func viewDidLoad() {
         super.viewDidLoad()

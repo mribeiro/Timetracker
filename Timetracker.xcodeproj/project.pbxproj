@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		E603199524487E57000FB79C /* copyright.txt in Resources */ = {isa = PBXBuildFile; fileRef = E603199424487E57000FB79C /* copyright.txt */; };
 		E612F3411CD2293800FC1D85 /* TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */; };
+		E621FF3E245B2D51002694CF /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621FF3C245B2D51002694CF /* AppCenter.framework */; };
+		E621FF3F245B2D51002694CF /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621FF3D245B2D51002694CF /* AppCenterAnalytics.framework */; };
+		E621FF41245B3164002694CF /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E621FF40245B3164002694CF /* AnalyticsManager.swift */; };
+		E621FF43245B3452002694CF /* TrackedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E621FF42245B3452002694CF /* TrackedViewController.swift */; };
 		E6281D2524420F4900CD467C /* AppDelegate+NSMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */; };
 		E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */; };
 		E6281D2B24421C1D00CD467C /* PreferenceMiscView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */; };
@@ -92,6 +96,10 @@
 /* Begin PBXFileReference section */
 		E603199424487E57000FB79C /* copyright.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = copyright.txt; sourceTree = "<group>"; };
 		E612F3401CD2293800FC1D85 /* TaskPingReceiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskPingReceiver.swift; sourceTree = "<group>"; };
+		E621FF3C245B2D51002694CF /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenter.framework; path = Carthage/Build/Mac/AppCenter.framework; sourceTree = SOURCE_ROOT; };
+		E621FF3D245B2D51002694CF /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterAnalytics.framework; path = Carthage/Build/Mac/AppCenterAnalytics.framework; sourceTree = SOURCE_ROOT; };
+		E621FF40245B3164002694CF /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		E621FF42245B3452002694CF /* TrackedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedViewController.swift; sourceTree = "<group>"; };
 		E6281D2424420F4900CD467C /* AppDelegate+NSMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+NSMenuDelegate.swift"; sourceTree = "<group>"; };
 		E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceMiscViewController.swift; sourceTree = "<group>"; };
 		E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceMiscView.xib; sourceTree = "<group>"; };
@@ -155,8 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6E9E5B424472D6C000D7D65 /* Preferences in Frameworks */,
+				E621FF3E245B2D51002694CF /* AppCenter.framework in Frameworks */,
 				E672025D2455BFA7004A9862 /* Sparkle.framework in Frameworks */,
 				E6E9E5B724473C42000D7D65 /* SwiftyBeaver in Frameworks */,
+				E621FF3F245B2D51002694CF /* AppCenterAnalytics.framework in Frameworks */,
 				E677696D2458816B00E1F3EB /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +200,8 @@
 		E672025B2455BF60004A9862 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E621FF3C245B2D51002694CF /* AppCenter.framework */,
+				E621FF3D245B2D51002694CF /* AppCenterAnalytics.framework */,
 				E672025C2455BFA7004A9862 /* Sparkle.framework */,
 			);
 			path = Frameworks;
@@ -318,6 +330,7 @@
 				E6E9E5C624486009000D7D65 /* TextDisplayerViewController.swift */,
 				E6F573752459A1DF005A00F1 /* TaskList */,
 				E6F573742459A1AD005A00F1 /* Preferences */,
+				E621FF42245B3452002694CF /* TrackedViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -351,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				E6281D2C24422BD200CD467C /* DockIconManager.swift */,
+				E621FF40245B3164002694CF /* AnalyticsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -489,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint autocorrect\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which swiftlint >/dev/null; then\n#  swiftlint autocorrect\n#  swiftlint\n#else\n#  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -523,6 +537,7 @@
 				E6910F6E1CCE6F1E003CBA90 /* Task.swift in Sources */,
 				E6910F431CCE5CFF003CBA90 /* Timetracker.xcdatamodeld in Sources */,
 				E6E9E5BF24483F29000D7D65 /* TrafficLights.swift in Sources */,
+				E621FF41245B3164002694CF /* AnalyticsManager.swift in Sources */,
 				E6FE838C1CDA5F9300794723 /* ExportViewController.swift in Sources */,
 				E6D680581CD4F5F000C45179 /* NSTimeInterval+Utils.swift in Sources */,
 				E6910F6A1CCE6F1E003CBA90 /* HeadOfDevelopment.swift in Sources */,
@@ -534,6 +549,7 @@
 				E6910F401CCE5CFF003CBA90 /* TaskRunnerViewController.swift in Sources */,
 				E6E1B4531CD899EA00FE24CD /* JackTheMonkey.swift in Sources */,
 				E6910F8E1CCF78C0003CBA90 /* CostCentreListController.swift in Sources */,
+				E621FF43245B3452002694CF /* TrackedViewController.swift in Sources */,
 				E6281D2524420F4900CD467C /* AppDelegate+NSMenuDelegate.swift in Sources */,
 				E6910F3E1CCE5CFF003CBA90 /* AppDelegate.swift in Sources */,
 				E6D6805C1CD4F76B00C45179 /* TaskProvider.swift in Sources */,
@@ -692,6 +708,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				IDLE_SECONDS = 62;
 				INFOPLIST_FILE = Timetracker/Info.plist;
@@ -724,6 +741,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				IDLE_SECONDS = 300;
 				INFOPLIST_FILE = Timetracker/Info.plist;
@@ -849,6 +867,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				IDLE_SECONDS = 300;
 				INFOPLIST_FILE = Timetracker/Info.plist;

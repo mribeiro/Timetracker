@@ -10,7 +10,7 @@ import Foundation
 import Cocoa
 
 class ErrorViewController: NSViewController {
-
+    
     var errorString: String?
 
     @IBOutlet var errorLabel: NSTextField!
@@ -19,10 +19,11 @@ class ErrorViewController: NSViewController {
         errorLabel.stringValue = errorString ?? ""
     }
 }
-
+#warning("This should be in utils, in a dedicated file")
 extension NSViewController {
 
-    func showError(_ error: String) {
+    func showError(_ error: String, because reason: String = "NOT-SET") {
+        AnalyticsManager.errorShownBecause(reason)
         let errorViewController = ErrorViewController(nibName: "ErrorView", bundle: nil)
         errorViewController.errorString = error
         presentAsSheet(errorViewController)

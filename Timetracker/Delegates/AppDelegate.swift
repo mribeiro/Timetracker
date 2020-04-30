@@ -11,6 +11,8 @@ import IOKit
 import AppKit
 import Preferences
 import Sparkle
+import AppCenter
+import AppCenterAnalytics
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, SUUpdaterDelegate {
@@ -44,6 +46,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+
+        AnalyticsManager.setup()
 
         self.updater.delegate = self
 

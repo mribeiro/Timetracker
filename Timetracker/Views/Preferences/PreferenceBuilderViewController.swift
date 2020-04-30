@@ -17,7 +17,7 @@ extension PreferencePane.Identifier {
     static let about = Identifier("about")
 }
 
-class PreferenceBuilderViewController: NSViewController, PreferencePane {
+class PreferenceBuilderViewController: TrackedViewController, PreferencePane {
 
     var preferencePaneIdentifier: Identifier = PreferencePane.Identifier.builder
 
@@ -26,6 +26,8 @@ class PreferenceBuilderViewController: NSViewController, PreferencePane {
     var toolbarItemIcon: NSImage = NSImage(named: "icon-worker")!
 
     var toolbarItemTitle: String = "Builder"
+    
+    override var analyticsScreenName: String? { "preferences-builder" }
 
     @IBOutlet weak var monkeyRadio: NSButton!
     @IBOutlet weak var moonRadio: NSButton!
