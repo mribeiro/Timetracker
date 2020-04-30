@@ -16,7 +16,8 @@ class PreferenceMiscViewController: TrackedViewController, PreferencePane {
     var preferencePaneTitle: String = "Misc"
 
     @IBOutlet weak var checkboxHideDockIcon: NSButton!
-
+    @IBOutlet weak var checkboxAnalytics: NSButton!
+    
     var toolbarItemTitle: String = "Misc"
 
     var toolbarItemIcon: NSImage = NSImage(named: "icon-switch")!
@@ -33,9 +34,17 @@ class PreferenceMiscViewController: TrackedViewController, PreferencePane {
 
     override func viewWillAppear() {
         self.checkboxHideDockIcon.state = DockIconManager.shouldHideIcon() ? .on : .off
+        
+        self.checkboxAnalytics.state = AnalyticsManager.isEnabled ? .on : .off
     }
 
     @IBAction func hideDockIconChanged(_ sender: NSButtonCell) {
         DockIconManager.set(hideIcon: sender.state == .on)
     }
+    
+    @IBAction func analyticsChanged(_ sender: NSButtonCell) {
+        AnalyticsManager.switchAnalytics(sender.state == .on)
+    }
+    
+    
 }

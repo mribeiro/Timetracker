@@ -19,6 +19,7 @@ class DockIconManager {
         UserDefaults().set(hideIcon, forKey: "hide_dock_icon")
         let policy: NSApplication.ActivationPolicy = hideIcon ? .accessory : .regular
         NSApplication.shared.setActivationPolicy(policy)
+        AnalyticsManager.dockIconStatusHidden(hideIcon)
     }
 
     class func setIconPerConfiguration() {

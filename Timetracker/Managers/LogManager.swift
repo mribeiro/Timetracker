@@ -77,6 +77,7 @@ final class LogManager {
     func setEnabled(_ enabled: Bool) {
         UserDefaults().set(enabled, forKey: "log_enabled")
         self.enabled = enabled
+        AnalyticsManager.logsChanged(enabled)
     }
 
     func setLevel(_ level: Level) {

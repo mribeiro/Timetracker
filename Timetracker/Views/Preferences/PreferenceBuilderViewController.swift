@@ -67,6 +67,7 @@ class PreferenceBuilderViewController: TrackedViewController, PreferencePane {
         if let identifier = sender.identifier?.rawValue {
             L.i("Saving new builder as \(identifier)")
             _ = BuilderManager.saveBuilder(identifier)
+            AnalyticsManager.builderChanged(identifier)
         }
     }
 

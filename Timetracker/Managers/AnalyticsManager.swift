@@ -12,8 +12,21 @@ import AppCenterAnalytics
 
 class AnalyticsManager {
     
+    static var isEnabled: Bool { UserDefaults().bool(forKey: "analytics_disabled") }
+    
     static func setup() {
+        let analyticsDisabled = UserDefaults().bool(forKey: "analytics_disabled")
+        
+        L.d("Analytics are disabled: \(analyticsDisabled)")
+        
+        MSAppCenter.setEnabled(!analyticsDisabled)
         MSAppCenter.start("55bbb316-b1d2-41c1-bbf2-72eed9b6a604", withServices: [MSAnalytics.self])
+    }
+    
+    static func switchAnalytics(_ disable: Bool) {
+        UserDefaults().set(disable, forKey: "analytics_disabled")
+        MSAppCenter.setEnabled(disable)
+        MSAnalytics.trackEvent("analytics-changed", withProperties: ["disabled": disable.description])
     }
     
     static func windowOpened(_ name: String) {
@@ -32,16 +45,12 @@ class AnalyticsManager {
         MSAnalytics.trackEvent("builder-changed", withProperties: ["new-builder": newBuilder])
     }
     
-    static func dockIconEnabled() {
-        MSAnalytics.trackEvent("dock-icon-enabled")
+    static func dockIconStatusHidden(_ hide: Bool) {
+        MSAnalytics.trackEvent("dock-icon-changed", withProperties:["hide": hide.description])
     }
     
-    static func logsDisabled() {
-        MSAnalytics.trackEvent("logs-disabled")
-    }
-    
-    static func logsEnabled() {
-        MSAnalytics.trackEvent("logs-enabled")
+    static func logsChanged(_ enabled: Bool) {
+        MSAnalytics.trackEvent("logs-changed", withProperties: ["enabled": enabled.description])
     }
     
     static func errorShownBecause(_ reason: String) {

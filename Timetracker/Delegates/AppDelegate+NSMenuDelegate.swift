@@ -98,11 +98,13 @@ extension AppDelegate: NSMenuDelegate {
             }
 
             taskProvider.startTask(task.title!, inProject: task.project!)
+            AnalyticsManager.taskStarted("top-menu")
         }
     }
 
     @objc func stopTaskClicked(_ sender: NSMenuItem) {
         _ = taskProvider.stopRunningTask()
+        AnalyticsManager.taskStopped("top-menu")
     }
 
     @objc func openTaskRunner(_ sender: NSMenuItem) {
@@ -218,5 +220,6 @@ extension AppDelegate: NSMenuDelegate {
         }
 
         taskProviderInstance.startTask(lastTaskTitle, inProject: lastTaskProject)
+        AnalyticsManager.taskStarted("restart-last-task")
     }
 }

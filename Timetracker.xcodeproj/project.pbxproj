@@ -17,6 +17,7 @@
 		E6281D2824421A4900CD467C /* PreferenceMiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */; };
 		E6281D2B24421C1D00CD467C /* PreferenceMiscView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */; };
 		E6281D2D24422BD200CD467C /* DockIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6281D2C24422BD200CD467C /* DockIconManager.swift */; };
+		E63BBB96245B81D70044D290 /* NSViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BBB95245B81D70044D290 /* NSViewController+Utils.swift */; };
 		E63FC791244A157C00B3202D /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = E63FC790244A157C00B3202D /* .travis.yml */; };
 		E63FC795244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */; };
 		E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */; };
@@ -104,6 +105,7 @@
 		E6281D2724421A4900CD467C /* PreferenceMiscViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceMiscViewController.swift; sourceTree = "<group>"; };
 		E6281D2A24421C1D00CD467C /* PreferenceMiscView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceMiscView.xib; sourceTree = "<group>"; };
 		E6281D2C24422BD200CD467C /* DockIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockIconManager.swift; sourceTree = "<group>"; };
+		E63BBB95245B81D70044D290 /* NSViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Utils.swift"; sourceTree = "<group>"; };
 		E63FC790244A157C00B3202D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 		E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+TaskPingReceiver.swift"; sourceTree = "<group>"; };
 		E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBuilderViewController.swift; sourceTree = "<group>"; };
@@ -181,14 +183,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E65EF086224E85CE0023A7B5 /* Logging */ = {
-			isa = PBXGroup;
-			children = (
-				E65EF087224E85F50023A7B5 /* LogManager.swift */,
-			);
-			path = Logging;
-			sourceTree = "<group>";
-		};
 		E66272391CD8E82600B50E38 /* Exporters */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +230,6 @@
 				E6F573722459A17C005A00F1 /* Providers */,
 				E6F573712459A13A005A00F1 /* Delegates */,
 				E6E9E5BB24483B65000D7D65 /* Builders */,
-				E65EF086224E85CE0023A7B5 /* Logging */,
 				E66272391CD8E82600B50E38 /* Exporters */,
 				E6D680561CD4F5D500C45179 /* Utils */,
 				E6910F6F1CCE6F25003CBA90 /* Model */,
@@ -276,6 +269,7 @@
 				E6FE83931CDB5D5F00794723 /* NSDate+Utils.swift */,
 				E6ECC1D3223D9B3000BBCD91 /* Timer+Utils.swift */,
 				E67203D82446174300AFCF31 /* Collection+Utils.swift */,
+				E63BBB95245B81D70044D290 /* NSViewController+Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -365,6 +359,7 @@
 			children = (
 				E6281D2C24422BD200CD467C /* DockIconManager.swift */,
 				E621FF40245B3164002694CF /* AnalyticsManager.swift */,
+				E65EF087224E85F50023A7B5 /* LogManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -535,6 +530,7 @@
 				E6910F6C1CCE6F1E003CBA90 /* Project.swift in Sources */,
 				E6F62FA724439EE700A9C8C9 /* PreferenceAboutViewController.swift in Sources */,
 				E6910F6E1CCE6F1E003CBA90 /* Task.swift in Sources */,
+				E63BBB96245B81D70044D290 /* NSViewController+Utils.swift in Sources */,
 				E6910F431CCE5CFF003CBA90 /* Timetracker.xcdatamodeld in Sources */,
 				E6E9E5BF24483F29000D7D65 /* TrafficLights.swift in Sources */,
 				E621FF41245B3164002694CF /* AnalyticsManager.swift in Sources */,

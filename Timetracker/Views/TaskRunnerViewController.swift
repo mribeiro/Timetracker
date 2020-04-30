@@ -105,6 +105,7 @@ class TaskRunnerViewController: TrackedViewController, TaskPingReceiver, DataCha
         }
 
         TaskProviderManager.instance.startTask(taskComboBox.stringValue, inProject: selectedProject)
+        AnalyticsManager.taskStarted("task-runner")
         setCurrentTaskLabels()
     }
 
@@ -113,7 +114,7 @@ class TaskRunnerViewController: TrackedViewController, TaskPingReceiver, DataCha
         let stopped = TaskProviderManager.instance.stopRunningTask()
         setCurrentTaskLabels()
         L.i("Task stopped successfully? \(stopped)")
-
+        AnalyticsManager.taskStopped("task-runner")
     }
 
     // MARK: - TaskPing Receiver implementation
