@@ -18,9 +18,7 @@
 		E63BBB96245B81D70044D290 /* NSViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BBB95245B81D70044D290 /* NSViewController+Utils.swift */; };
 		E63BBB98245B902E0044D290 /* TaskListViewController+NSTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BBB97245B902E0044D290 /* TaskListViewController+NSTableViewDelegate.swift */; };
 		E63BBB99245C1D1D0044D290 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621FF3D245B2D51002694CF /* AppCenterAnalytics.framework */; };
-		E63BBB9A245C1D1D0044D290 /* AppCenterAnalytics.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E621FF3D245B2D51002694CF /* AppCenterAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E63BBB9B245C1D1E0044D290 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621FF3C245B2D51002694CF /* AppCenter.framework */; };
-		E63BBB9C245C1D1E0044D290 /* AppCenter.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E621FF3C245B2D51002694CF /* AppCenter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E63FC791244A157C00B3202D /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = E63FC790244A157C00B3202D /* .travis.yml */; };
 		E63FC795244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */; };
 		E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */; };
@@ -91,8 +89,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E63BBB9A245C1D1D0044D290 /* AppCenterAnalytics.framework in CopyFiles */,
-				E63BBB9C245C1D1E0044D290 /* AppCenter.framework in CopyFiles */,
 				E672025F2455C043004A9862 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +379,7 @@
 				E6910F381CCE5CFF003CBA90 /* Resources */,
 				E63FC792244B0E0D00B3202D /* ShellScript */,
 				E672025E2455C029004A9862 /* CopyFiles */,
+				E63BBB9D245C1FD50044D290 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -490,6 +487,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		E63BBB9D245C1FD50044D290 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/AppCenter.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/AppCenterAnalytics.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AppCenter.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/AppCenterAnalytics.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
 		E63FC792244B0E0D00B3202D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
