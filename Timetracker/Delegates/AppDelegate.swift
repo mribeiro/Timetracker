@@ -310,3 +310,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
     }
 
 }
+
+extension NSApplication {
+
+    static var appDelegate: AppDelegate? {
+        return NSApplication.shared.delegate as? AppDelegate
+    }
+
+}

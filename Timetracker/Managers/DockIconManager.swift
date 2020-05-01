@@ -12,11 +12,11 @@ import Cocoa
 class DockIconManager {
 
     class func shouldHideIcon() -> Bool {
-        return UserDefaults().bool(forKey: "hide_dock_icon")
+        return U.get[.hideDockIcon]
     }
 
     class func set(hideIcon: Bool) {
-        UserDefaults().set(hideIcon, forKey: "hide_dock_icon")
+        U.get[.hideDockIcon] = hideIcon
         let policy: NSApplication.ActivationPolicy = hideIcon ? .accessory : .regular
         NSApplication.shared.setActivationPolicy(policy)
         AnalyticsManager.dockIconStatusHidden(hideIcon)
