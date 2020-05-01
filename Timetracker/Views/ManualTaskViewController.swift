@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class ManualTaskViewController: NSViewController, NSComboBoxDataSource {
+class ManualTaskViewController: TrackedViewController, NSComboBoxDataSource {
 
     @IBOutlet var hodsPopup: NSPopUpButton!
     @IBOutlet var projectsPopup: NSPopUpButton!
@@ -23,6 +23,8 @@ class ManualTaskViewController: NSViewController, NSComboBoxDataSource {
     weak var editingTask: Task?
 
     var onDismiss: (() -> Void)?
+
+    override var analyticsScreenName: String? { "manual-task" }
 
     fileprivate var selectedHod: HeadOfDevelopment? {
         return hods?[safe: hodsPopup.indexOfSelectedItem]
@@ -143,7 +145,7 @@ class ManualTaskViewController: NSViewController, NSComboBoxDataSource {
                     dismiss(self)
 
                 } else {
-                    showError("Couldn't update task")
+                    showError("Couldn't update task", because: "manual-task-fail-save")
                     L.e("Couldn't update task in database")
                 }
 
@@ -155,13 +157,13 @@ class ManualTaskViewController: NSViewController, NSComboBoxDataSource {
                                                                   finishingAt: taskEnd.dateValue) {
                     dismiss(self)
                 } else {
-                    showError("Couldn't save task")
+                    showError("Couldn't save task", because: "manual-task-fail-save")
                     L.e("Couldn't save task in database")
                 }
             }
 
         } else {
-            showError("Have you filled all fields?")
+            showError("Have you filled all fields?", because: "manual-task-missing-fields")
         }
     }
 

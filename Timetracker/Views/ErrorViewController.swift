@@ -19,13 +19,3 @@ class ErrorViewController: NSViewController {
         errorLabel.stringValue = errorString ?? ""
     }
 }
-
-extension NSViewController {
-
-    func showError(_ error: String) {
-        let errorViewController = ErrorViewController(nibName: "ErrorView", bundle: nil)
-        errorViewController.errorString = error
-        presentAsSheet(errorViewController)
-    }
-
-}

@@ -11,6 +11,9 @@ import IOKit
 import AppKit
 import Preferences
 import Sparkle
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, SUUpdaterDelegate {
@@ -34,16 +37,27 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         ], style: .toolbarItems
     )
 
+    var runningInProd: Bool {
+        return (Bundle.main.infoDictionary!["BUILD_TYPE"] as? String) == "RELEASE"
+    }
+
     @IBOutlet weak var updater: SUUpdater!
     @IBOutlet weak var taskRunnerMenuItem: NSMenuItem!
     @IBOutlet weak var costCentresMenuItem: NSMenuItem!
     @IBOutlet weak var taskListMenuItem: NSMenuItem!
+    @IBOutlet weak var devToolsMenu: NSMenuItem!
 
     @IBAction func checkForUpdatesClicked(_ sender: Any) {
         self.updater.checkForUpdates(sender)
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+
+        if runningInProd {
+            devToolsMenu.isHidden = true
+        }
+
+        AnalyticsManager.setup()
 
         self.updater.delegate = self
 
@@ -168,9 +182,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         case .alertFirstButtonReturn: // stop at idle time
             L.d("Task stopping at idle time")
             _ = taskProvider.stopRunningTask(atDate: idleDate)
+            AnalyticsManager.taskStopped("idle-dialog")
         case .alertSecondButtonReturn: // stop now
             L.d("Task stopping now")
             _ = taskProvider.stopRunningTask()
+            AnalyticsManager.taskStopped("idle-dialog")
         default: // continue
             L.d("nothing to do, let's continue counting time")
         }
@@ -278,5 +294,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
+
+    // MARK: - Dev tools
+
+    @IBAction func forceCrash(_ sender: Any) {
+        MSCrashes.generateTestCrash()
+    }
+
+    @IBAction func forceIdleDialog(_ sender: Any) {
+        showIdleDialogWithIdleDate(Date())
+    }
+
+    @IBAction func fakeScreenLock(_ sender: Any) {
+        screenLocked()
+    }
 
 }

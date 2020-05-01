@@ -10,7 +10,7 @@ import Foundation
 import AppKit
 import Preferences
 
-class PreferenceAboutViewController: NSViewController, PreferencePane {
+class PreferenceAboutViewController: TrackedViewController, PreferencePane {
     var preferencePaneIdentifier: Identifier = PreferencePaneIdentifier.Identifier.about
 
     var preferencePaneTitle: String = "About"
@@ -21,6 +21,8 @@ class PreferenceAboutViewController: NSViewController, PreferencePane {
     var toolbarItemIcon: NSImage = NSImage(named: "icon-about")!
 
     override var nibName: NSNib.Name? { "PreferenceAboutView" }
+
+    override var analyticsScreenName: String? { "preferences-about" }
 
     override func viewDidLoad() {
         preferredContentSize = NSSize(width: 600, height: 200)

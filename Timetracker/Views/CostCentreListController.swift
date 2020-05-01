@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 
-class CostCentreListController: NSViewController, NSOutlineViewDelegate {
+class CostCentreListController: TrackedViewController, NSOutlineViewDelegate {
 
     // MARK: - Outlets
 
@@ -22,9 +22,12 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
 
     weak var appDelegate = NSApplication.shared.delegate as? AppDelegate
 
+    override var analyticsScreenName: String? { "cost-centre" }
+
     // MARK: - ViewController callbacks
 
     override func viewWillAppear() {
+        super.viewWillAppear()
         outlineView.delegate = self
         adaptButton()
         loadTreeData()
@@ -49,7 +52,7 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
     @IBAction func addProjectOrClientClicked(_ sender: NSButton) {
 
         guard itemName.stringValue.count > 0 else {
-            showError("Please fill in the text box")
+            showError("Please fill in the text box", because: "project-client-name-not-set")
             return
         }
 
@@ -81,7 +84,7 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
             itemName.stringValue = ""
 
         } else {
-            showError("Couldn't save 😞 Did you select anything?")
+            showError("Couldn't save 😞 Did you select anything?", because: "save-clicked-no-selection")
         }
 
         adaptButton()
@@ -98,7 +101,7 @@ class CostCentreListController: NSViewController, NSOutlineViewDelegate {
                 L.e("Exception deleting \(selectedItem). Does this item have children?")
                 L.e("error \(error)")
                 appDelegate?.managedObjectContext.rollback()
-                showError("Could not delete! Does this item have children?")
+                showError("Could not delete! Does this item have children?", because: "try-delete-hierarchy")
             }
             loadTreeData()
             outlineView.reloadData()

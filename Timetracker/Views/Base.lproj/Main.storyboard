@@ -323,6 +323,31 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Dev tools" id="Ghd-DV-kpV">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Dev tools" id="cep-AF-QSc">
+                                    <items>
+                                        <menuItem title="Crash app" id="0Dl-XV-3YR">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="forceCrash:" target="Voe-Tx-rLC" id="dY1-go-WZv"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Open idle dialog" id="mW0-Ys-pWd">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="forceIdleDialog:" target="Voe-Tx-rLC" id="taH-J5-GKP"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Fake screen lock" id="ipH-Fl-A6O">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="fakeScreenLock:" target="Voe-Tx-rLC" id="u6W-Y1-95K"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Help" id="wpr-3q-Mcd">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
@@ -344,6 +369,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Timetracker" customModuleProvider="target">
                     <connections>
                         <outlet property="costCentresMenuItem" destination="7VX-H3-HqH" id="Q4R-7L-gxv"/>
+                        <outlet property="devToolsMenu" destination="Ghd-DV-kpV" id="RtZ-rc-SZx"/>
                         <outlet property="taskListMenuItem" destination="oDk-Ke-ZIj" id="ukf-fc-1WY"/>
                         <outlet property="taskRunnerMenuItem" destination="9kx-o6-CDK" id="8j6-8x-eYI"/>
                         <outlet property="updater" destination="bMp-8A-ggn" id="hc1-7R-Cpi"/>

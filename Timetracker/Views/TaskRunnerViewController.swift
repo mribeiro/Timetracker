@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged, NSComboBoxDataSource {
+class TaskRunnerViewController: TrackedViewController, TaskPingReceiver, DataChanged, NSComboBoxDataSource {
 
     // MARK: - Outlets
 
@@ -23,6 +23,8 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged,
     @IBOutlet weak var taskComboBox: NSComboBox!
 
     // MARK: - Vars and Lets
+
+    override var analyticsScreenName: String? { "task-runner" }
 
     fileprivate var selectedHod: HeadOfDevelopment? {
         return hodPopup.indexOfSelectedItem >= 0 ? hods?[hodPopup.indexOfSelectedItem] : nil
@@ -94,7 +96,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged,
 
         guard let selectedProject = selectedProject, taskComboBox.stringValue.count > 0 else {
             L.e("Cannot start task. Were all fields set?")
-            showError("Did you set all fields?")
+            showError("Did you set all fields?", because: "task-runner-fields-missing")
             return
         }
 
@@ -103,6 +105,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged,
         }
 
         TaskProviderManager.instance.startTask(taskComboBox.stringValue, inProject: selectedProject)
+        AnalyticsManager.taskStarted("task-runner")
         setCurrentTaskLabels()
     }
 
@@ -111,7 +114,7 @@ class TaskRunnerViewController: NSViewController, TaskPingReceiver, DataChanged,
         let stopped = TaskProviderManager.instance.stopRunningTask()
         setCurrentTaskLabels()
         L.i("Task stopped successfully? \(stopped)")
-
+        AnalyticsManager.taskStopped("task-runner")
     }
 
     // MARK: - TaskPing Receiver implementation

@@ -17,6 +17,10 @@ extension AppDelegate: NSMenuDelegate {
 
         menu.removeAllItems()
 
+        if !runningInProd {
+            loadDevTools(menu)
+        }
+
         loadBasicMenuItems(menu)
         loadLastTask(menu)
         loadTree(menu)
@@ -25,6 +29,18 @@ extension AppDelegate: NSMenuDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(withTitle: "Exit", action: #selector(NSApp.terminate), keyEquivalent: "")
 
+    }
+
+    func loadDevTools(_ sender: NSMenu) {
+        let devToolsItem = sender.addItem(withTitle: "Dev tools", action: nil, keyEquivalent: "")
+        let devToolsMenu = NSMenu()
+
+        devToolsMenu.addItem(withTitle: "Crash app", action: #selector(forceCrash), keyEquivalent: "")
+        devToolsMenu.addItem(withTitle: "Open idle dialog", action: #selector(forceIdleDialog), keyEquivalent: "")
+        devToolsMenu.addItem(withTitle: "Fake screen lock", action: #selector(screenLocked), keyEquivalent: "")
+        devToolsMenu.addItem(NSMenuItem.separator())
+
+        devToolsItem.submenu = devToolsMenu
     }
 
     func loadTree(_ sender: NSMenu) {
@@ -98,11 +114,13 @@ extension AppDelegate: NSMenuDelegate {
             }
 
             taskProvider.startTask(task.title!, inProject: task.project!)
+            AnalyticsManager.taskStarted("top-menu")
         }
     }
 
     @objc func stopTaskClicked(_ sender: NSMenuItem) {
         _ = taskProvider.stopRunningTask()
+        AnalyticsManager.taskStopped("top-menu")
     }
 
     @objc func openTaskRunner(_ sender: NSMenuItem) {
@@ -218,5 +236,7 @@ extension AppDelegate: NSMenuDelegate {
         }
 
         taskProviderInstance.startTask(lastTaskTitle, inProject: lastTaskProject)
+        AnalyticsManager.taskStarted("restart-last-task")
     }
+
 }
