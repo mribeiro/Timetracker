@@ -10,7 +10,7 @@ Timetracker analytics are provided by Microsoft AppCenter.
 
 ## Data gathered
 
-No personal data is gathered. The only information gathered concerns user's generic info like the macOS version the Mac is running or the macOS language.
+No personal data is gathered. The only information gathered concerns user's generic info like the macOS version the Mac is running or the macOS language. Additionally, if any crash happens this is also reported. 
 Apart from that, the following information is gathered.
 
 

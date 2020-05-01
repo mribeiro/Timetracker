@@ -13,6 +13,7 @@ import Preferences
 import Sparkle
 import AppCenter
 import AppCenterAnalytics
+import AppCenterCrashes
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDelegate, SUUpdaterDelegate {
@@ -36,16 +37,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         ], style: .toolbarItems
     )
 
+    var runningInProd: Bool {
+        return (Bundle.main.infoDictionary!["BUILD_TYPE"] as? String) == "RELEASE"
+    }
+
     @IBOutlet weak var updater: SUUpdater!
     @IBOutlet weak var taskRunnerMenuItem: NSMenuItem!
     @IBOutlet weak var costCentresMenuItem: NSMenuItem!
     @IBOutlet weak var taskListMenuItem: NSMenuItem!
+    @IBOutlet weak var devToolsMenu: NSMenuItem!
 
     @IBAction func checkForUpdatesClicked(_ sender: Any) {
         self.updater.checkForUpdates(sender)
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+
+        if runningInProd {
+            devToolsMenu.isHidden = true
+        }
 
         AnalyticsManager.setup()
 
@@ -284,5 +294,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSUserNotificationCenterDele
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
+
+    // MARK: - Dev tools
+
+    @IBAction func forceCrash(_ sender: Any) {
+        MSCrashes.generateTestCrash()
+    }
+
+    @IBAction func forceIdleDialog(_ sender: Any) {
+        showIdleDialogWithIdleDate(Date())
+    }
+
+    @IBAction func fakeScreenLock(_ sender: Any) {
+        screenLocked()
+    }
 
 }

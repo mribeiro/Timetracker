@@ -9,6 +9,7 @@
 import Foundation
 import AppCenter
 import AppCenterAnalytics
+import AppCenterCrashes
 
 class AnalyticsManager {
 
@@ -20,7 +21,7 @@ class AnalyticsManager {
         L.d("Analytics are disabled: \(analyticsDisabled)")
 
         MSAppCenter.setEnabled(!analyticsDisabled)
-        MSAppCenter.start("55bbb316-b1d2-41c1-bbf2-72eed9b6a604", withServices: [MSAnalytics.self])
+        MSAppCenter.start("55bbb316-b1d2-41c1-bbf2-72eed9b6a604", withServices: [MSAnalytics.self, MSCrashes.self])
     }
 
     static func switchAnalytics(_ disable: Bool) {
