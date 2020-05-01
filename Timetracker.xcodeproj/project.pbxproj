@@ -20,6 +20,8 @@
 		E63BBB99245C1D1D0044D290 /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621FF3D245B2D51002694CF /* AppCenterAnalytics.framework */; };
 		E63BBB9B245C1D1E0044D290 /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E621FF3C245B2D51002694CF /* AppCenter.framework */; };
 		E63BBB9F245C24690044D290 /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E63BBB9E245C24690044D290 /* AppCenterCrashes.framework */; };
+		E63BBBA2245C7C040044D290 /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = E63BBBA1245C7C040044D290 /* Defaults */; };
+		E63BBBA4245C7C4E0044D290 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63BBBA3245C7C4E0044D290 /* DefaultsManager.swift */; };
 		E63FC791244A157C00B3202D /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = E63FC790244A157C00B3202D /* .travis.yml */; };
 		E63FC795244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */; };
 		E65ED058223DAF23004C22C9 /* PreferenceBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */; };
@@ -110,6 +112,7 @@
 		E63BBB95245B81D70044D290 /* NSViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Utils.swift"; sourceTree = "<group>"; };
 		E63BBB97245B902E0044D290 /* TaskListViewController+NSTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskListViewController+NSTableViewDelegate.swift"; sourceTree = "<group>"; };
 		E63BBB9E245C24690044D290 /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppCenterCrashes.framework; path = Carthage/Build/Mac/AppCenterCrashes.framework; sourceTree = SOURCE_ROOT; };
+		E63BBBA3245C7C4E0044D290 /* DefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		E63FC790244A157C00B3202D /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .travis.yml; sourceTree = "<group>"; };
 		E63FC794244C64FC00B3202D /* AppDelegate+TaskPingReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+TaskPingReceiver.swift"; sourceTree = "<group>"; };
 		E65ED057223DAF23004C22C9 /* PreferenceBuilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBuilderViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E63BBBA2245C7C040044D290 /* Defaults in Frameworks */,
 				E6E9E5B424472D6C000D7D65 /* Preferences in Frameworks */,
 				E63BBB9F245C24690044D290 /* AppCenterCrashes.framework in Frameworks */,
 				E63BBB9B245C1D1E0044D290 /* AppCenter.framework in Frameworks */,
@@ -367,6 +371,7 @@
 				E6281D2C24422BD200CD467C /* DockIconManager.swift */,
 				E621FF40245B3164002694CF /* AnalyticsManager.swift */,
 				E65EF087224E85F50023A7B5 /* LogManager.swift */,
+				E63BBBA3245C7C4E0044D290 /* DefaultsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 				E6E9E5B324472D6C000D7D65 /* Preferences */,
 				E6E9E5B624473C42000D7D65 /* SwiftyBeaver */,
 				E677696C2458816B00E1F3EB /* SwiftDate */,
+				E63BBBA1245C7C040044D290 /* Defaults */,
 			);
 			productName = Timetracker;
 			productReference = E6910F3A1CCE5CFF003CBA90 /* Timetracker.app */;
@@ -451,6 +457,7 @@
 				E6E9E5B224472D6C000D7D65 /* XCRemoteSwiftPackageReference "Preferences" */,
 				E6E9E5B524473C42000D7D65 /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 				E677696B2458816B00E1F3EB /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				E63BBBA0245C7C040044D290 /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = E6910F3B1CCE5CFF003CBA90 /* Products */;
 			projectDirPath = "";
@@ -545,6 +552,7 @@
 				E6E1B4551CD89CE900FE24CD /* MoonPhases.swift in Sources */,
 				E6910F5E1CCE65B5003CBA90 /* CoreDataTaskProvider.swift in Sources */,
 				E67203D92446174300AFCF31 /* Collection+Utils.swift in Sources */,
+				E63BBBA4245C7C4E0044D290 /* DefaultsManager.swift in Sources */,
 				E6E9E5B92447BCA1000D7D65 /* CurrentTaskEditorViewController.swift in Sources */,
 				E6E9E5C724486009000D7D65 /* TextDisplayerViewController.swift in Sources */,
 				E6D680651CD5018F00C45179 /* TaskListViewController.swift in Sources */,
@@ -967,6 +975,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E63BBBA0245C7C040044D290 /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		E677696B2458816B00E1F3EB /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
@@ -994,6 +1010,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E63BBBA1245C7C040044D290 /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E63BBBA0245C7C040044D290 /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
+		};
 		E677696C2458816B00E1F3EB /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E677696B2458816B00E1F3EB /* XCRemoteSwiftPackageReference "SwiftDate" */;

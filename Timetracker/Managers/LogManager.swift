@@ -25,7 +25,7 @@ final class LogManager {
 
     var logFolder: String
 
-    enum Level: Int {
+    enum Level: Int, Codable {
         // These values must be in sync with SwiftyBeaver
         case verbose = 1
         case debug = 2
@@ -75,13 +75,13 @@ final class LogManager {
     }
 
     func setEnabled(_ enabled: Bool) {
-        UserDefaults().set(enabled, forKey: "log_enabled")
+        U.get[.logsEnabled] = enabled
         self.enabled = enabled
         AnalyticsManager.logsChanged(enabled)
     }
 
     func setLevel(_ level: Level) {
-        UserDefaults().set(level.rawValue, forKey: "log_level")
+        U.get[.logLevel] = level
         self.level = level
     }
 
@@ -113,8 +113,8 @@ final class LogManager {
 
         self.logFolder = fileLog.logFileURL?.path ?? "NA"
 
-        self.enabled = UserDefaults().bool(forKey: "log_enabled")
-        self.level = Level(rawValue: UserDefaults().integer(forKey: "log_level")) ?? .error
+        self.enabled = U.get[.logsEnabled]
+        self.level = U.get[.logLevel]
 
     }
 

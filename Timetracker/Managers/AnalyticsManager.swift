@@ -13,10 +13,11 @@ import AppCenterCrashes
 
 class AnalyticsManager {
 
-    static var isEnabled: Bool { UserDefaults().bool(forKey: "analytics_disabled") }
+    static var isEnabled: Bool { U.get[.analyticsDisabled] }
 
     static func setup() {
-        let analyticsDisabled = UserDefaults().bool(forKey: "analytics_disabled")
+
+        let analyticsDisabled = isEnabled
 
         L.d("Analytics are disabled: \(analyticsDisabled)")
 
@@ -25,7 +26,7 @@ class AnalyticsManager {
     }
 
     static func switchAnalytics(_ disable: Bool) {
-        UserDefaults().set(disable, forKey: "analytics_disabled")
+        U.get[.analyticsDisabled] = disable
         MSAppCenter.setEnabled(disable)
         MSAnalytics.trackEvent("analytics-changed", withProperties: ["disabled": disable.description])
     }

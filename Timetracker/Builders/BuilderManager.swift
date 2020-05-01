@@ -12,12 +12,13 @@ import Cocoa
 class BuilderManager {
 
     class func getFromConfiguration() -> Builder {
-        let builder = UserDefaults().string(forKey: "builder") ?? ""
+
+        let builder = U.get[.builder]
         return getFromName(builder)
     }
 
     class func saveBuilder(_ name: String) -> Builder {
-        UserDefaults().set(name, forKey: "builder")
+        U.get[.builder] = name
         let builder = getFromName(name)
         // This looks so bad it hurts
         if let appDelegate = NSApp.delegate as? AppDelegate {
