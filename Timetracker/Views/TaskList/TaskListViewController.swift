@@ -259,8 +259,9 @@ class TaskListViewController: TrackedViewController, NSTableViewDataSource {
             endOfFilter = startDate.dateAt(.endOfDay)
 
         case .week:
-            startOfFilter = startDate.dateAt(.startOfWeek)
-            endOfFilter = startDate.dateAt(.endOfWeek)
+            let startAndDateOfWeek = startDate.getStartAndEndOfThisWeek()
+            startOfFilter = startAndDateOfWeek.monday.dateAt(.startOfDay)
+            endOfFilter = startAndDateOfWeek.sunday.dateAt(.endOfDay)
 
         case .month:
             startOfFilter = startDate.dateAt(.startOfMonth)

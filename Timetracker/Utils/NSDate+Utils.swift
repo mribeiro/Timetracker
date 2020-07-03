@@ -9,15 +9,18 @@
 import Foundation
 
 extension Date {
-    var startOfDay: Date {
-        return Calendar.current.startOfDay(for: self)
+    func getStartAndEndOfThisWeek() -> (monday: Date, sunday: Date) {
+        Date.getStartAndEndOfWeek(ofDate: self)
     }
 
-    var endOfDay: Date? {
-        var components = DateComponents()
-        components.day = 1
-        components.second = -1
-        let calendarOptions = NSCalendar.Options()
-        return (Calendar.current as NSCalendar).date(byAdding: components, to: startOfDay, options: calendarOptions)
+    static func getStartAndEndOfWeek(ofDate date: Date) -> (monday: Date, sunday: Date) {
+        let currentCalendar = Calendar.current
+        let currentWeekday = currentCalendar.component(.weekday, from: date)
+        // 1 is sunday . If it is sunday we know the diff is -6 because the week ends on sundays.
+        // 2 is monday . The diff must be 0 because the week starts on mondays.
+        let diffToMonday = currentWeekday == 1 ? -6 : 2 - currentWeekday
+        let mondayThisWeek = currentCalendar.date(byAdding: .day, value: diffToMonday, to: date)
+        let sundayThisWeek = currentCalendar.date(byAdding: .day, value: 6, to: mondayThisWeek!)
+        return (mondayThisWeek!, sundayThisWeek!)
     }
 }
